@@ -23,7 +23,7 @@ export default function SEOReviewSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="container pt-20 pb-10 md:pt-28">
+    <section ref={ref as React.RefObject<HTMLElement>} id="proof" className="container pt-20 pb-10 md:pt-28">
       <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
 
         <div className={`relative transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
@@ -43,11 +43,20 @@ export default function SEOReviewSection() {
             className="font-black text-[#F0EDE6] leading-[1.05] -tracking-[2px] pl-14 md:pl-16"
             style={{ fontSize: 'clamp(36px, 5.5vw, 76px)' }}
           >
-            A track record that <span className="text-[#F5C842]">moves the floor</span>
+            Proof from <span className="text-[#F5C842]">our missions</span>
           </h2>
           <p className="mt-6 pl-14 md:pl-16 text-[#8A8A9A] text-base md:text-lg leading-relaxed max-w-[460px]">
-            What past Mustache Crew releases have already achieved on the world's top platforms.
+            Mustache Gang Xmas 2025 — the blueprint that started it all.
+            Real chart positions from coordinated squad pushes.
           </p>
+          <a
+            href="https://www.instagram.com/mustachecrew/"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 ml-14 md:ml-16 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2A2A3E] text-sm text-[#F0EDE6] hover:bg-[#13131F] transition-colors"
+          >
+            📷 Watch the highlights on Instagram ↗
+          </a>
         </div>
 
         <div className={`transition-all duration-700 delay-200 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
