@@ -74,12 +74,12 @@ export function PortfolioGallery({
             const totalImages = images.length;
             const middle = Math.floor(totalImages / 2);
             const distanceFromMiddle = Math.abs(index - middle);
-            const staggerOffset = variant === "straight" ? 0 : maxHeight - distanceFromMiddle * 20;
+            const staggerOffset = maxHeight - distanceFromMiddle * 20;
             const zIndex = totalImages - distanceFromMiddle;
             const isHovered = hoveredIndex === index;
             const isOtherHovered = hoveredIndex !== null && hoveredIndex !== index;
-            const yOffset = isHovered ? (variant === "straight" ? -40 : -120) : isOtherHovered ? 0 : -staggerOffset;
-            const rotation = variant === "straight" ? 0 : (index - middle) * 3;
+            const yOffset = isHovered ? -120 : isOtherHovered ? 0 : -staggerOffset;
+            const rotation = (index - middle) * 3;
 
             return (
               <motion.div
