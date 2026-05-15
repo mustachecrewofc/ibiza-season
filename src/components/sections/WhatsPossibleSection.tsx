@@ -2,28 +2,28 @@ import { useInView } from '../../hooks/useInView';
 
 const useCases = [
   {
-    title: 'Custom artwork & visuals',
-    desc: 'Each selected track gets dedicated cover design plus an animated visualizer for IG reels, TikTok and YouTube — built by our in-house art team.',
+    title: 'Full Media Kit per Track',
+    desc: 'Official cover art, SoundCloud cover, Facebook cover, individual YouTube video, Instagram Story launch video (16:9 motion) and pre-save video (16:9 motion). Built per artist, per track.',
   },
   {
-    title: 'Worldwide distribution',
-    desc: 'Beatport, Spotify, Apple Music, SoundCloud, Tidal, Deezer, Amazon Music and more. Full ISRC, metadata and royalty splits handled.',
+    title: 'Full DJ Set with All Tracks',
+    desc: 'A complete DJ set including every VA track posted on YouTube and SoundCloud — extra visibility for the whole squad on the platforms DJs actually browse.',
   },
   {
-    title: 'Mastering by industry pros',
-    desc: 'Tracks are mastered to club & streaming standards by engineers who work with major labels — at no cost to selected artists.',
+    title: 'SoundCloud Reach (~2M)',
+    desc: 'Repost campaign across our partner network reaching roughly 2M followers. Real ears, real DJs, real velocity into the chart push.',
   },
   {
-    title: 'Editorial & playlist push',
-    desc: 'Curated submission to Spotify, Apple Music and SoundCloud editorial teams plus placement on the official VA World Cup playlists.',
+    title: 'Spotify Playlist Support',
+    desc: 'Curated submission and placement support across our editorial network — your single, not just the VA.',
   },
   {
-    title: 'Premiere & press coverage',
-    desc: 'Official premieres on tastemaker channels, magazine features, podcast spots and DJ support tracking from established names in the scene.',
+    title: 'Beatport Chart Mission',
+    desc: 'Coordinated release date, pre-save sync, day-one velocity push — engineered for Beatport New Releases and Genre Charts.',
   },
   {
-    title: 'A global crew, for life',
-    desc: 'Once you\'re in, you\'re part of the Mustache Crew family. Private Discord, collab opportunities, gig leads, and a network spanning 30+ countries.',
+    title: 'Instagram + Press Coverage',
+    desc: 'Coordinated Instagram content campaign across all 15 artists, plus blog and press coverage to extend the reach beyond the algorithm.',
   },
 ];
 
@@ -38,8 +38,12 @@ export default function WhatsPossibleSection() {
         }`}
         style={{ fontSize: 'clamp(52px, 8vw, 120px)' }}
       >
-        What selected artists <span className="text-[#F5C842]">get</span>
+        360° promotional <span className="text-[#F5C842]">campaign</span>
       </h2>
+      <p className="mt-5 max-w-[640px] text-[#8A8A9A] text-base md:text-lg leading-relaxed">
+        A coordinated multi-platform campaign designed to push the entire squad
+        toward Beatport's highest chart positions.
+      </p>
 
       <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2">
         {useCases.map((uc, i) => (
