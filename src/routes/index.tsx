@@ -5,17 +5,17 @@ export const Route = createFileRoute("/")({
   component: SEOPage,
   head: () => ({
     meta: [
-      { title: "VA World Cup 2026 — Mustache Crew Records" },
+      { title: "VA World Cup 2026 — Mustache Crew Records | Submit Your Electronic Music Track" },
       {
         name: "description",
         content:
-          "The biggest international electronic music compilation of 2026. Submit your unreleased Techno, House, Tech House or Melodic track. Free worldwide release on Beatport, Spotify & more. Deadline March 31, 2026.",
+          "Join the VA World Cup 2026 by Mustache Crew Records. A coordinated electronic music chart campaign launching during the 2026 World Cup. 15 curated spots. Submit your demo now.",
       },
       { property: "og:title", content: "VA World Cup 2026 — Mustache Crew Records" },
       {
         property: "og:description",
         content:
-          "Producers from every continent, one global compilation. Free submission, worldwide release, full promo. Deadline March 31, 2026.",
+          "A coordinated Beatport chart campaign during the 2026 World Cup. 15 curated spots, full 360° promo, daily crew direction. Submissions close August 15, 2026.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
