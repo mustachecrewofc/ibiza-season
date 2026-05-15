@@ -1,14 +1,14 @@
 import { useInView } from '../../hooks/useInView';
 
 const issues = [
-  { label: 'Featured on Beatport Top 100 Tech House', status: 'ok', badge: 'Charted' },
-  { label: 'SoundCloud Premiere · Selector Series', status: 'ok' },
-  { label: 'Spotify Editorial · "Underground Pulse"', status: 'ok' },
-  { label: 'Apple Music New Releases · Electronic', status: 'ok' },
-  { label: '29+ artists released globally', status: 'ok' },
-  { label: '5 continents represented in last edition', status: 'ok' },
-  { label: 'Tracks broadcast on RBMA, Resident Advisor sets', status: 'ok' },
-  { label: '2M+ combined streams across DSPs', status: 'ok', badge: 'Verified' },
+  { label: 'Mustache Gang Xmas — #38 Beatport Overall Top 100 Releases', status: 'ok', badge: 'Charted' },
+  { label: 'Mustache Gang Xmas — #2 Beatport Dubstep Releases', status: 'ok' },
+  { label: 'Brazilian Carnival VA — #1 Electronica/Downtempo Releases', status: 'ok', badge: '#1' },
+  { label: 'Mustache Gang Xmas — Top 5 Genre Releases', status: 'ok' },
+  { label: '29+ artists coordinated across past missions', status: 'ok' },
+  { label: 'Pre-save campaigns synced across the full squad', status: 'ok' },
+  { label: 'SoundCloud repost network ≈ 2M followers', status: 'ok' },
+  { label: 'Daily crew direction from prep through release week', status: 'ok', badge: 'Verified' },
 ];
 
 function StatusIcon() {
