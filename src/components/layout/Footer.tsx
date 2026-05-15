@@ -1,41 +1,35 @@
 const footerColumns = [
   {
-    title: 'VA World Cup',
+    title: 'Company',
     links: [
-      { label: 'About the compilation', href: '#about' },
-      { label: 'How to submit', href: '#submit' },
-      { label: 'Past editions', href: '#' },
-      { label: 'Selected lineup', href: '#lineup' },
+      { label: 'About', href: '#' },
+      { label: 'Past VAs', href: '#proof' },
+      { label: 'Contact', href: '#' },
     ],
   },
   {
-    title: 'Label',
+    title: 'Current VA',
     links: [
-      { label: 'Mustache Crew Records', href: '#' },
-      { label: 'Roster', href: '#' },
-      { label: 'Releases', href: '#' },
-      { label: 'Press', href: '#' },
-      { label: 'Contact A&R', href: '#' },
+      { label: 'VA World Cup 2026', href: '#' },
+      { label: 'Submit', href: '#submit' },
+      { label: 'FAQ', href: '#faq' },
     ],
   },
   {
-    title: 'Community',
+    title: 'Past Campaigns',
     links: [
-      { label: 'Discord', href: '#' },
-      { label: 'Instagram', href: '#' },
+      { label: 'Brazilian Carnival VA', href: '#' },
+      { label: 'Xmas 2025', href: '#' },
+      { label: 'Euro Tour VA 2026', href: '#' },
+    ],
+  },
+  {
+    title: 'Follow',
+    links: [
       { label: 'SoundCloud', href: '#' },
-      { label: 'Beatport', href: '#' },
+      { label: 'Instagram', href: 'https://www.instagram.com/mustachecrew/' },
       { label: 'Spotify', href: '#' },
       { label: 'YouTube', href: '#' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { label: 'Submission terms', href: '#' },
-      { label: 'Privacy policy', href: '#' },
-      { label: 'Royalty agreement', href: '#' },
-      { label: 'Imprint', href: '#' },
     ],
   },
 ];
@@ -61,7 +55,7 @@ export default function Footer() {
                 <span className="font-black text-[#F0EDE6] text-base">Mustache Crew</span>
               </a>
               <p className="text-xs text-[#8A8A9A] leading-relaxed mb-4">
-                Independent label. Worldwide crew. Underground sound since 2018.
+                Strategic VA campaigns for electronic music artists.
               </p>
               <span className="inline-flex items-center gap-2 text-xs text-[#8A8A9A] border border-[#2A2A3E] rounded-full px-3 py-1.5">
                 <span>🌍</span>
