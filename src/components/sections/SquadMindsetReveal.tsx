@@ -2,7 +2,7 @@ import logoWhite from '@/assets/mustache-crew-white.png';
 
 export default function SquadMindsetReveal() {
   return (
-    <div style={{ position: 'relative', height: '110vh' }}>
+    <div style={{ position: 'relative', height: '130vh' }}>
       <div
         style={{
           position: 'sticky',
@@ -49,7 +49,7 @@ export default function SquadMindsetReveal() {
           top: 0,
           left: 0,
           right: 0,
-          height: '45vh',
+          height: '100vh',
           zIndex: 10,
           overflow: 'hidden',
           background: '#0A0A0F',
