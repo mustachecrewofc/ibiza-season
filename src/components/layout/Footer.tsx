@@ -1,3 +1,5 @@
+import logoWhite from '@/assets/mustache-crew-white.png';
+
 const footerColumns = [
   {
     title: 'Company',
