@@ -6,6 +6,7 @@ export default function LetLovableFixSection() {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
+      id="promo"
       className="container pt-20 pb-20 md:pt-28 md:pb-[138px]"
     >
       <h2
@@ -13,7 +14,7 @@ export default function LetLovableFixSection() {
           inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
         }`}
       >
-        and the <span className="text-[#F5C842]">crew</span> handles the rest
+        Smart <span className="text-[#F5C842]">distribution</span> strategy
       </h2>
 
       <div
@@ -21,20 +22,25 @@ export default function LetLovableFixSection() {
           inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
-        <div className="max-w-[360px] text-lg leading-[23px] font-[500] -tracking-[0.36px] text-[#8A8A9A] md:max-w-[409px] md:text-2xl md:leading-[109%] md:-tracking-[0.48px]">
-          You send the music. Mustache Crew Records takes care of mastering, artwork,
-          distribution, promo and global push.
+        <div className="max-w-[360px] text-lg leading-[23px] font-[500] -tracking-[0.36px] text-[#8A8A9A] md:max-w-[440px] md:text-2xl md:leading-[109%] md:-tracking-[0.48px]">
+          The VA goes to 50+ platforms as a classic VA. On Spotify, each track is
+          <span className="text-[#F0EDE6]"> also released as a single under your artist profile</span> —
+          so you don't lose visibility on your own page.
         </div>
 
         <div>
           {[
             {
-              title: 'Full promo package',
-              desc: 'Animated cover art, IG reels, YouTube visualizer, premiere coverage on tastemaker channels, and dedicated push on the official VA World Cup playlists.',
+              title: 'VA on every relevant store',
+              desc: 'Beatport + 50+ download stores and DSPs where a VA actually drives chart velocity. Full ISRC, metadata and royalty splits handled.',
             },
             {
-              title: 'Worldwide community',
-              desc: 'Selected artists join the Mustache Crew global network — a private Discord with producers, DJs and label staff from 30+ countries collaborating, swapping stems and booking gigs.',
+              title: 'Singles on Spotify',
+              desc: 'Each track also released as a single under your artist profile. VA tracks often don\'t show on artist pages — this fixes it. You keep the streams, you keep the page.',
+            },
+            {
+              title: 'Aim: Beatport Top Charts',
+              desc: 'Every distribution decision serves one goal — coordinated chart velocity during the World Cup window. No random platforms, no wasted reach.',
             },
           ].map((item, i) => (
             <div key={item.title} className={`py-5 md:py-6 ${i > 0 ? 'border-t border-[#2A2A3E]' : ''}`}>
