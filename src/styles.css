@@ -19,12 +19,8 @@ html, body {
   margin-inline: auto;
   max-width: 1280px;
   padding-inline: 1rem;
-}
-@media (min-width: 768px) {
-  @utility container { padding-inline: 2rem; }
-}
-@media (min-width: 1024px) {
-  @utility container { padding-inline: 3rem; }
+  @media (min-width: 768px) { padding-inline: 2rem; }
+  @media (min-width: 1024px) { padding-inline: 3rem; }
 }
 
 @keyframes heartbeat {
