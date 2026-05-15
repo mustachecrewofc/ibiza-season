@@ -1,21 +1,13 @@
 import logoWhite from '@/assets/mustache-crew-white.png';
 
-/**
- * Sticky scroll reveal — same pattern as HeroBg, but compact.
- * BACK (sticky): bright Squad Mindset hero, gives strong contrast.
- * FRONT (absolute top): dark layer that fades to transparent + glowing
- * edge at the bottom so the reveal line is clearly visible against the
- * already-dark proof section.
- */
 export default function SquadMindsetReveal() {
   return (
-    <div style={{ position: 'relative', height: '90vh' }}>
-      {/* BACK LAYER — sticky, bright gradient stays pinned */}
+    <div style={{ position: 'relative', height: '200vh' }}>
       <div
         style={{
           position: 'sticky',
           top: 0,
-          height: '60vh',
+          height: '100vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -28,39 +20,41 @@ export default function SquadMindsetReveal() {
             position: 'absolute',
             inset: 0,
             background:
-              'radial-gradient(ellipse 80% 70% at 50% 50%, #F5C842 0%, #E63B2E 45%, #7c1d1d 90%)',
+              'radial-gradient(ellipse 90% 75% at 50% 30%, #F5C842 0%, #F08A32 28%, #E63B2E 58%, #7c1d1d 100%)',
           }}
           aria-hidden="true"
         />
-        <div className="relative z-10 container text-center">
-          <h2
-            className="font-black text-[#F0EDE6] leading-tight -tracking-[2px]"
-            style={{ fontSize: 'clamp(36px, 5.5vw, 72px)' }}
-          >
-            Squad Mindset = <span className="text-[#F5C842]">Chart Potential</span>
-          </h2>
-          <p className="mt-4 text-[#F0EDE6]/85 text-base md:text-lg max-w-[560px] mx-auto leading-relaxed">
-            30 artists working as one coordinated squad, aiming for Beatport chart positions.
-          </p>
-          <div className="mt-6 flex items-center justify-center gap-3">
-            <img src={logoWhite} alt="Mustache Crew" className="h-12 w-auto invert" />
+
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(245,200,66,0.18) 0%, rgba(245,200,66,0) 24%, rgba(10,10,15,0.12) 100%)' }} aria-hidden="true" />
+
+        <div className="relative z-10 container flex min-h-screen items-center justify-center px-6 py-24 text-center">
+          <div className="max-w-5xl">
+            <h2
+              className="font-black text-[#F0EDE6] leading-[0.95]"
+              style={{ fontSize: 'clamp(42px, 7vw, 116px)' }}
+            >
+              Squad Mindset = <span className="text-[#F5C842]">Chart Potential</span>
+            </h2>
+            <p className="mx-auto mt-6 max-w-[700px] text-lg leading-relaxed text-[#F0EDE6]/92 md:text-[28px]">
+              30 artists working as one coordinated squad, aiming for Beatport chart positions.
+            </p>
+            <div className="mt-8 flex items-center justify-center">
+              <img src={logoWhite} alt="Mustache Crew" className="h-14 w-auto invert md:h-16" />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* FRONT LAYER — short dark cover with glowing edge so the
-          reveal line is visible even against the dark proof bg above. */}
       <div
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
-          height: '35vh',
+          height: '100vh',
           zIndex: 10,
-          background:
-            'linear-gradient(to bottom, #0A0A0F 0%, #0A0A0F 70%, rgba(10,10,15,0.6) 100%)',
           overflow: 'hidden',
+          background: '#0A0A0F',
         }}
       >
         <div
@@ -73,17 +67,16 @@ export default function SquadMindsetReveal() {
             backgroundSize: '60px 60px',
           }}
         />
-        {/* Glowing edge at the bottom — the visible "reveal line" */}
+
         <div
           style={{
             position: 'absolute',
-            bottom: 0,
             left: 0,
             right: 0,
-            height: '2px',
-            background:
-              'linear-gradient(90deg, transparent, #F5C842 50%, transparent)',
-            boxShadow: '0 0 20px 4px rgba(245,200,66,0.6)',
+            bottom: 0,
+            height: '22vh',
+            background: 'linear-gradient(180deg, rgba(10,10,15,0) 0%, rgba(245,200,66,0.22) 45%, rgba(230,59,46,0.4) 100%)',
+            boxShadow: '0 0 30px rgba(245,200,66,0.22)',
           }}
         />
       </div>
