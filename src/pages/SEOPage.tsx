@@ -13,17 +13,12 @@ import CTASection from '../components/sections/CTASection';
 
 export default function SEOPage() {
   return (
-    <div className="min-h-screen bg-[#FCFBF8]">
+    <div className="min-h-screen bg-[#0A0A0F]">
       <Navbar />
 
       <main id="main-content">
-        {/* Dark hero section */}
         <HeroSection />
-
-        {/* Blue glow + dark-to-light transition */}
         <HeroBg />
-
-        {/* Light sections */}
         <IntroVideoSection />
         <BuiltToBeFoundSection />
         <ChatSemrushSection />
@@ -31,8 +26,6 @@ export default function SEOPage() {
         <LetLovableFixSection />
         <WhatsPossibleSection />
         <FAQSection />
-
-        {/* Dark CTA */}
         <CTASection />
       </main>
 

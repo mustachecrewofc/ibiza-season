@@ -2,28 +2,28 @@ import { useInView } from '../../hooks/useInView';
 
 const useCases = [
   {
-    title: 'Lance um app novo que o Google consegue indexar',
-    desc: 'Seu app novo já vem com SSR pronto. Metatags, dados Open Graph e dados estruturados serão sinalizados na revisão de SEO e podem ser adicionados em um clique.',
+    title: 'Custom artwork & visuals',
+    desc: 'Each selected track gets dedicated cover design plus an animated visualizer for IG reels, TikTok and YouTube — built by our in-house art team.',
   },
   {
-    title: 'Torne um app existente descobrível sem mudar nada',
-    desc: 'A pré-renderização já está ativa. Seu conteúdo agora fica acessível para crawlers — sem migração e sem trabalho manual.',
+    title: 'Worldwide distribution',
+    desc: 'Beatport, Spotify, Apple Music, SoundCloud, Tidal, Deezer, Amazon Music and more. Full ISRC, metadata and royalty splits handled.',
   },
   {
-    title: 'Pergunte "para quais termos eu ranqueio?" e receba uma resposta real',
-    desc: 'Digite a pergunta no chat e receba seus rankings reais de palavras-chave com dados da Semrush.',
+    title: 'Mastering by industry pros',
+    desc: 'Tracks are mastered to club & streaming standards by engineers who work with major labels — at no cost to selected artists.',
   },
   {
-    title: 'Encontre oportunidades de palavra-chave e crie páginas para capturá-las',
-    desc: 'A Semrush mostra os termos que as pessoas usam para encontrar apps como o seu, e então cria landing pages para esses termos — direto no chat.',
+    title: 'Editorial & playlist push',
+    desc: 'Curated submission to Spotify, Apple Music and SoundCloud editorial teams plus placement on the official VA World Cup playlists.',
   },
   {
-    title: 'Faça seu app ser recomendado por ferramentas de busca por IA',
-    desc: 'A Lovable otimiza sua estrutura de conteúdo com markdown estruturado, para que seus apps sejam legíveis pelo ChatGPT, Perplexity e outras respostas com IA.',
+    title: 'Premiere & press coverage',
+    desc: 'Official premieres on tastemaker channels, magazine features, podcast spots and DJ support tracking from established names in the scene.',
   },
   {
-    title: 'Rode uma revisão completa de SEO sempre que precisar',
-    desc: 'Compare seu app com boas práticas antes ou depois de publicar. Corrija problemas em um clique e deixe o agente cuidar disso por você.',
+    title: 'A global crew, for life',
+    desc: 'Once you\'re in, you\'re part of the Mustache Crew family. Private Discord, collab opportunities, gig leads, and a network spanning 30+ countries.',
   },
 ];
 
@@ -33,28 +33,28 @@ export default function WhatsPossibleSection() {
   return (
     <section ref={ref as React.RefObject<HTMLElement>} className="container py-20 md:py-28">
       <h2
-        className={`font-bold text-[#1B1B1B] leading-[0.95] -tracking-[3px] transition-all duration-700 ${
+        className={`font-black text-[#F0EDE6] leading-[0.95] -tracking-[3px] transition-all duration-700 ${
           inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
         }`}
         style={{ fontSize: 'clamp(52px, 8vw, 120px)' }}
       >
-        O que é possível com os recursos de SEO da Lovable
+        What selected artists <span className="text-[#F5C842]">get</span>
       </h2>
 
       <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2">
         {useCases.map((uc, i) => (
           <div
             key={uc.title}
-            className={`p-1 rounded-[22px] bg-[#ECEAE4] md:rounded-[28px] transition-all duration-700 ${
+            className={`p-1 rounded-[22px] bg-[#13131F] md:rounded-[28px] transition-all duration-700 ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
             style={{ transitionDelay: inView ? `${i * 80 + 150}ms` : '0ms' }}
           >
-            <div className="h-full px-5 py-5 md:p-[23px] md:pr-[39px] flex flex-col gap-y-3 md:gap-y-4 rounded-[18px] border border-[#D8D6CF] bg-[#F7F4ED] md:rounded-[24px]">
-              <h3 className="text-xl leading-[24px] font-bold -tracking-[0.2px] text-pretty text-[#282827] md:text-2xl md:leading-[120%] md:-tracking-[0.24px]">
+            <div className="h-full px-5 py-5 md:p-[23px] md:pr-[39px] flex flex-col gap-y-3 md:gap-y-4 rounded-[18px] border border-[#2A2A3E] bg-[#0A0A0F] md:rounded-[24px]">
+              <h3 className="text-xl leading-[24px] font-bold -tracking-[0.2px] text-pretty text-[#F0EDE6] md:text-2xl md:leading-[120%] md:-tracking-[0.24px]">
                 {uc.title}
               </h3>
-              <p className="text-base leading-[22px] text-[#73726F]">{uc.desc}</p>
+              <p className="text-base leading-[22px] text-[#8A8A9A]">{uc.desc}</p>
             </div>
           </div>
         ))}

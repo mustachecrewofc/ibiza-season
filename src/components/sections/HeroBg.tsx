@@ -1,22 +1,13 @@
-/**
- * Two-layer scroll reveal:
- * - Back layer  (sticky, cream): "começo" stays put, revealed as front layer scrolls away
- * - Front layer (absolute, dark): arches + gradient + "Construir é só o" — slides up and off
- *
- * The 200vh outer container gives exactly 1 viewport-height of "scroll travel" to the
- * dark front layer before it fully exits, matching the sticky back layer's lock range.
- */
 export default function HeroBg() {
   return (
     <div style={{ position: 'relative', height: '200vh' }}>
-
-      {/* ── BACK LAYER: cream "começo" — sticky, stays centred while dark layer scrolls away ── */}
+      {/* BACK LAYER */}
       <div
         style={{
           position: 'sticky',
           top: 0,
           height: '100vh',
-          background: '#FCFBF8',
+          background: '#0A0A0F',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -27,19 +18,19 @@ export default function HeroBg() {
         <h2
           style={{
             fontSize: 'clamp(80px, 16vw, 220px)',
-            fontWeight: 700,
-            color: '#1C1C1C',
+            fontWeight: 900,
+            color: '#F5C842',
             lineHeight: 1,
             letterSpacing: '-0.04em',
             margin: 0,
             userSelect: 'none',
           }}
         >
-          começo
+          worldwide
         </h2>
       </div>
 
-      {/* ── FRONT LAYER: dark surface matching the hero — grid + text. Scrolls off top. ── */}
+      {/* FRONT LAYER */}
       <div
         style={{
           position: 'absolute',
@@ -49,22 +40,20 @@ export default function HeroBg() {
           height: '100vh',
           zIndex: 10,
           overflow: 'hidden',
-          background: '#1B1B1B',
+          background: '#0A0A0F',
         }}
       >
-        {/* Subtle grid pattern — same as HeroSection */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            opacity: 0.03,
+            opacity: 0.04,
             backgroundImage:
-              'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
+              'linear-gradient(#F5C842 1px, transparent 1px), linear-gradient(90deg, #F5C842 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
 
-        {/* "Construir é só o" — centered */}
         <div
           style={{
             position: 'absolute', inset: 0,
@@ -74,8 +63,8 @@ export default function HeroBg() {
         >
           <p
             style={{
-              color: '#F8F4EC',
-              fontWeight: 700,
+              color: '#F0EDE6',
+              fontWeight: 800,
               fontSize: 'clamp(40px, 8vw, 110px)',
               lineHeight: 1.05,
               letterSpacing: '-0.04em',
@@ -83,11 +72,10 @@ export default function HeroBg() {
               margin: 0,
             }}
           >
-            Construir é só o
+            One stage.<br/>One sound.
           </p>
         </div>
       </div>
-
     </div>
   );
 }

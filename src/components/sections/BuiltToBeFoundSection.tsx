@@ -2,20 +2,20 @@ import { useInView } from '../../hooks/useInView';
 
 const features = [
   {
-    title: 'Renderização no servidor para apps novos',
-    description: 'As páginas são renderizadas como HTML completo antes de chegarem ao navegador, para que Google, ChatGPT e Perplexity descubram seu conteúdo imediatamente. Gratuito em todos os planos.',
+    title: 'A truly worldwide lineup',
+    description: 'Producers from every continent compete for a spot on the official compilation. The VA World Cup represents the global pulse of underground electronic music, with curated selection from Brazil, Europe, Asia, North America, and beyond.',
   },
   {
-    title: 'Pré-renderização para apps existentes',
-    description: 'Snapshots de HTML estático são gerados automaticamente para todos os apps da Lovable criados na nossa tecnologia anterior. Sem ativação manual ou migração. Gratuito em todos os planos.',
+    title: 'Professional release on every major store',
+    description: 'Selected tracks are mastered, packaged with cover art, and distributed worldwide on Beatport, Spotify, Apple Music, SoundCloud, Tidal, and more. Full credits, ISRC codes, and royalty splits handled by Mustache Crew Records.',
   },
   {
-    title: 'Prévias sociais mais completas',
-    description: 'Links de prévia social, por exemplo no LinkedIn, Slack, WhatsApp e X, agora são únicos por página.',
+    title: 'Promo package built for impact',
+    description: 'Every selected artist gets dedicated social campaigns, premiere coverage, IG reels, animated artwork, and feature spots in the official VA World Cup playlists curated by international tastemakers.',
   },
   {
-    title: 'Visibilidade em busca por IA',
-    description: 'Saída em markdown estruturado, HTML semântico e dados estruturados ajudam seu app a aparecer no ChatGPT, Claude, Perplexity e outras ferramentas de busca por IA.',
+    title: 'Real exposure to a real audience',
+    description: 'Mustache Crew releases land on Beatport Top 100 charts and SoundCloud editorials. Past compilations have featured 29+ artists with combined streams in the millions across DSPs.',
   },
 ];
 
@@ -27,7 +27,6 @@ function FeatureCard({ title, description, index, isLast }: {
 }) {
   return (
     <div>
-      {/* Sticky card — cada card fica preso enquanto o próximo sobe por cima */}
       <div
         className="sticky"
         style={{
@@ -37,25 +36,25 @@ function FeatureCard({ title, description, index, isLast }: {
       >
         <div
           style={{
-            background: '#F0EDE6',
+            background: '#13131F',
+            border: '1px solid #2A2A3E',
             borderRadius: '28px',
             padding: '56px 56px',
             minHeight: '420px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            boxShadow: '0 -2px 20px rgba(0,0,0,0.06)',
+            boxShadow: '0 -2px 30px rgba(245,200,66,0.04)',
           }}
         >
-          <h3 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: '#1B1B1B', lineHeight: 1.15, letterSpacing: '-0.5px', marginBottom: '20px' }}>
+          <h3 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: '#F0EDE6', lineHeight: 1.15, letterSpacing: '-0.5px', marginBottom: '20px' }}>
             {title}
           </h3>
-          <p style={{ fontSize: '17px', color: '#73726F', lineHeight: 1.65 }}>
+          <p style={{ fontSize: '17px', color: '#8A8A9A', lineHeight: 1.65 }}>
             {description}
           </p>
         </div>
       </div>
-      {/* Espaçador: cria o espaço de scroll entre um card e o próximo */}
       {!isLast && <div style={{ height: '480px' }} />}
     </div>
   );
@@ -66,11 +65,10 @@ export default function BuiltToBeFoundSection() {
 
   return (
     <section className="relative" style={{ overflow: 'clip' }}>
-      {/* Orange glow at bottom */}
       <div
         className="absolute bottom-0 left-0 w-full h-[500px] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 70% 50% at 15% 100%, #fb923c55 0%, #f4724433 30%, transparent 70%)',
+          background: 'radial-gradient(ellipse 70% 50% at 15% 100%, rgba(245,200,66,0.18) 0%, rgba(230,59,46,0.10) 30%, transparent 70%)',
           filter: 'blur(40px)',
         }}
         aria-hidden="true"
@@ -78,32 +76,28 @@ export default function BuiltToBeFoundSection() {
 
       <div className="container py-16 md:py-24">
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 lg:gap-20">
-
-          {/* LEFT: sticky heading */}
           <div className="md:w-[40%] md:sticky md:top-[80px] md:self-start">
             <div
               ref={ref as React.RefObject<HTMLDivElement>}
               className={`transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
             >
               <h2
-                className="font-bold text-[#1B1B1B] leading-[1.0] -tracking-[2.5px]"
+                className="font-black text-[#F0EDE6] leading-[1.0] -tracking-[2.5px]"
                 style={{ fontSize: 'clamp(48px, 6.5vw, 88px)' }}
               >
-                Criado para ser encontrado
+                Built for the <span className="text-[#F5C842]">world stage</span>
               </h2>
-              <p className="mt-5 text-[#73726F] text-lg -tracking-[0.36px] leading-relaxed font-medium">
-                Seus apps são descobertos assim que você publica
+              <p className="mt-5 text-[#F0EDE6] text-lg -tracking-[0.36px] leading-relaxed font-medium">
+                A global compilation engineered for real impact
               </p>
-              <p className="mt-3 text-[#73726F] text-sm md:text-base leading-relaxed">
-                Apps novos já saem com renderização no servidor completa — HTML real que mecanismos
-                de busca e crawlers de IA conseguem ler imediatamente. Apps criados na tecnologia
-                anterior recebem snapshots pré-renderizados para que crawlers também acessem seu
-                conteúdo.
+              <p className="mt-3 text-[#8A8A9A] text-sm md:text-base leading-relaxed">
+                Mustache Crew Records connects underground producers across 5 continents.
+                Each VA World Cup edition is a snapshot of where electronic music is heading —
+                released globally with full distribution, promo, and editorial support.
               </p>
             </div>
           </div>
 
-          {/* RIGHT: stacking sticky cards */}
           <div className="md:w-[60%]">
             {features.map((feat, i) => (
               <FeatureCard
@@ -115,7 +109,6 @@ export default function BuiltToBeFoundSection() {
               />
             ))}
           </div>
-
         </div>
       </div>
     </section>
