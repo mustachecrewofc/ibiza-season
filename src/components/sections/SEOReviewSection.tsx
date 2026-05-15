@@ -1,4 +1,5 @@
 import { useInView } from '../../hooks/useInView';
+import { PortfolioGallery } from '../ui/portfolio-gallery';
 
 const issues = [
   { label: 'Mustache Gang Xmas — #38 Beatport Overall Top 100 Releases', status: 'ok', badge: 'Charted' },
@@ -85,6 +86,10 @@ export default function SEOReviewSection() {
           </div>
         </div>
 
+      </div>
+
+      <div className={`mt-16 md:mt-24 transition-all duration-700 delay-300 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <PortfolioGallery />
       </div>
     </section>
   );
