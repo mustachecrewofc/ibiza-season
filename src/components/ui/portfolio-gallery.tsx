@@ -29,7 +29,7 @@ export function PortfolioGallery({
   images: customImages,
   className = "",
   maxHeight = 120,
-  spacing = "-space-x-72 md:-space-x-80",
+  spacing = "-space-x-32 md:-space-x-40",
   onImageClick,
   marqueeRepeat = 4,
 }: PortfolioGalleryProps) {
@@ -64,7 +64,7 @@ export function PortfolioGallery({
                 onClick={() => onImageClick?.(index)}
                 className="cursor-pointer"
               >
-                <div className="w-[340px] h-[240px] rounded-2xl overflow-hidden border-2 border-[#2A2A3E] bg-[#13131F] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)]">
+                <div className="w-[260px] h-[260px] rounded-2xl overflow-hidden border-2 border-[#2A2A3E] bg-[#13131F] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)]">
                   <img src={image.src} alt={image.alt} className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
@@ -75,13 +75,13 @@ export function PortfolioGallery({
 
       {/* Mobile marquee */}
       <div className="md:hidden overflow-hidden py-6 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex gap-3 animate-[marquee_40s_linear_infinite] hover:[animation-play-state:paused] w-max">
+        <div className="flex gap-6 animate-[marquee_40s_linear_infinite] hover:[animation-play-state:paused] w-max">
           {Array(marqueeRepeat).fill(0).map((_, i) => (
-            <div key={i} className="flex gap-3 shrink-0">
+            <div key={i} className="flex gap-6 shrink-0">
               {images.map((image, index) => (
                 <div
                   key={`${i}-${index}`}
-                  className="w-[220px] h-[160px] rounded-xl overflow-hidden border border-[#2A2A3E] bg-[#13131F] shrink-0"
+                  className="w-[200px] h-[200px] rounded-xl overflow-hidden border border-[#2A2A3E] bg-[#13131F] shrink-0"
                   onClick={() => onImageClick?.(index)}
                 >
                   <img src={image.src} alt={image.alt} className="w-full h-full object-cover" loading="lazy" />
