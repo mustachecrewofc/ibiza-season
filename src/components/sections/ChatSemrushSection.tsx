@@ -120,7 +120,7 @@ export default function ChatSemrushSection() {
               {/* Telegram group header */}
               <div className="flex items-center gap-3 px-5 py-4 border-b border-[#2A2A3E] bg-[#0F0F1A]">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#F5C842] to-[#E63B2E] flex items-center justify-center flex-shrink-0">
-                  <Users size={18} className="text-[#060612]" />
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#060612" strokeWidth="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold text-[#F0EDE6] text-sm">Carnival Worldwide Squad</p>
