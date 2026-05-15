@@ -20,19 +20,19 @@ export default function CTASection() {
 
       <div className="container relative z-10 flex flex-col items-center text-center">
         <p className={`text-[#F5C842] font-semibold text-sm tracking-[0.2em] uppercase mb-6 transition-all duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-          29+ artists · 5 continents · 1 stage
+          Join the label that charted #1 and #2 on Beatport with 29+ artists
         </p>
 
         <h2
           className={`font-black text-[#F0EDE6] leading-[1.05] -tracking-[2px] max-w-[900px] transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
           style={{ fontSize: 'clamp(48px, 6vw, 88px)' }}
         >
-          Ready to <span className="text-[#F5C842]">represent your sound</span>?
+          Ready to represent your sound on the <span className="text-[#F5C842]">world stage?</span>
         </h2>
 
-        <p className={`mt-6 max-w-[560px] text-[#8A8A9A] text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          Send your unreleased track to the VA World Cup 2026.
-          Free to submit. Worldwide release. Real distribution.
+        <p className={`mt-6 max-w-[600px] text-[#8A8A9A] text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+          The World Cup happens once every four years. This campaign happens once — period.
+          15 spots. Submissions close August 15, 2026.
         </p>
 
         <div
@@ -42,18 +42,12 @@ export default function CTASection() {
             href="#submit"
             className="h-[52px] flex items-center px-7 rounded-full bg-[#F5C842] text-[#060612] text-base font-bold hover:bg-[#FFD75A] transition-colors"
           >
-            Submit Your Track →
-          </a>
-          <a
-            href="#about"
-            className="h-[52px] flex items-center px-7 rounded-full border border-[#2A2A3E] text-[#F0EDE6] text-base font-medium hover:bg-[#13131F] transition-colors"
-          >
-            Learn About the Label
+            Submit Your Track Now →
           </a>
         </div>
 
         <p className={`mt-8 text-xs text-[#8A8A9A] transition-all duration-700 delay-300 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-          ⏱ Deadline: March 31, 2026 · Selection notified by April 30, 2026
+          Submission is free  ·  Review within 7 days  ·  All genres welcome
         </p>
       </div>
     </section>
