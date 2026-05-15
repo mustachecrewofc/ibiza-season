@@ -2,20 +2,20 @@ import { useInView } from '../../hooks/useInView';
 
 const features = [
   {
-    title: 'A truly worldwide lineup',
-    description: 'Producers from every continent compete for a spot on the official compilation. The VA World Cup represents the global pulse of underground electronic music, with curated selection from Brazil, Europe, Asia, North America, and beyond.',
+    title: 'Velocity = Visibility',
+    description: "Higher chart velocity means higher visibility across all Beatport surfaces — New Releases, Genre Charts, Editorial picks. The more tracks in a VA push simultaneously, the harder the algorithm notices. Collective velocity beats solo effort every time.",
   },
   {
-    title: 'Professional release on every major store',
-    description: 'Selected tracks are mastered, packaged with cover art, and distributed worldwide on Beatport, Spotify, Apple Music, SoundCloud, Tidal, and more. Full credits, ISRC codes, and royalty splits handled by Mustache Crew Records.',
+    title: 'Stacking Plays Into Rankings',
+    description: "Visibility stacks into more plays, more profile visits, and more DJ attention. Each repost, playlist add, and email blast adds to the pile. Momentum creates a loop: attention → action → ranking → more attention. That loop is what we're engineering.",
   },
   {
-    title: 'Promo package built for impact',
-    description: 'Every selected artist gets dedicated social campaigns, premiere coverage, IG reels, animated artwork, and feature spots in the official VA World Cup playlists curated by international tastemakers.',
+    title: 'The World Cup Timing Window',
+    description: "The 2026 FIFA World Cup is the biggest cultural event on the planet. Releasing during this window means your music is positioned inside a global conversation. Electronic music tied to a world moment gets discovered by people who weren't already looking for it.",
   },
   {
-    title: 'Real exposure to a real audience',
-    description: 'Mustache Crew releases land on Beatport Top 100 charts and SoundCloud editorials. Past compilations have featured 29+ artists with combined streams in the millions across DSPs.',
+    title: 'Curated Lineup, No Random Slots',
+    description: "Every track is selected. Not every demo gets in. The curation process is what makes the campaign credible — a tight, quality lineup that DJs actually want to play and Beatport's algorithm treats as serious. You're not just buying a slot. You're being selected.",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function BuiltToBeFoundSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="relative bg-[#EEF1F5]" style={{ overflow: 'clip' }}>
+    <section id="strategy" className="relative bg-[#EEF1F5]" style={{ overflow: 'clip' }}>
       <div
         className="absolute bottom-0 left-0 w-full h-[500px] pointer-events-none"
         style={{
@@ -85,16 +85,33 @@ export default function BuiltToBeFoundSection() {
                 className="font-black text-[#0A0A0F] leading-[1.0] -tracking-[2.5px]"
                 style={{ fontSize: 'clamp(48px, 6.5vw, 88px)' }}
               >
-                Built for the <span className="text-[#A8821C]">world stage</span>
+                Why this VA <span className="text-[#A8821C]">hits different.</span>
               </h2>
               <p className="mt-5 text-[#0A0A0F] text-lg -tracking-[0.36px] leading-relaxed font-medium">
-                A global compilation engineered for real impact
+                Chart positions aren't luck.
               </p>
               <p className="mt-3 text-[#4A4A55] text-sm md:text-base leading-relaxed">
-                Mustache Crew Records connects underground producers across 5 continents.
-                Each VA World Cup edition is a snapshot of where electronic music is heading —
-                released globally with full distribution, promo, and editorial support.
+                They're the result of coordinated momentum.
+                Curated lineup, 360° promo plan, daily guidance from Mustache Crew —
+                every element engineered to push the squad onto Beatport's highest charts.
               </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {[
+                  'Beatport chart run',
+                  'Curated lineup',
+                  'Execution > luck',
+                  'Community-driven momentum',
+                  '360° promo plan',
+                  'Daily crew direction',
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs font-medium px-3 py-1.5 rounded-full bg-white border border-[#DDE2EA] text-[#4A4A55]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
