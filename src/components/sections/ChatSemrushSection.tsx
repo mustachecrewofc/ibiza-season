@@ -1,15 +1,53 @@
 import { useEffect, useState } from 'react';
 import { useInView } from '../../hooks/useInView';
 
-type Step = { type: 'user' | 'ai' | 'loading' | 'thinking' | 'file'; content?: string; delay: number };
+type ChatMessage = {
+  author: string;
+  role?: string;
+  time: string;
+  content: string;
+  color: string;
+  delay: number;
+};
 
-const steps: Step[] = [
-  { type: 'user', content: "I'm in. How does the squad actually work day to day?", delay: 600 },
-  { type: 'loading', delay: 1200 },
-  { type: 'ai', content: "Once the lineup locks, you join our private Telegram with all 15 confirmed artists. One mission, one schedule, one push.", delay: 2400 },
-  { type: 'file', content: 'squad-content-calendar.pdf', delay: 3400 },
-  { type: 'user', content: "And the coordination during release week?", delay: 4400 },
-  { type: 'ai', content: "Daily updates, shared assets, coordinated posting, pre-save sync — Mustache Crew runs the direction so the squad moves together from prep through the full promo window.", delay: 5400 },
+const messages: ChatMessage[] = [
+  {
+    author: 'Mustache Crew',
+    role: 'A&R',
+    time: '9:14 AM',
+    content: "Pre-order links go live in 2 hours. Everyone ready to blast socials at 11 AM sharp? 🚀",
+    color: '#F5C842',
+    delay: 600,
+  },
+  {
+    author: 'Artist_Carlos',
+    time: '9:16 AM',
+    content: "Posts scheduled. Email list primed. Let's go 🔥",
+    color: '#3B82F6',
+    delay: 1600,
+  },
+  {
+    author: 'DJ_Sofia',
+    time: '9:18 AM',
+    content: "Same! Stories + reel ready. Let's crack that Beatport Top 10 🚀",
+    color: '#F59E0B',
+    delay: 2600,
+  },
+  {
+    author: 'TechnoMike',
+    time: '9:20 AM',
+    content: "Pre-save link in bio updated. Squad assets all loaded ✅",
+    color: '#10B981',
+    delay: 3600,
+  },
+  {
+    author: 'Mustache Crew',
+    role: 'A&R',
+    time: '9:21 AM',
+    content: "This is what winning looks like. First 72h = everything. Let's make history 💪",
+    color: '#F5C842',
+    delay: 4600,
+  },
 ];
 
 function Dots() {
