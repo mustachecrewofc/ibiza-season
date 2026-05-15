@@ -28,7 +28,7 @@ export default function SquadMindsetReveal() {
           aria-hidden="true"
         />
 
-        <div className="relative z-10 container flex min-h-screen items-start justify-center px-6 pb-24 pt-[16vh] text-center">
+        <div className="relative z-10 container flex min-h-screen items-start justify-center px-6 pb-24 pt-[12vh] text-center">
           <div className="max-w-5xl">
             <h2
               className="font-black text-[#F0EDE6] leading-[0.95]"
@@ -36,11 +36,60 @@ export default function SquadMindsetReveal() {
             >
               Squad Mindset = <span className="text-[#F5C842]">Chart Potential</span>
             </h2>
-            <p className="mx-auto mt-6 max-w-[700px] text-lg leading-relaxed text-[#F0EDE6]/92 md:text-[28px]">
-              30 artists working as one coordinated squad, aiming for Beatport chart positions.
+            <p className="mx-auto mt-6 max-w-[760px] text-lg leading-relaxed text-[#F0EDE6]/92 md:text-[24px]">
+              30 artists moving in sync — one release week, one coordinated push, one shared chart goal on Beatport.
             </p>
-            <div className="mt-8 flex items-center justify-center">
-              <img src={logoWhite} alt="Mustache Crew" className="h-14 w-auto invert md:h-16" />
+
+            <div className="mx-auto mt-12 max-w-[860px] rounded-2xl border border-[#F0EDE6]/15 bg-black/25 p-6 text-left backdrop-blur-sm md:p-8">
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F5C842]">
+                The Math Behind the Mission
+              </p>
+              <h3 className="mt-3 text-2xl font-extrabold leading-tight text-[#F0EDE6] md:text-[32px]">
+                Momentum becomes math — not luck.
+              </h3>
+              <p className="mt-4 text-[15px] leading-relaxed text-[#F0EDE6]/85 md:text-[17px]">
+                With 30 committed artists executing together, every pre-order, DJ support
+                slot, and launch-week action lands in the same window. That synchronized
+                pressure is the exact ingredient behind real breakout movement on Beatport.
+              </p>
+
+              <div className="mt-6 grid gap-3 md:grid-cols-3">
+                <div className="rounded-xl border border-[#F0EDE6]/10 bg-[#0A0A0F]/40 p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[#F0EDE6]/55">
+                    Baseline
+                  </p>
+                  <p className="mt-2 text-[#F0EDE6] text-sm">
+                    30 artists × 1 purchase each
+                  </p>
+                  <p className="mt-2 text-2xl font-black text-[#F5C842]">= 30 purchases</p>
+                </div>
+                <div className="rounded-xl border border-[#F0EDE6]/10 bg-[#0A0A0F]/40 p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[#F0EDE6]/55">
+                    Squad support
+                  </p>
+                  <p className="mt-2 text-[#F0EDE6] text-sm">
+                    30 artists × 30 purchases each
+                  </p>
+                  <p className="mt-2 text-2xl font-black text-[#F5C842]">= 900 purchases</p>
+                </div>
+                <div className="rounded-xl border border-[#F0EDE6]/10 bg-[#0A0A0F]/40 p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[#F0EDE6]/55">
+                    Inner circle boost
+                  </p>
+                  <p className="mt-2 text-[#F0EDE6] text-sm">
+                    +5–10 supporters per artist (friends, family, fans)
+                  </p>
+                  <p className="mt-2 text-2xl font-black text-[#F5C842]">+150–300 more</p>
+                </div>
+              </div>
+
+              <p className="mt-5 text-sm leading-relaxed text-[#F0EDE6]/70 md:text-base">
+                That's concentrated chart pressure — exactly what Beatport's algorithm rewards during release week.
+              </p>
+            </div>
+
+            <div className="mt-10 flex items-center justify-center">
+              <img src={logoWhite} alt="Mustache Crew" className="h-12 w-auto invert md:h-14" />
             </div>
           </div>
         </div>
