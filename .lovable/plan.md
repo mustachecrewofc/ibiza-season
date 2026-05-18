@@ -1,53 +1,42 @@
-## Plano — Atualização Copy + Pricing + Novas Seções
+## Problema
 
-Mantemos 100% da paleta atual (dark + gold + ice-white). Ignoramos a seção "Design Tokens" do PRD.
+O site publicado (`https://cozy-single-spark.lovable.app`) está retornando **HTTP 502 — Internal server error** em todas as requisições. O preview às vezes mostra apenas "Hello?" pelo mesmo motivo: um erro de SSR está sendo engolido pelo runtime, então nem o navegador nem os logs do servidor mostram a causa real, e o publish falha silenciosamente.
 
-### 1. Refinar copy nas seções existentes
-Sem mudar layout/animações:
+Esse é o padrão clássico de "catastrophic SSR error" do TanStack Start no Cloudflare Worker: erros no momento da inicialização do módulo (ou engolidos pelo h3) viram um 500/502 vazio, sem stack trace, sem chance do `errorComponent` da rota atuar.
 
-- **Navbar** — Links: `The Strategy`, `360° Promo`, `Proof`, `FAQ` + CTA `Submit Your Track`.
-- **HeroSection** — Badge `⚽ VA World Cup 2026 • 15 Spots • Beatport Chart Mission`. H1 mantém. Subtítulo do PRD ("A coordinated, global chart push…"). Checklist inline (`✓ 15 curated spots • ✓ 360° promo coordination • ✓ World Cup 2026 release window`). Linha sob o CTA: `📅 Submissions open now • Lineup locks August 15, 2026`.
-- **HeroBg** — Camada dark: `The world is watching.` Camada ice-white: `Let your sound play.`
-- **BuiltToBeFoundSection** — Heading `Why this VA hits different.` Subtítulo + 4 cards reescritos (Velocity = Visibility / Stacking Plays Into Rankings / The World Cup Timing Window / Curated Lineup, No Random Slots). Tags atualizadas.
-- **ChatSemrushSection** (Squad Mindset) — Mantém o chat animado. Reescrevo as mensagens usando o tom do PRD ("The Mission" + "The Communication" virando 6 mensagens curtas).
-- **WhatsPossibleSection / LetLovableFixSection** (360° Campaign) — Atualizo copy: card destaque "Smart Distribution Strategy" + 3 cards de asset (Full Media Kit / Set with All Tracks / SoundCloud Reach) + grid 2×3 de plataformas (Spotify, Beatport, YouTube, SoundCloud, Instagram, Press). Mantenho a estrutura de cards atual, só re-mapeio o conteúdo.
-- **FAQSection** — Substituo pelos 8 Q&A do PRD.
-- **CTASection** — Heading `Ready to represent your sound on the world stage?`, subtítulo + nota + social proof do PRD.
-- **Footer** — Tagline + 4 colunas conforme PRD.
+## Solução
 
-### 2. Novas seções (no padrão visual atual)
+Aplicar a correção de 4 camadas para SSR do TanStack Start, mais um `errorComponent` na rota raiz. Isso garante que:
 
-**A) Proof From Our Missions** — após `BuiltToBeFoundSection`, antes do `ChatSemrushSection`.
-- Heading `Proof From Our Missions` (gold accent na 2ª linha).
-- Subtítulo `Mustache Gang Xmas 2025 — the blueprint that started it all.`
-- Botão outline `📷 Watch the highlights on Instagram ↗` (placeholder href `#`).
-- Galeria com 3 cards (1 grande centro + 2 menores): #38 Overall Top 100 / #2 Dubstep / #4 [Genre]. **Uso placeholders visuais** (cards estilizados estilo Beatport, sem prints reais) — pedir ao usuário os prints depois.
-- Linha final: `Brazilian Carnival VA — Charted #1 Electronica/Downtempo Releases`.
+1. Qualquer erro de SSR seja capturado e logado de verdade (apareceria nos Server Logs).
+2. O usuário veja uma página de fallback "algo deu errado" em vez de 502/Hello.
+3. O publish pare de quebrar por causa de um erro de render silencioso.
 
-**B) How It Works** — antes do FAQ.
-- Heading `How It Works`.
-- 4 steps numerados em grid (cards minimalistas dark com número gold grande).
-- Conteúdo dos steps direto do PRD.
+### Arquivos a criar/editar
 
-**C) Pricing / Investment** — antes do CTA final, depois do FAQ.
-- Card grande centralizado, fundo `#13131F`, borda gold sutil.
-- Eyebrow `INVESTMENT`.
-- Preço grande: **€299** + `per accepted track`.
-- Lista de bullets do que está incluído (resumo do 360°): distribuição 50+ plataformas, media kit completo, vídeos individuais, DJ set no YouTube/SoundCloud, repost em rede de ~2M, suporte em playlist, chart mission Beatport, coordenação diária pela Mustache Crew.
-- Linha de garantia: `Submission is always free. €299 only if your track is selected and you choose to join.`
-- Botão `Submit Your Track →` (gold).
+1. **`vite.config.ts`** — apontar o entry do servidor para `src/server.ts`:
+   ```ts
+   import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+   export default defineConfig({
+     tanstackStart: { server: { entry: "server" } },
+   });
+   ```
 
-### 3. SEO (`src/routes/index.tsx`)
-- Title: `VA World Cup 2026 — Mustache Crew Records | Submit Your Electronic Music Track`
-- Meta description do PRD.
-- Atualizar OG tags consistentes.
+2. **`src/server.ts`** (novo) — wrapper com import preguiçoso, try/catch e normalização da resposta 500 que o h3 engole. Importa `./lib/error-capture` no topo para armar os listeners globais.
 
-### Fora de escopo
-- Form real de submissão (CTA aponta para `#submit`).
-- Prints reais do Beatport/Songstats (placeholders visuais até você enviar).
-- Mudança de paleta.
-- Substituir o chat animado por cards estáticos.
+3. **`src/lib/error-capture.ts`** (novo) — listeners de `error`/`unhandledrejection` no `globalThis` que guardam o último erro por 5s, para que o normalizador consiga recuperar o stack original.
 
-### Arquivos a editar/criar
-- Editar: `Navbar.tsx`, `HeroSection.tsx`, `HeroBg.tsx`, `BuiltToBeFoundSection.tsx`, `ChatSemrushSection.tsx`, `WhatsPossibleSection.tsx`, `LetLovableFixSection.tsx`, `SEOReviewSection.tsx` (vira a Proof Gallery), `FAQSection.tsx`, `CTASection.tsx`, `Footer.tsx`, `routes/index.tsx`, `pages/SEOPage.tsx` (ordem das seções).
-- Criar: `HowItWorksSection.tsx`, `PricingSection.tsx`, `ProofGallerySection.tsx` (se a `SEOReviewSection` não couber bem como reskin).
+4. **`src/lib/error-page.ts`** (novo) — função `renderErrorPage()` que devolve uma string HTML auto-contida (sem importar nada do app) com botões "Recarregar" e "Voltar ao início" no visual do site (fundo `#0A0A0F`, amarelo `#F5C842`).
+
+5. **`src/routes/__root.tsx`** — adicionar `errorComponent` e `notFoundComponent` para pegar erros que aconteçam dentro da árvore React (em render/loader), com fallback no mesmo estilo visual.
+
+### O que esperar depois
+
+- O `Hello?` intermitente no preview deve sumir (ou virar a tela de erro com mensagem real, que você pode me mostrar para eu corrigir).
+- O publish volta a funcionar — se algum erro de SSR persistir, ele agora aparecerá nos Server Logs com stack completo em vez de cair em 502 silencioso.
+- Você precisa **clicar em "Publish" / "Update" de novo** depois que eu aplicar a correção para republicar a versão saudável.
+
+### Fora do escopo
+
+- Não vou mexer no `SquadMindsetReveal` nem em nenhuma seção visual nessa rodada (já está como você aprovou).
+- Não vou tocar em Lovable Cloud / Supabase (o projeto não usa).
