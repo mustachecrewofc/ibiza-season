@@ -50,8 +50,8 @@ export default function IntroVideoSection() {
       >
         The VA World Cup is more than a compilation —
         it's a global movement uniting underground talent under one banner.
-        From <span className="text-[#A8821C] font-semibold">São Paulo</span> to{' '}
-        <span className="text-[#A8821C] font-semibold">Berlin</span>, every track is a flag.
+        From <span className="text-[#22C55E] font-semibold">São Paulo</span> to{' '}
+        <span className="text-[#22C55E] font-semibold">Berlin</span>, every track is a flag.
       </p>
 
       <div
@@ -89,7 +89,7 @@ export default function IntroVideoSection() {
               className="flex flex-col items-center gap-4 group"
             >
               <div className="flex items-center gap-3">
-                <span className="text-[#F5C842] text-2xl md:text-3xl font-black tracking-tight">VA WORLD CUP</span>
+                <span className="text-[#22C55E] text-2xl md:text-3xl font-black tracking-tight">VA WORLD CUP</span>
               </div>
               <div className="w-14 h-14 rounded-full bg-[#F5C842] flex items-center justify-center group-hover:bg-[#FFD75A] transition-colors">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#060612" className="ml-0.5">

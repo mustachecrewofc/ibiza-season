@@ -34,7 +34,7 @@ export default function HowItWorksSection() {
         }`}
         style={{ fontSize: 'clamp(48px, 7vw, 96px)' }}
       >
-        How it <span className="text-[#F5C842]">works</span>
+        How it <span className="text-[#22C55E]">works</span>
       </h2>
       <p className="mt-5 max-w-[560px] text-[#728A72] text-base md:text-lg">
         Four steps from demo to release. Submission is always free.
@@ -50,7 +50,7 @@ export default function HowItWorksSection() {
             style={{ transitionDelay: inView ? `${i * 100 + 100}ms` : '0ms' }}
           >
             <div
-              className="text-[#F5C842] font-black leading-none mb-5 -tracking-[2px]"
+              className="text-[#22C55E] font-black leading-none mb-5 -tracking-[2px]"
               style={{ fontSize: 'clamp(48px, 6vw, 72px)' }}
             >
               {String(i + 1).padStart(2, '0')}

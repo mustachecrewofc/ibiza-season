@@ -84,7 +84,7 @@ export default function SEOReviewSection() {
             className="font-black text-[#F0EDE6] leading-[1.05] -tracking-[2px] pl-14 md:pl-16"
             style={{ fontSize: 'clamp(36px, 5.5vw, 76px)' }}
           >
-            Proof from <span className="text-[#F5C842]">our missions</span>
+            Proof from <span className="text-[#22C55E]">our missions</span>
           </h2>
           <p className="mt-6 pl-14 md:pl-16 text-[#728A72] text-base md:text-lg leading-relaxed max-w-[460px]">
             Mustache Gang Xmas 2025 — the blueprint that started it all.
@@ -118,7 +118,7 @@ export default function SEOReviewSection() {
                   <StatusIcon />
                   <span className="text-sm text-[#F0EDE6] flex-1">{item.label}</span>
                   {item.badge && (
-                    <span className="text-xs bg-[#F5C842]/15 text-[#F5C842] px-2 py-0.5 rounded-full font-medium">{item.badge}</span>
+                    <span className="text-xs bg-[#F5C842]/15 text-[#22C55E] px-2 py-0.5 rounded-full font-medium">{item.badge}</span>
                   )}
                 </div>
               ))}
@@ -140,7 +140,7 @@ export default function SEOReviewSection() {
 
       <div className={`mt-12 md:mt-20 transition-all duration-700 delay-300 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
         <div className="flex items-center gap-3 mb-2 md:mb-4">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5C842]/15 border border-[#F5C842]/40 text-[#F5C842] text-xs font-bold uppercase tracking-wider">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5C842]/15 border border-[#F5C842]/40 text-[#22C55E] text-xs font-bold uppercase tracking-wider">
             🇧🇷 Brazilian Carnival VA
           </span>
           <span className="text-[#728A72] text-xs hidden sm:inline">12 Beatport chart placements</span>

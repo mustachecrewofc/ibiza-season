@@ -19,7 +19,7 @@ export default function CTASection() {
       />
 
       <div className="container relative z-10 flex flex-col items-center text-center">
-        <p className={`text-[#F5C842] font-semibold text-sm tracking-[0.2em] uppercase mb-6 transition-all duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
+        <p className={`text-[#22C55E] font-semibold text-sm tracking-[0.2em] uppercase mb-6 transition-all duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
           Join the label that charted #1 and #2 on Beatport with 29+ artists
         </p>
 
@@ -27,7 +27,7 @@ export default function CTASection() {
           className={`font-black text-[#F0EDE6] leading-[1.05] -tracking-[2px] max-w-[900px] transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
           style={{ fontSize: 'clamp(48px, 6vw, 88px)' }}
         >
-          Ready to represent your sound on the <span className="text-[#F5C842]">world stage?</span>
+          Ready to represent your sound on the <span className="text-[#22C55E]">world stage?</span>
         </h2>
 
         <p className={`mt-6 max-w-[600px] text-[#728A72] text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>

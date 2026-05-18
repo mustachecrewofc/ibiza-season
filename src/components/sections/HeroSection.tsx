@@ -30,14 +30,14 @@
         {/* Main content */}
         <div className="pt-[100px] lg:pt-0 pb-4 flex flex-col items-center">
           {/* Badge */}
-          <div className="mt-12 lg:mt-0 mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#F5C842]/40 bg-[#F5C842]/10 text-[#F5C842] text-sm font-medium">
+          <div className="mt-12 lg:mt-0 mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#F5C842]/40 bg-[#F5C842]/10 text-[#22C55E] text-sm font-medium">
             <span>⚽</span>
             <span>VA World Cup 2026 · 30 Spots Max · Beatport Chart Mission</span>
           </div>
 
           <h1 className="self-center text-center font-black text-[#F0EDE6] text-5xl leading-[54px] tracking-tight md:text-[96px] md:leading-[100px] md:-tracking-[2.5px] lg:pb-12 lg:text-[140px] lg:leading-[130px] lg:-tracking-[5px] [text-wrap:balance]">
-            VA <span className="text-[#F5C842]">/</span> WORLD CUP<br className="hidden lg:block" />
-            <span className="text-[#F5C842]"> 2026</span>
+            VA <span className="text-[#22C55E]">/</span> WORLD CUP<br className="hidden lg:block" />
+            <span className="text-[#22C55E]"> 2026</span>
           </h1>
         </div>
 
@@ -62,7 +62,7 @@
             Submit Your Track →
           </a>
           <p className="mt-4 max-w-[520px] text-sm text-[#728A72]">
-            📅 Submissions open now&nbsp;&nbsp;•&nbsp;&nbsp;Lineup locks <span className="text-[#F5C842] font-semibold">August 15, 2026</span>
+            📅 Submissions open now&nbsp;&nbsp;•&nbsp;&nbsp;Lineup locks <span className="text-[#22C55E] font-semibold">August 15, 2026</span>
           </p>
         </div>
       </section>

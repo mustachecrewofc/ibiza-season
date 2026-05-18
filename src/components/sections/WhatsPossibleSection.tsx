@@ -38,7 +38,7 @@ export default function WhatsPossibleSection() {
         }`}
         style={{ fontSize: 'clamp(52px, 8vw, 120px)' }}
       >
-        360° promotional <span className="text-[#F5C842]">campaign</span>
+        360° promotional <span className="text-[#22C55E]">campaign</span>
       </h2>
       <p className="mt-5 max-w-[640px] text-[#728A72] text-base md:text-lg leading-relaxed">
         A coordinated multi-platform campaign designed to push the entire squad

@@ -14,7 +14,7 @@ export default function LetLovableFixSection() {
           inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
         }`}
       >
-        Smart <span className="text-[#F5C842]">distribution</span> strategy
+        Smart <span className="text-[#22C55E]">distribution</span> strategy
       </h2>
 
       <div

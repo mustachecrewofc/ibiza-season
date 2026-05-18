@@ -85,7 +85,7 @@ export default function BuiltToBeFoundSection() {
                 className="font-black text-[#060A06] leading-[1.0] -tracking-[2.5px]"
                 style={{ fontSize: 'clamp(48px, 6.5vw, 88px)' }}
               >
-                Why this VA <span className="text-[#A8821C]">hits different.</span>
+                Why this VA <span className="text-[#22C55E]">hits different.</span>
               </h2>
               <p className="mt-5 text-[#060A06] text-lg -tracking-[0.36px] leading-relaxed font-medium">
                 Chart positions aren't luck.

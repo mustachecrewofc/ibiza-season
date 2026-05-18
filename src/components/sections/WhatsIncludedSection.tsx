@@ -20,7 +20,7 @@ export default function WhatsIncludedSection() {
         }`}
         style={{ fontSize: 'clamp(48px, 7vw, 96px)' }}
       >
-        What's <span className="text-[#F5C842]">Included</span>
+        What's <span className="text-[#22C55E]">Included</span>
       </h2>
 
       <div className="mt-12 md:mt-16 grid gap-4 md:grid-cols-2 md:gap-5">

@@ -40,7 +40,7 @@ export default function PricingSection() {
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          <p className="text-[#F5C842] font-semibold text-xs tracking-[0.25em] uppercase mb-5">
+          <p className="text-[#22C55E] font-semibold text-xs tracking-[0.25em] uppercase mb-5">
             Investment
           </p>
 
@@ -50,7 +50,7 @@ export default function PricingSection() {
                 className="font-black text-[#F0EDE6] leading-[0.95] -tracking-[2px]"
                 style={{ fontSize: 'clamp(48px, 6.5vw, 88px)' }}
               >
-                <span className="text-[#F5C842]">€299</span>
+                <span className="text-[#22C55E]">€299</span>
               </h2>
               <p className="mt-2 text-[#F0EDE6] text-lg md:text-xl font-medium -tracking-[0.4px]">
                 per accepted track

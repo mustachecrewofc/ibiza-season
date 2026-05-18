@@ -124,7 +124,7 @@ export default function ChatSemrushSection({ hideHero = false }: { hideHero?: bo
             className={`font-black text-[#F0EDE6] leading-tight -tracking-[2px] transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
             style={{ fontSize: 'clamp(36px, 5.5vw, 72px)' }}
           >
-            Squad Mindset = <span className="text-[#F5C842]">Chart Potential</span>
+            Squad Mindset = <span className="text-[#22C55E]">Chart Potential</span>
           </h2>
           <p className={`mt-4 text-[#F0EDE6]/85 text-lg max-w-[560px] mx-auto leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100' : 'opacity-0'}`}>
             30 artists working as one coordinated squad, aiming for Beatport chart positions.
@@ -165,7 +165,7 @@ export default function ChatSemrushSection({ hideHero = false }: { hideHero?: bo
                       <div className="flex items-baseline gap-2 mb-0.5">
                         <span
                           className="text-sm font-semibold"
-                          style={{ color: msg.isCrew ? '#F5C842' : msg.color }}
+                          style={{ color: msg.isCrew ? '#22C55E' : msg.color }}
                         >
                           {msg.author}
                         </span>
@@ -198,7 +198,7 @@ export default function ChatSemrushSection({ hideHero = false }: { hideHero?: bo
                   <p className="font-semibold text-[#F0EDE6] text-sm">Free to submit. Worldwide.</p>
                   <p className="text-[#728A72] text-sm mt-1 leading-relaxed">
                     No submission fee, no membership. Selected artists sign a fair distribution deal with{' '}
-                    <span className="font-medium text-[#F5C842]">transparent royalty splits</span>. Deadline: March 31, 2026.
+                    <span className="font-medium text-[#22C55E]">transparent royalty splits</span>. Deadline: March 31, 2026.
                   </p>
                 </div>
               </div>

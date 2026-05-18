@@ -22,7 +22,7 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
         className="w-full flex items-center justify-between py-5 text-left gap-8 group"
         aria-expanded={open}
       >
-        <span className="text-base md:text-lg font-medium text-[#F0EDE6] group-hover:text-[#F5C842] transition-colors -tracking-[0.3px]">
+        <span className="text-base md:text-lg font-medium text-[#F0EDE6] group-hover:text-[#22C55E] transition-colors -tracking-[0.3px]">
           {q}
         </span>
         <span className={`flex-shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>

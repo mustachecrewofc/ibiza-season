@@ -34,14 +34,14 @@ export default function SquadMindsetReveal() {
               className="font-black text-[#F0EDE6] leading-[0.95]"
               style={{ fontSize: 'clamp(38px, 6vw, 96px)' }}
             >
-              Squad Mindset = <span className="text-[#F5C842]">Chart Potential</span>
+              Squad Mindset = <span className="text-[#22C55E]">Chart Potential</span>
             </h2>
             <p className="mx-auto mt-4 max-w-[760px] text-base leading-relaxed text-[#F0EDE6]/92 md:text-[20px]">
               30 artists moving in sync — one release week, one coordinated push, one shared chart goal on Beatport.
             </p>
 
             <div className="mx-auto mt-6 max-w-[860px] rounded-2xl border border-[#F0EDE6]/15 bg-black/25 p-5 text-left backdrop-blur-sm md:p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F5C842]">
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#22C55E]">
                 The Math Behind the Mission
               </p>
               <h3 className="mt-2 text-xl font-extrabold leading-tight text-[#F0EDE6] md:text-[26px]">
@@ -61,7 +61,7 @@ export default function SquadMindsetReveal() {
                   <p className="mt-1.5 text-[#F0EDE6] text-[13px]">
                     30 artists × 1 purchase each
                   </p>
-                  <p className="mt-1.5 text-xl font-black text-[#F5C842]">= 30 purchases</p>
+                  <p className="mt-1.5 text-xl font-black text-[#22C55E]">= 30 purchases</p>
                 </div>
                 <div className="rounded-xl border border-[#F0EDE6]/10 bg-[#060A06]/40 p-3">
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-[#F0EDE6]/55">
@@ -70,7 +70,7 @@ export default function SquadMindsetReveal() {
                   <p className="mt-1.5 text-[#F0EDE6] text-[13px]">
                     30 artists × 30 purchases each
                   </p>
-                  <p className="mt-1.5 text-xl font-black text-[#F5C842]">= 900 purchases</p>
+                  <p className="mt-1.5 text-xl font-black text-[#22C55E]">= 900 purchases</p>
                 </div>
                 <div className="rounded-xl border border-[#F0EDE6]/10 bg-[#060A06]/40 p-3">
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-[#F0EDE6]/55">
@@ -79,7 +79,7 @@ export default function SquadMindsetReveal() {
                   <p className="mt-1.5 text-[#F0EDE6] text-[13px]">
                     +5–10 supporters per artist (friends, family, fans)
                   </p>
-                  <p className="mt-1.5 text-xl font-black text-[#F5C842]">+150–300 more</p>
+                  <p className="mt-1.5 text-xl font-black text-[#22C55E]">+150–300 more</p>
                 </div>
               </div>
 
