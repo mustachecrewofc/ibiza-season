@@ -1,5 +1,4 @@
 import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
 import HeroSection from '../components/sections/HeroSection';
 import HeroBg from '../components/sections/HeroBg';
 import BuiltToBeFoundSection from '../components/sections/BuiltToBeFoundSection';
@@ -58,8 +57,6 @@ export default function SEOPage() {
 
         <FAQSection />
       </main>
-
-      <Footer />
     </div>
   );
 }
