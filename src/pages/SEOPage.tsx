@@ -2,7 +2,6 @@ import Navbar from '../components/layout/Navbar';
 import HeroSection from '../components/sections/HeroSection';
 import HeroBg from '../components/sections/HeroBg';
 import BuiltToBeFoundSection from '../components/sections/BuiltToBeFoundSection';
-import BeatportMultiplierSection from '../components/sections/BeatportMultiplierSection';
 import SEOReviewSection from '../components/sections/SEOReviewSection';
 import WhatsPossibleSection from '../components/sections/WhatsPossibleSection';
 import SquadMindsetReveal from '../components/sections/SquadMindsetReveal';
@@ -28,9 +27,6 @@ export default function SEOPage() {
 
         {/* Beat 3 — O Problema: Solo releases don't chart */}
         <BuiltToBeFoundSection />
-
-        {/* Beat 4 — A Arma Secreta: 1 album = 30 chart votes */}
-        <BeatportMultiplierSection />
 
         {/* Beat 5 — A Prova: Proof. Not promises. */}
         <SEOReviewSection />
