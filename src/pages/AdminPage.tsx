@@ -95,10 +95,11 @@ const inputCls = 'w-full bg-[#060A06] border border-[#182B18] rounded-xl px-3 py
 
 // ─── Submission detail modal ──────────────────────────────────────────────────
 
-function SubmissionModal({ sub, onClose, onUpdate }: {
+function SubmissionModal({ sub, onClose, onUpdate, onDelete }: {
   sub: Submission;
   onClose: () => void;
   onUpdate: (updated: Submission) => void;
+  onDelete: () => void;
 }) {
   const [status, setStatus] = useState<SubmissionStatus>(sub.status);
   const [noteText, setNoteText] = useState('');
@@ -128,7 +129,15 @@ function SubmissionModal({ sub, onClose, onUpdate }: {
             <p className="font-bold text-[#F0EDE6]">{sub.artist_name}</p>
             <p className="text-xs text-[#728A72]">{sub.track_name} · {sub.email}</p>
           </div>
-          <button onClick={onClose} className="text-[#728A72] hover:text-[#F0EDE6] transition-colors text-xl leading-none">×</button>
+          <div className="flex items-center gap-2">
+            <a
+              href={`/track?id=${sub.public_id}`} target="_blank" rel="noreferrer"
+              className="h-8 px-3 flex items-center rounded-lg border border-[#182B18] text-[#728A72] text-xs hover:text-[#F5C842] hover:border-[#F5C842]/30 transition-colors"
+            >
+              🔗 Tracker ↗
+            </a>
+            <button onClick={onClose} className="text-[#728A72] hover:text-[#F0EDE6] transition-colors text-xl leading-none ml-1">×</button>
+          </div>
         </div>
 
         <div className="p-6 space-y-6">
@@ -211,6 +220,16 @@ function SubmissionModal({ sub, onClose, onUpdate }: {
                 Add
               </button>
             </div>
+          </div>
+
+          {/* Delete */}
+          <div className="pt-2 border-t border-[#182B18]">
+            <button
+              onClick={onDelete}
+              className="w-full h-10 rounded-xl border border-red-500/20 text-red-400/70 text-sm font-semibold hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/40 transition-colors"
+            >
+              🗑️ Delete this submission
+            </button>
           </div>
         </div>
       </div>
@@ -304,6 +323,8 @@ export default function AdminPage() {
   const [selectedSub, setSelectedSub] = useState<Submission | null>(null);
   const [paymentSub, setPaymentSub] = useState<Submission | null>(null);
   const [missionFullModal, setMissionFullModal] = useState(false);
+  const [deleteConfirm, setDeleteConfirm] = useState<Submission | null>(null);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
 
   // ── Auth check
   useEffect(() => {
@@ -349,6 +370,20 @@ export default function AdminPage() {
     if (newStatus === 'not_charged') { update.payment_requested_at = undefined; update.payment_paid_at = undefined; }
     const { data } = await supabase.from('submissions').update(update).eq('id', sub.id).select().single();
     if (data) updateLocal(data as Submission);
+  }
+
+  async function deleteSub(sub: Submission) {
+    await supabase.from('submissions').delete().eq('id', sub.id);
+    setSubs(prev => prev.filter(s => s.id !== sub.id));
+    setDeleteConfirm(null);
+    setSelectedSub(null);
+  }
+
+  function copyTrackerLink(sub: Submission) {
+    const url = `${window.location.origin}/track?id=${sub.public_id}`;
+    navigator.clipboard.writeText(url);
+    setCopiedId(sub.id);
+    setTimeout(() => setCopiedId(null), 2000);
   }
 
   async function signOut() { await supabase.auth.signOut(); setSession(false); }
@@ -444,7 +479,7 @@ export default function AdminPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-[#182B18]">
-                      {['Artist', 'Track', 'Email', 'Status', 'Submitted', 'Actions'].map(h => (
+                      {['Artist', 'Track', 'Email', 'Status', 'Submitted', 'Tracker', 'Actions'].map(h => (
                         <th key={h} className="px-4 py-3 text-left text-xs font-bold uppercase tracking-[1px] text-[#728A72]">{h}</th>
                       ))}
                     </tr>
@@ -471,6 +506,26 @@ export default function AdminPage() {
                         <td className="px-4 py-3 text-[#728A72] text-xs hidden lg:table-cell whitespace-nowrap">
                           {new Date(sub.created_at).toLocaleDateString('en-GB')}
                         </td>
+                        {/* Tracker link */}
+                        <td className="px-4 py-3" onClick={e => e.stopPropagation()}>
+                          <div className="flex items-center gap-1.5">
+                            <button
+                              onClick={() => copyTrackerLink(sub)}
+                              className="h-7 px-2.5 flex items-center rounded-lg bg-[#182B18] text-[#728A72] text-xs hover:text-[#F5C842] transition-colors"
+                              title="Copy tracker link"
+                            >
+                              {copiedId === sub.id ? '✓ Copied' : '🔗 Copy'}
+                            </button>
+                            <a
+                              href={`/track?id=${sub.public_id}`} target="_blank" rel="noreferrer"
+                              className="h-7 px-2 flex items-center rounded-lg border border-[#182B18] text-[#728A72] text-xs hover:text-[#F0EDE6] transition-colors"
+                              title="Open tracker"
+                            >
+                              ↗
+                            </a>
+                          </div>
+                        </td>
+                        {/* Actions */}
                         <td className="px-4 py-3" onClick={e => e.stopPropagation()}>
                           <div className="flex items-center gap-2">
                             <a href={sub.track_link} target="_blank" rel="noreferrer"
@@ -480,6 +535,10 @@ export default function AdminPage() {
                             <button onClick={() => setSelectedSub(sub)}
                               className="h-7 px-2.5 flex items-center rounded-lg border border-[#182B18] text-[#728A72] text-xs hover:text-[#F0EDE6] transition-colors">
                               Details
+                            </button>
+                            <button onClick={() => setDeleteConfirm(sub)}
+                              className="h-7 px-2.5 flex items-center rounded-lg border border-red-500/20 text-red-400/60 text-xs hover:text-red-400 hover:border-red-500/50 transition-colors">
+                              🗑
                             </button>
                           </div>
                         </td>
@@ -586,8 +645,43 @@ export default function AdminPage() {
         </div>
       )}
 
+      {/* Delete confirmation modal */}
+      {deleteConfirm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setDeleteConfirm(null)}>
+          <div className="bg-[#0C140C] border border-red-500/30 rounded-2xl p-7 max-w-[380px] w-full" onClick={e => e.stopPropagation()}>
+            <p className="text-2xl mb-3">🗑️</p>
+            <h3 className="font-black text-[#F0EDE6] text-lg mb-1">Delete submission?</h3>
+            <p className="text-[#728A72] text-sm leading-relaxed mb-1">
+              <span className="text-[#F0EDE6] font-semibold">{deleteConfirm.artist_name}</span> — {deleteConfirm.track_name}
+            </p>
+            <p className="text-[#728A72] text-xs mb-6">This action is permanent and cannot be undone.</p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => deleteSub(deleteConfirm)}
+                className="flex-1 h-10 rounded-full bg-red-500 text-white text-sm font-bold hover:bg-red-600 transition-colors"
+              >
+                Yes, delete
+              </button>
+              <button
+                onClick={() => setDeleteConfirm(null)}
+                className="flex-1 h-10 rounded-full border border-[#182B18] text-[#728A72] text-sm font-semibold hover:text-[#F0EDE6] transition-colors"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Modals */}
-      {selectedSub && <SubmissionModal sub={selectedSub} onClose={() => setSelectedSub(null)} onUpdate={updateLocal} />}
+      {selectedSub && (
+        <SubmissionModal
+          sub={selectedSub}
+          onClose={() => setSelectedSub(null)}
+          onUpdate={updateLocal}
+          onDelete={() => { setDeleteConfirm(selectedSub); setSelectedSub(null); }}
+        />
+      )}
       {paymentSub && <PaymentModal sub={paymentSub} onClose={() => setPaymentSub(null)} onUpdate={updateLocal} />}
     </div>
   );
