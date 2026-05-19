@@ -1,4 +1,5 @@
 import { useInView } from '../../hooks/useInView';
+import crewImg from '@/assets/mustache-crew-team.jpg';
 
 const includes = [
   {
@@ -105,7 +106,7 @@ export default function PricingSection() {
             <div className="flex-shrink-0 self-start md:self-end">
               <div className="relative w-[200px] md:w-[240px] rounded-2xl overflow-hidden border border-[#F5C842]/20 shadow-[0_8px_32px_-8px_rgba(245,200,66,0.20)]">
                 <img
-                  src="https://mustachecrew.com.br/assets/about-crew-DfaZ6Llw.jpg"
+                  src={crewImg}
                   alt="Mustache Crew Records team"
                   className="w-full h-[150px] md:h-[175px] object-cover object-top"
                 />

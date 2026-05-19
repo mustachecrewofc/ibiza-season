@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useInView } from '../../hooks/useInView';
+import stadiumImg from '@/assets/stadium-worldcup.jpg';
 
 const RELEASE_DATE = new Date('2026-07-17T00:00:00');
 
@@ -61,7 +62,7 @@ export default function WorldCupWindowSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: 'url(https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/EB4D/production/_127873206_gettyimages-1245307567.jpg)',
+          backgroundImage: `url(${stadiumImg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center 30%',
           opacity: 0.08,
