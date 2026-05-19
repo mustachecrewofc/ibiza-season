@@ -65,7 +65,7 @@ export default function WorldCupWindowSection() {
           backgroundImage: `url(${stadiumImg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center 30%',
-          opacity: 0.08,
+          opacity: 0.09,
         }}
         aria-hidden="true"
       />
