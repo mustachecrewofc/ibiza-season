@@ -1,19 +1,54 @@
-﻿import { useInView } from '../../hooks/useInView';
+import { useInView } from '../../hooks/useInView';
 
 const includes = [
-  'Distribution to 50+ platforms (Beatport, Spotify, Apple Music, SoundCloud, etc.)',
-  'Spotify single release under your artist profile (not just the VA)',
-  'Full media kit per track (cover art, SoundCloud + Facebook covers)',
-  'Individual YouTube video for your track',
-  'Individual Instagram Story launch video (16:9 motion design)',
-  'Individual pre-save video (16:9 motion design)',
-  'Full DJ set with all VA tracks on YouTube + SoundCloud',
-  'SoundCloud repost network reach (≈ 2M followers)',
-  'Spotify playlist support + editorial submission',
-  'Beatport chart mission — coordinated release-week velocity push',
-  'Instagram content campaign across the full squad',
-  'Blog & press coverage',
-  'Daily crew direction from prep through the full promo window',
+  {
+    title: 'Worldwide Distribution',
+    desc: 'Beatport, Spotify, Apple Music, SoundCloud, Tidal, and 50+ platforms — your track, everywhere.',
+  },
+  {
+    title: 'Your Own Spotify Single',
+    desc: 'Released under your artist profile, not buried in a compilation. Your name on the release.',
+  },
+  {
+    title: 'Full Visual Identity Kit',
+    desc: 'Custom cover art, SoundCloud cover, Facebook cover — professional assets built for your track.',
+  },
+  {
+    title: 'Motion Content Package',
+    desc: 'Individual YouTube video, Instagram Story launch video, and pre-save video — all 16:9 motion design.',
+  },
+  {
+    title: 'SoundCloud Repost Network',
+    desc: '≈ 2 million followers reached through our partner repost network. Real DJs, real discovery.',
+  },
+  {
+    title: 'Beatport Chart Push',
+    desc: 'Coordinated release timing, pre-save sync, and day-one velocity — engineered for New Releases and Genre Charts.',
+  },
+  {
+    title: 'Spotify Editorial Submission',
+    desc: 'Curated playlist pitching across our editorial network. For your single, not just the VA.',
+  },
+  {
+    title: 'Full Squad Instagram Campaign',
+    desc: '30 artists posting the same week, same assets, same energy — combined reach that no solo push can match.',
+  },
+  {
+    title: 'Blog & Press Coverage',
+    desc: 'Editorial features timed to release week. Your name in print, not just in algorithms.',
+  },
+  {
+    title: 'VA DJ Set on YouTube + SoundCloud',
+    desc: 'A full DJ set featuring every track in the compilation — extra exposure on the platforms DJs actually browse.',
+  },
+  {
+    title: 'Daily War Room Direction',
+    desc: 'From pre-save launch to release week, Mustache Crew runs the strategy. You execute. We guide.',
+  },
+  {
+    title: 'Private Squad Telegram',
+    desc: 'Direct access to the full lineup. Coordination, assets, schedules, and squad energy — all in one place.',
+  },
 ];
 
 export default function PricingSection() {
@@ -36,7 +71,7 @@ export default function PricingSection() {
 
       <div className="container relative z-10">
         <div
-          className={`max-w-[860px] mx-auto bg-[#0C140C] border border-[#F5C842]/30 rounded-3xl p-8 md:p-14 shadow-[0_30px_80px_-30px_rgba(245,200,66,0.25)] transition-all duration-700 ${
+          className={`max-w-[900px] mx-auto bg-[#0C140C] border border-[#F5C842]/30 rounded-3xl p-8 md:p-14 shadow-[0_30px_80px_-30px_rgba(245,200,66,0.25)] transition-all duration-700 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
@@ -44,7 +79,7 @@ export default function PricingSection() {
             Investment
           </p>
 
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8 pb-8 border-b border-[#182B18]">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 pb-10 border-b border-[#182B18]">
             <div>
               <h2
                 className="font-black text-[#F0EDE6] leading-[0.95] -tracking-[2px]"
@@ -68,34 +103,42 @@ export default function PricingSection() {
             </a>
           </div>
 
-          <p className="text-sm font-semibold text-[#F0EDE6] uppercase tracking-[0.15em] mb-5">
+          <p className="text-xs font-bold text-[#728A72] uppercase tracking-[0.2em] mb-6">
             What's included
           </p>
-          <ul className="grid md:grid-cols-2 gap-x-8 gap-y-3">
-            {includes.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm md:text-[15px] text-[#C4C2B8] leading-relaxed">
-                <span className="mt-1 w-4 h-4 flex-shrink-0 flex items-center justify-center rounded-full bg-[#F5C842]/15">
-                  <svg width="9" height="9" viewBox="0 0 12 12" fill="none">
-                    <path d="M2.5 6l2.5 2.5 4.5-4.5" stroke="#F5C842" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+
+          <div className="grid md:grid-cols-2 gap-3">
+            {includes.map((item, i) => (
+              <div
+                key={item.title}
+                className={`flex gap-4 p-4 rounded-xl border border-[#182B18] bg-[#060A06]/60 transition-all duration-500 ${
+                  inView ? 'opacity-100' : 'opacity-0'
+                }`}
+                style={{ transitionDelay: inView ? `${i * 40 + 300}ms` : '0ms' }}
+              >
+                <span className="mt-0.5 w-5 h-5 flex-shrink-0 flex items-center justify-center rounded-full bg-[#22C55E]/15">
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+                    <path d="M2.5 6l2.5 2.5 4.5-4.5" stroke="#22C55E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>{item}</span>
-              </li>
+                <div>
+                  <p className="text-sm font-semibold text-[#F0EDE6] -tracking-[0.2px]">{item.title}</p>
+                  <p className="mt-0.5 text-xs text-[#728A72] leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
 
-          <div className="mt-8 pt-6 border-t border-[#182B18] flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
-            <div className="flex items-start gap-2 text-sm text-[#728A72] leading-relaxed">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5C842" strokeWidth="2" className="mt-0.5 flex-shrink-0">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="12" y1="8" x2="12" y2="12"/>
-                <line x1="12" y1="16" x2="12.01" y2="16"/>
-              </svg>
-              <p>
-                <span className="text-[#F0EDE6] font-medium">Submission is always free.</span>{' '}
-                €299 only applies if your track is selected and you choose to join.
-              </p>
-            </div>
+          <div className="mt-8 pt-6 border-t border-[#182B18] flex items-start gap-2 text-sm text-[#728A72] leading-relaxed">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5C842" strokeWidth="2" className="mt-0.5 flex-shrink-0">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <p>
+              <span className="text-[#F0EDE6] font-medium">Submission is always free.</span>{' '}
+              €299 only applies if your track is selected and you choose to join.
+            </p>
           </div>
         </div>
       </div>
