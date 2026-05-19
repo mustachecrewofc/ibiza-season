@@ -6,8 +6,8 @@ const includes = [
     desc: 'Beatport, Spotify, Apple Music, SoundCloud, Tidal, and 50+ platforms — your track, everywhere.',
   },
   {
-    title: 'Your Own Spotify Single',
-    desc: 'Released under your artist profile, not buried in a compilation. Your name on the release.',
+    title: 'Spotify Playlist Placement',
+    desc: 'Your track pitched to curated playlists in our network — up to 30k saves per playlist.',
   },
   {
     title: 'Full Visual Identity Kit',
@@ -26,8 +26,8 @@ const includes = [
     desc: 'Coordinated release timing, pre-save sync, and day-one velocity — engineered for New Releases and Genre Charts.',
   },
   {
-    title: 'Spotify Editorial Submission',
-    desc: 'Curated playlist pitching across our editorial network. For your single, not just the VA.',
+    title: 'Spotify Playlist Network',
+    desc: 'Active playlist positioning across our curated Spotify network — playlists with up to 30k saves.',
   },
   {
     title: 'Full Squad Instagram Campaign',

@@ -19,8 +19,8 @@ const infrastructure = [
       </svg>
     ),
     stat: '30k+',
-    label: 'Spotify monthly listeners',
-    desc: 'Your single gets its own Spotify release under your profile — not just buried in a compilation.',
+    label: 'Spotify playlist saves',
+    desc: 'We pitch your track to curated Spotify playlists — our network reaches playlists with up to 30k saves.',
   },
   {
     icon: (
