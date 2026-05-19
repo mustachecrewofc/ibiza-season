@@ -31,35 +31,36 @@
         <div className="pt-[100px] lg:pt-0 pb-4 flex flex-col items-center">
           {/* Badge */}
           <div className="mt-12 lg:mt-0 mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#F5C842]/40 bg-[#F5C842]/10 text-[#22C55E] text-sm font-medium">
-            <span>⚽</span>
-            <span>VA World Cup 2026 · 30 Spots Max · Beatport Chart Mission</span>
+            <span>🌍</span>
+            <span>30 Spots Max · Beatport Chart Mission · World Cup Window</span>
           </div>
 
           <h1 className="self-center text-center font-black text-[#F0EDE6] text-5xl leading-[54px] tracking-tight md:text-[96px] md:leading-[100px] md:-tracking-[2.5px] lg:pb-12 lg:text-[140px] lg:leading-[130px] lg:-tracking-[5px] [text-wrap:balance]">
-            VA <span className="text-[#22C55E]">/</span> WORLD CUP<br className="hidden lg:block" />
-            <span className="text-[#22C55E]"> 2026</span>
+            YOUR TRACK.<br className="hidden lg:block" />
+            THE WORLD'S<br className="hidden lg:block" />
+            <span className="text-[#22C55E]">BIGGEST STAGE.</span>
           </h1>
         </div>
 
         {/* Subtitle + CTA */}
         <div className="pt-8 pb-6 flex flex-col items-start justify-end md:pt-8 md:pb-[55px]">
           <p className="max-w-[520px] -tracking-[0.16px] text-[#C4C2B8] text-base md:text-lg leading-relaxed">
-            A coordinated, global chart push built around one thing: execution.
-            Mustache Crew leads the full direction — curation, rollout, promo
-            architecture, and daily guidance — so the squad can perform like one
-            unit and push for Beatport's highest chart positions.
+            The 2026 FIFA World Cup draws 5 billion eyes. We're using that moment
+            to launch 30 tracks straight onto Beatport's charts — coordinated,
+            collective, unstoppable. Led by a Brazilian label that knows football
+            and music run on the same fuel: passion, timing, and collective force.
           </p>
           <p className="mt-3 max-w-[520px] text-[#F0EDE6] text-base font-medium">
-            Top 10 is the baseline. The top is what we're building toward.
+            Your track. The biggest stage in the world. Let's go.
           </p>
           <p className="mt-4 max-w-[520px] text-sm text-[#728A72]">
-            ✓ 30 curated spots (max)&nbsp;&nbsp;•&nbsp;&nbsp;✓ 360° promo coordination&nbsp;&nbsp;•&nbsp;&nbsp;✓ World Cup 2026 release window
+            ✓ Free to submit&nbsp;&nbsp;•&nbsp;&nbsp;✓ €299 upon acceptance&nbsp;&nbsp;•&nbsp;&nbsp;✓ Deadline: August 15, 2026
           </p>
           <a
             href="#submit"
             className="mt-6 h-[48px] flex items-center px-6 rounded-full bg-[#F5C842] text-base font-semibold -tracking-[0.32px] text-[#060612] border-0 transition-colors hover:bg-[#FFD75A] cursor-pointer focus-visible:ring-2 focus-visible:ring-[#F5C842]/60 focus-visible:outline-none"
           >
-            Submit Your Track →
+            Submit Your Track — Free →
           </a>
           <p className="mt-4 max-w-[520px] text-sm text-[#728A72]">
             📅 Submissions open now&nbsp;&nbsp;•&nbsp;&nbsp;Lineup locks <span className="text-[#22C55E] font-semibold">August 15, 2026</span>

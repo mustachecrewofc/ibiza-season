@@ -20,19 +20,20 @@ export default function CTASection() {
 
       <div className="container relative z-10 flex flex-col items-center text-center">
         <p className={`text-[#22C55E] font-semibold text-sm tracking-[0.2em] uppercase mb-6 transition-all duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-          Join the label that charted #1 and #2 on Beatport with 29+ artists
+          3 chart campaigns. 30 artists. Beatport proven.
         </p>
 
         <h2
           className={`font-black text-[#F0EDE6] leading-[1.05] -tracking-[2px] max-w-[900px] transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
           style={{ fontSize: 'clamp(48px, 6vw, 88px)' }}
         >
-          Ready to represent your sound on the <span className="text-[#22C55E]">world stage?</span>
+          Ready to write<br/>your <span className="text-[#22C55E]">chapter?</span>
         </h2>
 
-        <p className={`mt-6 max-w-[600px] text-[#728A72] text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          The World Cup happens once every four years. This campaign happens once — period.
-          30 spots max. Submissions close August 15, 2026.
+        <p className={`mt-6 max-w-[580px] text-[#728A72] text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+          Forty years from now, you'll either remember being part of this
+          — or you'll remember not submitting.
+          30 spots. One deadline. The World Cup window opens once.
         </p>
 
         <div
@@ -42,12 +43,13 @@ export default function CTASection() {
             href="#submit"
             className="h-[52px] flex items-center px-7 rounded-full bg-[#F5C842] text-[#060612] text-base font-bold hover:bg-[#FFD75A] transition-colors"
           >
-            Submit Your Track Now →
+            Submit Your Track — Free →
           </a>
+          <p className="text-sm text-[#728A72]">No fee now. €299 only if accepted.</p>
         </div>
 
         <p className={`mt-8 text-xs text-[#728A72] transition-all duration-700 delay-300 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-          Submission is free  ·  Review within 7 days  ·  All genres welcome
+          Submission is free  ·  Review within 7 days  ·  All genres welcome  ·  Deadline August 15, 2026
         </p>
       </div>
     </section>

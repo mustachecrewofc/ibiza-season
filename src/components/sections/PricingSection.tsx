@@ -50,20 +50,21 @@ export default function PricingSection() {
                 className="font-black text-[#F0EDE6] leading-[0.95] -tracking-[2px]"
                 style={{ fontSize: 'clamp(48px, 6.5vw, 88px)' }}
               >
-                <span className="text-[#22C55E]">€299</span>
+                <span className="text-[#22C55E]">€299.</span>
               </h2>
               <p className="mt-2 text-[#F0EDE6] text-lg md:text-xl font-medium -tracking-[0.4px]">
-                per accepted track
+                Everything included. Nothing hidden.
               </p>
-              <p className="mt-2 text-[#728A72] text-sm">
-                One-time investment. No hidden fees. No subscriptions.
+              <p className="mt-2 text-[#728A72] text-sm max-w-[380px]">
+                One Facebook ads campaign won't chart you. One press release won't either.
+                This does — because it's coordinated, collective, and backed by a label that's done it before.
               </p>
             </div>
             <a
               href="#submit"
               className="h-[52px] flex items-center justify-center px-7 rounded-full bg-[#F5C842] text-[#060612] text-base font-bold hover:bg-[#FFD75A] transition-colors whitespace-nowrap self-start md:self-end"
             >
-              Submit Your Track →
+              Submit Free →
             </a>
           </div>
 

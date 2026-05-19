@@ -1,19 +1,18 @@
-﻿import Navbar from '../components/layout/Navbar';
+import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import HeroSection from '../components/sections/HeroSection';
 import HeroBg from '../components/sections/HeroBg';
-import IntroVideoSection from '../components/sections/IntroVideoSection';
 import BuiltToBeFoundSection from '../components/sections/BuiltToBeFoundSection';
-import ChatSemrushSection from '../components/sections/ChatSemrushSection';
+import BeatportMultiplierSection from '../components/sections/BeatportMultiplierSection';
 import SEOReviewSection from '../components/sections/SEOReviewSection';
-import LetLovableFixSection from '../components/sections/LetLovableFixSection';
 import WhatsPossibleSection from '../components/sections/WhatsPossibleSection';
-import FAQSection from '../components/sections/FAQSection';
-import CTASection from '../components/sections/CTASection';
+import SquadMindsetReveal from '../components/sections/SquadMindsetReveal';
+import ChatSemrushSection from '../components/sections/ChatSemrushSection';
+import WorldCupWindowSection from '../components/sections/WorldCupWindowSection';
 import HowItWorksSection from '../components/sections/HowItWorksSection';
 import PricingSection from '../components/sections/PricingSection';
-import WhatsIncludedSection from '../components/sections/WhatsIncludedSection';
-import SquadMindsetReveal from '../components/sections/SquadMindsetReveal';
+import CTASection from '../components/sections/CTASection';
+import FAQSection from '../components/sections/FAQSection';
 
 export default function SEOPage() {
   return (
@@ -21,19 +20,42 @@ export default function SEOPage() {
       <Navbar />
 
       <main id="main-content">
+        {/* Beat 1 — O Chamado */}
         <HeroSection />
+
+        {/* Beat 2 — A Tensão (scroll reveal) */}
         <HeroBg />
-        <IntroVideoSection />
+
+        {/* Beat 3 — O Problema: Solo releases don't chart */}
         <BuiltToBeFoundSection />
+
+        {/* Beat 4 — A Arma Secreta: 1 album = 30 chart votes */}
+        <BeatportMultiplierSection />
+
+        {/* Beat 5 — A Prova: Proof. Not promises. */}
         <SEOReviewSection />
-        <SquadMindsetReveal />
-        <ChatSemrushSection hideHero />
-        <LetLovableFixSection />
-        <HowItWorksSection />
+
+        {/* Beat 6 — A Máquina: The infrastructure */}
         <WhatsPossibleSection />
-        <WhatsIncludedSection />
+
+        {/* Beat 7 — O Squad: 30 artists. One heartbeat. */}
+        <SquadMindsetReveal />
+
+        {/* Beat 8 — A Comunidade: Squad in action (Telegram chat) */}
+        <ChatSemrushSection hideHero />
+
+        {/* Beat 9 — A Janela: June 2026. 5 billion people watching. */}
+        <WorldCupWindowSection />
+
+        {/* Beat 10 — O Processo: 4 steps */}
+        <HowItWorksSection />
+
+        {/* Beat 11 — O Investimento: €299. Everything included. */}
         <PricingSection />
+
+        {/* Beat 12 — O Chamado Final: Ready to write your chapter? */}
         <CTASection />
+
         <FAQSection />
       </main>
 

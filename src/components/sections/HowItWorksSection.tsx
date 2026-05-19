@@ -2,20 +2,20 @@
 
 const steps = [
   {
-    title: 'Submit Your Demo',
-    desc: 'Send your best, most finished track via the submission form. Private SoundCloud link, WeTransfer, or Dropbox. Include your artist name, email, and Spotify profile. Submission is free.',
+    title: 'Submit free — any genre.',
+    desc: 'Send your best, most finished track. SoundCloud link, WeTransfer, or Dropbox. Include your artist name and Spotify profile. Zero cost, zero commitment at this stage. We listen to everything.',
   },
   {
-    title: 'We Review Within 7 Days',
-    desc: "We listen to every submission. You'll receive feedback either way — accepted or not. Selection is based on track quality, energy, fit with the World Cup theme, and genre balance across the compilation.",
+    title: 'We review in 7 days.',
+    desc: "Every submission gets a real listen. You'll hear back either way — accepted or not. Selection is based on track quality, energy, fit with the World Cup theme, and genre balance across the lineup.",
   },
   {
-    title: 'Confirm & Join the Squad',
-    desc: 'Accepted artists receive the artist agreement, artwork brief, and campaign timeline. You confirm your spot (€299 investment) and join the private Telegram group with the full lineup.',
+    title: 'Join the squad. Lock your spot.',
+    desc: 'Accepted artists receive the agreement, artwork brief, and campaign timeline. Confirm your spot (€299) and join the private Telegram war room with the full squad. From here, you\'re not solo anymore.',
   },
   {
-    title: 'Push Together',
-    desc: 'From pre-save launch to release day, every artist moves together. Coordinated posts, shared assets, daily guidance from Mustache Crew — one unit, one push, one campaign built around the world\'s biggest moment.',
+    title: 'Execute together. Chart together.',
+    desc: 'Pre-save launch, release day coordination, daily crew direction — every artist pushes simultaneously. The machine runs. You ride it. One unit, one campaign, one historic moment to hit the charts.',
   },
 ];
 
@@ -28,16 +28,19 @@ export default function HowItWorksSection() {
       id="how-it-works"
       className="container py-20 md:py-28"
     >
+      <div className="mb-3 text-xs font-bold uppercase tracking-[2px] text-[#728A72]">
+        O processo
+      </div>
       <h2
         className={`font-black text-[#F0EDE6] leading-[0.95] -tracking-[3px] transition-all duration-700 ${
           inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
         }`}
         style={{ fontSize: 'clamp(48px, 7vw, 96px)' }}
       >
-        How it <span className="text-[#22C55E]">works</span>
+        Four steps from<br/>demo to <span className="text-[#22C55E]">Beatport chart.</span>
       </h2>
       <p className="mt-5 max-w-[560px] text-[#728A72] text-base md:text-lg">
-        Four steps from demo to release. Submission is always free.
+        Simple. Transparent. No fine print. Submission is always free — €299 only if you're selected and you say yes.
       </p>
 
       <div className="mt-12 md:mt-16 grid gap-4 md:grid-cols-2 md:gap-5">

@@ -1,4 +1,4 @@
-﻿import logoWhite from '@/assets/mustache-crew-white.png';
+import logoWhite from '@/assets/mustache-crew-white.png';
 
 export default function SquadMindsetReveal() {
   const frontLayerHeight = '72vh';
@@ -28,63 +28,69 @@ export default function SquadMindsetReveal() {
           aria-hidden="true"
         />
 
-        <div className="relative z-10 container flex h-screen flex-col items-center px-6 pb-8 pt-[18vh] text-center">
+        <div className="relative z-10 container flex h-screen flex-col items-center px-6 pb-8 pt-[16vh] text-center">
           <div className="max-w-5xl flex-1 flex flex-col">
+            {/* Label */}
+            <div className="mb-4 text-xs font-bold uppercase tracking-[2px] text-[#14532d]/70">
+              O Squad
+            </div>
+
             <h2
-              className="font-black text-[#F0EDE6] leading-[0.95]"
+              className="font-black text-[#060A06] leading-[0.95]"
               style={{ fontSize: 'clamp(38px, 6vw, 96px)' }}
             >
-              Squad Mindset = <span className="text-[#22C55E]">Chart Potential</span>
+              30 artists.<br/><span className="text-[#F0EDE6]">One heartbeat.</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-[760px] text-base leading-relaxed text-[#F0EDE6]/92 md:text-[20px]">
-              30 artists moving in sync — one release week, one coordinated push, one shared chart goal on Beatport.
+            <p className="mx-auto mt-4 max-w-[680px] text-base leading-relaxed text-[#060A06]/85 md:text-[20px]">
+              When 30 artists push simultaneously — same week, same energy, same goal —
+              the algorithm notices. That's not theory. That's the mechanic we've exploited three times already.
             </p>
 
-            <div className="mx-auto mt-6 max-w-[860px] rounded-2xl border border-[#F0EDE6]/15 bg-black/25 p-5 text-left backdrop-blur-sm md:p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#22C55E]">
-                The Math Behind the Mission
+            {/* Math card */}
+            <div className="mx-auto mt-6 w-full max-w-[860px] rounded-2xl border border-[#060A06]/20 bg-[#060A06]/30 p-5 text-left backdrop-blur-sm md:p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F0EDE6]">
+                The math behind the mission
               </p>
               <h3 className="mt-2 text-xl font-extrabold leading-tight text-[#F0EDE6] md:text-[26px]">
                 Momentum becomes math — not luck.
               </h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-[#F0EDE6]/85 md:text-[15px]">
-                With 30 committed artists executing together, every pre-order, DJ support
-                slot, and launch-week action lands in the same window. That synchronized
-                pressure is the exact ingredient behind real breakout movement on Beatport.
-              </p>
 
               <div className="mt-4 grid gap-3 md:grid-cols-3">
-                <div className="rounded-xl border border-[#F0EDE6]/10 bg-[#060A06]/40 p-3">
+                <div className="rounded-xl border border-[#F0EDE6]/15 bg-[#060A06]/40 p-4">
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-[#F0EDE6]/55">
-                    Baseline
+                    Minimum baseline
                   </p>
-                  <p className="mt-1.5 text-[#F0EDE6] text-[13px]">
+                  <p className="mt-1.5 text-[#F0EDE6]/80 text-[13px]">
                     30 artists × 1 purchase each
                   </p>
-                  <p className="mt-1.5 text-xl font-black text-[#22C55E]">= 30 purchases</p>
+                  <p className="mt-2 text-xl font-black text-[#22C55E]">= 900 chart votes</p>
+                  <p className="mt-1 text-[11px] text-[#F0EDE6]/50">at 30× multiplier per album</p>
                 </div>
-                <div className="rounded-xl border border-[#F0EDE6]/10 bg-[#060A06]/40 p-3">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[#F0EDE6]/55">
-                    Squad support
+                <div className="rounded-xl border border-[#F5C842]/30 bg-[#060A06]/40 p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[#F5C842]/70">
+                    With squad support
                   </p>
-                  <p className="mt-1.5 text-[#F0EDE6] text-[13px]">
-                    30 artists × 30 purchases each
+                  <p className="mt-1.5 text-[#F0EDE6]/80 text-[13px]">
+                    Each artist mobilises 10 fans
                   </p>
-                  <p className="mt-1.5 text-xl font-black text-[#22C55E]">= 900 purchases</p>
+                  <p className="mt-2 text-xl font-black text-[#F5C842]">= 9,000+ chart votes</p>
+                  <p className="mt-1 text-[11px] text-[#F0EDE6]/50">same release week</p>
                 </div>
-                <div className="rounded-xl border border-[#F0EDE6]/10 bg-[#060A06]/40 p-3">
+                <div className="rounded-xl border border-[#F0EDE6]/15 bg-[#060A06]/40 p-4">
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-[#F0EDE6]/55">
-                    Inner circle boost
+                    EDMArmy + SoundCloud
                   </p>
-                  <p className="mt-1.5 text-[#F0EDE6] text-[13px]">
-                    +5–10 supporters per artist (friends, family, fans)
+                  <p className="mt-1.5 text-[#F0EDE6]/80 text-[13px]">
+                    300k + 2M external reach
                   </p>
-                  <p className="mt-1.5 text-xl font-black text-[#22C55E]">+150–300 more</p>
+                  <p className="mt-2 text-xl font-black text-[#22C55E]">Velocity spike</p>
+                  <p className="mt-1 text-[11px] text-[#F0EDE6]/50">exactly when it matters</p>
                 </div>
               </div>
 
               <p className="mt-4 text-[13px] leading-relaxed text-[#F0EDE6]/70 md:text-sm">
-                That's concentrated chart pressure — exactly what Beatport's algorithm rewards during release week.
+                That concentrated pressure in a single 7-day window is exactly what Beatport's algorithm rewards.
+                One artist can't create it. <span className="text-[#22C55E] font-semibold">A squad can.</span>
               </p>
             </div>
 

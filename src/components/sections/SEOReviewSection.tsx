@@ -43,13 +43,13 @@ const carnivalImages = [
 
 const issues = [
   { label: 'Mustache Gang Xmas — #38 Beatport Overall Top 100 Releases', status: 'ok', badge: 'Charted' },
+  { label: 'Brazilian Carnival — #1 Electronica / Downtempo Releases', status: 'ok', badge: '#1' },
+  { label: 'Brazilian Carnival — #1 140 / Deep Dubstep / Grime Releases', status: 'ok', badge: '#1' },
   { label: 'Mustache Gang Xmas — #2 Beatport Dubstep Releases', status: 'ok' },
-  { label: 'Brazilian Carnival VA — #1 Electronica/Downtempo Releases', status: 'ok', badge: '#1' },
-  { label: 'Mustache Gang Xmas — Top 5 Genre Releases', status: 'ok' },
-  { label: '29+ artists coordinated across past missions', status: 'ok' },
-  { label: 'Pre-save campaigns synced across the full squad', status: 'ok' },
-  { label: 'SoundCloud repost network ≈ 2M followers', status: 'ok' },
-  { label: 'Daily crew direction from prep through release week', status: 'ok', badge: 'Verified' },
+  { label: 'Brazilian Carnival — #2 Bass House · #2 Dance · #2 Electro', status: 'ok' },
+  { label: '3 VA campaigns successfully coordinated', status: 'ok', badge: '3×' },
+  { label: '29+ artists across coordinated squad pushes', status: 'ok' },
+  { label: 'SoundCloud repost network ≈ 2 million followers', status: 'ok', badge: 'Verified' },
 ];
 
 function StatusIcon() {
@@ -80,15 +80,18 @@ export default function SEOReviewSection() {
             </svg>
           </div>
 
+          <div className="pl-14 md:pl-16 mb-3 text-xs font-bold uppercase tracking-[2px] text-[#728A72]">
+            Proof. Not promises.
+          </div>
           <h2
             className="font-black text-[#F0EDE6] leading-[1.05] -tracking-[2px] pl-14 md:pl-16"
             style={{ fontSize: 'clamp(36px, 5.5vw, 76px)' }}
           >
-            Proof from <span className="text-[#22C55E]">our missions</span>
+            We've done this before.<br/><span className="text-[#22C55E]">Three times.</span>
           </h2>
           <p className="mt-6 pl-14 md:pl-16 text-[#728A72] text-base md:text-lg leading-relaxed max-w-[460px]">
-            Mustache Gang Xmas 2025 — the blueprint that started it all.
-            Real chart positions from coordinated squad pushes.
+            Three VA campaigns. Three Beatport chart runs. Real screenshots,
+            real positions — not projections. Every number below is documented.
           </p>
           <a
             href="https://www.instagram.com/mustachecrew/"
