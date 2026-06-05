@@ -182,7 +182,7 @@ export default function ChatSemrushSection({ hideHero = false }: { hideHero?: bo
             <div style={heroAnim(380)} className="mt-10 flex flex-col items-center gap-2">
               <img src={logoWhite} alt="Mustache Crew" className="h-10 w-auto opacity-70" />
               <p className="text-[#F0EDE6]/45 text-xs max-w-[360px] leading-relaxed">
-                Three VA chart campaigns since 2018. Every time, the group chat was the engine.
+                A record label since 2018, specialized in launching and promoting tracks in the electronic music scene.
               </p>
             </div>
 
