@@ -31,8 +31,8 @@
         <div className="pt-[100px] lg:pt-0 pb-4 flex flex-col items-center">
           {/* Badge */}
           <div className="mt-12 lg:mt-0 mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#F5C842]/40 bg-[#F5C842]/10 text-[#22C55E] text-sm font-medium">
-            <span>🌍</span>
-            <span>30 Spots Max · Beatport Chart Mission · World Cup Window</span>
+            <span>🎯</span>
+            <span>30 Artists · 1 Coordinated Push · Beatport Top 100</span>
           </div>
 
           <h1 className="self-center text-center font-black text-[#F0EDE6] text-5xl leading-[54px] tracking-tight md:text-[96px] md:leading-[100px] md:-tracking-[2.5px] lg:pb-12 lg:text-[140px] lg:leading-[130px] lg:-tracking-[5px] [text-wrap:balance]">
@@ -45,25 +45,21 @@
         {/* Subtitle + CTA */}
         <div className="pt-8 pb-6 flex flex-col items-start justify-end md:pt-8 md:pb-[55px]">
           <p className="max-w-[520px] -tracking-[0.16px] text-[#C4C2B8] text-base md:text-lg leading-relaxed">
-            The 2026 FIFA World Cup draws 5 billion eyes. We're using that moment
-            to launch 30 tracks straight onto Beatport's charts — coordinated,
-            collective, unstoppable. Led by a Brazilian label that knows football
-            and music run on the same fuel: passion, timing, and collective force.
-          </p>
-          <p className="mt-3 max-w-[520px] text-[#F0EDE6] text-base font-medium">
-            Your track. The biggest stage in the world. Let's go.
+            Join a community of 30 artists who share your ambition. On launch day,
+            everyone buys the album — creating a coordinated chart push that no solo
+            release can match. Individual force. Collective objective.
           </p>
           <p className="mt-4 max-w-[520px] text-sm text-[#728A72]">
-            ✓ Free to submit&nbsp;&nbsp;•&nbsp;&nbsp;✓ €299 upon acceptance&nbsp;&nbsp;•&nbsp;&nbsp;✓ Submit by: July 10, 2026
+            ✓ Free to submit&nbsp;&nbsp;•&nbsp;&nbsp;✓ Submit by: July 10, 2026
           </p>
           <a
             href="/submit"
             className="mt-6 h-[48px] flex items-center px-6 rounded-full bg-[#F5C842] text-base font-semibold -tracking-[0.32px] text-[#060612] border-0 transition-colors hover:bg-[#FFD75A] cursor-pointer focus-visible:ring-2 focus-visible:ring-[#F5C842]/60 focus-visible:outline-none"
           >
-            Submit Your Track — Free →
+            Send Your Demo →
           </a>
           <p className="mt-4 max-w-[520px] text-sm text-[#728A72]">
-            📅 Submissions open now&nbsp;&nbsp;•&nbsp;&nbsp;Submit by <span className="text-[#22C55E] font-semibold">July 10</span>&nbsp;&nbsp;•&nbsp;&nbsp;Releases <span className="text-[#F5C842] font-semibold">July 17, 2026</span>
+            Submit by <span className="text-[#22C55E] font-semibold">July 10</span>&nbsp;&nbsp;•&nbsp;&nbsp;Releases <span className="text-[#F5C842] font-semibold">July 17, 2026</span>
           </p>
         </div>
       </section>

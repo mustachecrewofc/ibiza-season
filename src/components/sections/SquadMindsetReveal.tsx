@@ -33,9 +33,15 @@ export default function SquadMindsetReveal() {
         </h2>
 
         <p className={`mt-6 max-w-[600px] text-[#060A06]/80 text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-          Most artists don't know this: on Beatport, when someone buys a VA compilation,
-          every single track gets a chart credit — simultaneously.
+          On Beatport, when someone buys a VA compilation, every single track
+          gets a chart credit — simultaneously. That's the mechanism.
           That's why a coordinated VA push hits 30× harder than a solo release.
+        </p>
+        <p className={`mt-3 max-w-[600px] text-[#060A06]/70 text-base leading-relaxed transition-all duration-700 delay-150 ${inView ? 'opacity-100' : 'opacity-0'}`}>
+          And there's more: when the album climbs the chart, every track inside gains
+          visibility on the platform — opening the door to an{' '}
+          <span className="font-semibold text-[#060A06]">individual chart position</span> for your release.
+          On launch day, you already start with 30 individual purchases. Your individual top is closer than you think.
         </p>
 
         {/* Comparison cards */}

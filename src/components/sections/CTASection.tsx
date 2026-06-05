@@ -33,12 +33,12 @@ export default function CTASection() {
           className={`font-black text-[#F0EDE6] leading-[1.05] -tracking-[2px] max-w-[860px] transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
           style={{ fontSize: 'clamp(48px, 6vw, 88px)' }}
         >
-          Ready to write<br/>your <span className="text-[#22C55E]">chapter?</span>
+          Send your demo.<br/><span className="text-[#22C55E]">Join the squad.</span>
         </h2>
 
         <p className={`mt-6 max-w-[520px] text-[#728A72] text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          Forty years from now, you'll either remember being part of this
-          — or you'll remember not submitting.
+          Submit your track for analysis. If it's a fit, you're in —
+          and on July 17 your name is on the Beatport chart.
         </p>
 
         {/* Spots progress bar */}
@@ -69,13 +69,12 @@ export default function CTASection() {
             href="/submit"
             className="h-[52px] flex items-center px-8 rounded-full bg-[#F5C842] text-[#060612] text-base font-bold hover:bg-[#FFD75A] transition-colors"
           >
-            Submit Your Track — Free →
+            Send Your Demo — Free →
           </a>
-          <p className="text-sm text-[#728A72]">No fee now · €299 only if accepted</p>
         </div>
 
         <p className={`mt-6 text-xs text-[#728A72] transition-all duration-700 delay-400 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-          Review within 7 days · All genres welcome · All countries welcome
+          All genres welcome · All countries welcome · Deadline July 10
         </p>
       </div>
     </section>

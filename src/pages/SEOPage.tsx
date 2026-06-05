@@ -1,17 +1,11 @@
 import Navbar from '../components/layout/Navbar';
 import HeroSection from '../components/sections/HeroSection';
 import HeroBg from '../components/sections/HeroBg';
-import BuiltToBeFoundSection from '../components/sections/BuiltToBeFoundSection';
-import SEOReviewSection from '../components/sections/SEOReviewSection';
-import WhatsPossibleSection from '../components/sections/WhatsPossibleSection';
 import SquadMindsetReveal from '../components/sections/SquadMindsetReveal';
+import SEOReviewSection from '../components/sections/SEOReviewSection';
 import ChatSemrushSection from '../components/sections/ChatSemrushSection';
-import MarqueeSection from '../components/sections/MarqueeSection';
-import WorldCupWindowSection from '../components/sections/WorldCupWindowSection';
-import HowItWorksSection from '../components/sections/HowItWorksSection';
-import PricingSection from '../components/sections/PricingSection';
+import ExtraPushSection from '../components/sections/ExtraPushSection';
 import CTASection from '../components/sections/CTASection';
-import FAQSection from '../components/sections/FAQSection';
 
 export default function SEOPage() {
   return (
@@ -19,43 +13,26 @@ export default function SEOPage() {
       <Navbar />
 
       <main id="main-content">
-        {/* Beat 1 — O Chamado */}
+        {/* 1 — Hook */}
         <HeroSection />
 
-        {/* Beat 2 — A Tensão (scroll reveal) */}
+        {/* 2 — Visual transition */}
         <HeroBg />
 
-        {/* Beat 3 — O Problema: Solo releases don't chart */}
-        <BuiltToBeFoundSection />
-
-        {/* Beat 5 — A Prova: Proof. Not promises. */}
-        <SEOReviewSection />
-
-        {/* Beat 6 — A Máquina: The infrastructure */}
-        <WhatsPossibleSection />
-
-        {/* Beat 7 — O Squad: 30 artists. One heartbeat. */}
+        {/* 3 — The mechanism: 1 purchase = 30 votes + the trick */}
         <SquadMindsetReveal />
 
-        {/* Beat 8 — A Comunidade: Squad in action (Telegram chat) */}
-        <ChatSemrushSection hideHero />
+        {/* 4 — Proof: previous chart tops */}
+        <SEOReviewSection />
 
-        {/* Scrolling global reach ticker */}
-        <MarqueeSection />
+        {/* 5 — Community: Telegram + same mindset artists */}
+        <ChatSemrushSection />
 
-        {/* Beat 9 — A Janela: July 17. Countdown. */}
-        <WorldCupWindowSection />
+        {/* 6 — Extra push: EDM Army + SoundCloud + Email */}
+        <ExtraPushSection />
 
-        {/* Beat 10 — O Processo: Horizontal timeline */}
-        <HowItWorksSection />
-
-        {/* Beat 11 — O Investimento: €299. Everything included. */}
-        <PricingSection />
-
-        {/* Beat 12 — O Chamado Final: Spots bar + CTA */}
+        {/* 7 — Submit demo CTA */}
         <CTASection />
-
-        <FAQSection />
       </main>
     </div>
   );

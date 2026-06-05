@@ -124,11 +124,11 @@ export default function ChatSemrushSection({ hideHero = false }: { hideHero?: bo
             className={`font-black text-[#F0EDE6] leading-tight -tracking-[2px] transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
             style={{ fontSize: 'clamp(36px, 5.5vw, 72px)' }}
           >
-            Squad Mindset = <span className="text-[#22C55E]">Chart Potential</span>
+            Artists with the same<br /><span className="text-[#22C55E]">mindset as yours.</span>
           </h2>
           <p className={`mt-4 text-[#F0EDE6]/85 text-lg max-w-[560px] mx-auto leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-            30 artists working as one coordinated squad, aiming for Beatport chart positions.
-            This is how independent music competes at the highest level.
+            Our Telegram group is where campaigns are activated — and where you meet
+            producers and DJs who are just as serious about growing as you are.
           </p>
           <div className={`mt-8 flex items-center justify-center gap-3 transition-all duration-700 delay-200 ${inView ? 'opacity-100' : 'opacity-0'}`}>
             <img src={logoWhite} alt="Mustache Crew" className="h-14 w-auto invert" />
@@ -195,10 +195,11 @@ export default function ChatSemrushSection({ hideHero = false }: { hideHero?: bo
               <div className="flex items-start gap-3">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C842" strokeWidth="2" className="mt-0.5 flex-shrink-0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 <div>
-                  <p className="font-semibold text-[#F0EDE6] text-sm">Free to submit. Worldwide.</p>
+                  <p className="font-semibold text-[#F0EDE6] text-sm">Open to producers worldwide.</p>
                   <p className="text-[#728A72] text-sm mt-1 leading-relaxed">
-                    No submission fee, no membership. Selected artists sign a fair distribution deal with{' '}
-                    <span className="font-medium text-[#22C55E]">transparent royalty splits</span>. Submission deadline: <span className="text-[#F5C842] font-medium">July 10, 2026</span>.
+                    All genres. All countries. The only requirement is the same mindset:{' '}
+                    <span className="font-medium text-[#22C55E]">grow together</span>.
+                    Submission deadline: <span className="text-[#F5C842] font-medium">July 10, 2026</span>.
                   </p>
                 </div>
               </div>
