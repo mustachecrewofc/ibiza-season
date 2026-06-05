@@ -44,7 +44,6 @@
         {/* Subtitle + CTA */}
         <div className="pt-8 pb-6 flex flex-col items-start justify-end md:pt-8 md:pb-[55px]">
           <p className="max-w-[520px] -tracking-[0.16px] text-[#C4C2B8] text-base md:text-lg leading-relaxed">
-            30 artists. One mission: Beatport Top 100.
             A community built around coordination, consistency,
             and the mindset to make every release count.
           </p>
