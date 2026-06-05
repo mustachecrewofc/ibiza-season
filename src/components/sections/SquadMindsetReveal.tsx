@@ -226,6 +226,26 @@ export default function SquadMindsetReveal() {
           </div>
         </div>
 
+        {/* Inline CTA */}
+        <div
+          style={{
+            ...anim(700, 12),
+            background: 'rgba(6,10,6,0.50)',
+            border: '1px solid rgba(240,237,230,0.08)',
+          }}
+          className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-5 rounded-2xl"
+        >
+          <p className="font-semibold text-[#F0EDE6]/70 text-sm text-center sm:text-left">
+            Ready to be on the VA card, not the solo one?
+          </p>
+          <a
+            href="/submit"
+            className="flex-shrink-0 h-[40px] px-5 rounded-full bg-[#F5C842] text-sm font-bold text-[#060612] hover:bg-[#FFD75A] transition-colors flex items-center gap-2"
+          >
+            Send Your Demo →
+          </a>
+        </div>
+
       </div>
     </section>
   );

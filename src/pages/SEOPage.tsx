@@ -6,6 +6,7 @@ import SquadMindsetReveal from '../components/sections/SquadMindsetReveal';
 import SEOReviewSection from '../components/sections/SEOReviewSection';
 import ChatSemrushSection from '../components/sections/ChatSemrushSection';
 import ExtraPushSection from '../components/sections/ExtraPushSection';
+import FAQSection from '../components/sections/FAQSection';
 import CTASection from '../components/sections/CTASection';
 
 export default function SEOPage() {
@@ -35,7 +36,10 @@ export default function SEOPage() {
         {/* 7 — Extra push: EDM Army + SoundCloud + Email */}
         <ExtraPushSection />
 
-        {/* 7 — Submit demo CTA */}
+        {/* 8 — FAQ */}
+        <FAQSection />
+
+        {/* 9 — Submit demo CTA */}
         <CTASection />
       </main>
     </div>

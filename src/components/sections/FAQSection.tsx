@@ -1,52 +1,138 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { useInView } from '../../hooks/useInView';
 
 const faqs = [
-  { q: 'Do you guarantee a Beatport chart position?', a: "We don't guarantee positions — no label can honestly do that. What we guarantee is the full execution of our proven promotional strategy. Our past VAs hit #38 Overall Top 100, #2 Dubstep, and #1 Electronica/Downtempo on Beatport. We engineer for maximum chart potential, not guaranteed outcomes." },
-  { q: 'How many artists will be selected?', a: 'Maximum 30 tracks — hard cap, no exceptions. The lineup is curated — not everyone who submits gets in. Selection is based on track quality, energy, genre fit, and overall compilation balance. Smaller lineup = more focused push = better chart potential per track.' },
-  { q: 'When do submissions close?', a: 'Submissions close on July 10, 2026 — one week before the album releases on July 17. Early submissions have a higher chance of selection as spots fill on a rolling basis — don\'t wait until the last minute.' },
-  { q: 'When is the release?', a: 'Mustache Gang World Cup 2026 releases on July 17, 2026 — two days before the World Cup Final on July 19. Pre-save campaign launches 4 weeks before the release date. Accepted artists receive the full timeline at lineup lock.' },
-  { q: 'What genres are accepted?', a: "We're open to all electronic music genres that carry World Cup energy: Tech House, House, Afro House, Techno, Breaks, Melodic Techno, Bass House, and similar styles. The main criteria is energy, originality, and a strong hook. If it makes a crowd move, submit it." },
-  { q: 'What is the investment?', a: 'The investment is €299 per track upon acceptance. This covers production of all campaign assets, distribution costs, the full 360° promotional budget (playlists, email, SoundCloud, social, press), and full campaign coordination. Submission is always free — the investment only applies if your track is selected and you choose to join.' },
-  { q: 'Do I need to promote my own track?', a: "Yes — and that's exactly what makes this model powerful. We coordinate a collective promotion calendar. Every artist posts on the same days with the same campaign assets. The combined reach of 30 artists promoting simultaneously is what drives the chart push. We provide all assets and the full schedule." },
-  { q: 'What happens after I submit?', a: "We review within 7 business days. You'll receive feedback regardless of outcome. If accepted: artist agreement, artwork brief, campaign timeline, and access to the squad Telegram group. If not selected: we'll tell you why and may keep you in consideration for future VA campaigns." },
+  {
+    q: 'What genres are accepted?',
+    a: 'All electronic music genres. We curate for diversity across the 30 slots — tech house, melodic techno, dubstep, electronica, progressive house, bass house, peaktime techno, and more. The VA is stronger when the range is wide.',
+  },
+  {
+    q: 'Is there a cost to submit?',
+    a: 'Submitting is completely free. There are no upfront costs to send your demo.',
+  },
+  {
+    q: 'What happens after I submit?',
+    a: 'Mustache Crew A&R listens personally to every demo and responds within 7 days. No bots, no auto-rejections. If selected, you receive access to the squad Telegram group and the full campaign brief for July 17.',
+  },
+  {
+    q: 'What if my track is not selected?',
+    a: "Not every track fits every campaign — and that's not a quality judgment. If you're not in for this VA, we'll let you know and you're welcome to submit for future Mustache Crew campaigns.",
+  },
+  {
+    q: 'Do I have to do anything on launch day?',
+    a: 'Yes. Every artist is expected to activate their own audience on July 17 — stories, reels, email list, bio link, whatever your channels are. The coordinated push only works when everyone shows up. That commitment is part of being in the squad.',
+  },
+  {
+    q: 'When is the submission deadline?',
+    a: 'Demos must be submitted by July 10, 2026. The VA releases July 17 — two days before the FIFA World Cup Final.',
+  },
+  {
+    q: 'How many spots are still available?',
+    a: '30 spots total. We are filling them now on a rolling basis — earlier submissions get priority consideration. Once the 30 are confirmed, submissions close.',
+  },
+  {
+    q: 'Why is the release date July 17?',
+    a: 'The FIFA World Cup Final 2026 is July 19. Releasing two days before the most-watched sporting event on the planet puts our album — and all 30 artists — in front of a global, highly engaged audience at exactly the right moment.',
+  },
 ];
 
-function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
+function FAQItem({ q, a, index, inView }: { q: string; a: string; index: number; inView: boolean }) {
   const [open, setOpen] = useState(false);
+
   return (
-    <div className={`border-t border-[#182B18] ${index === faqs.length - 1 ? 'border-b' : ''}`}>
+    <div
+      className="border-b border-[#182B18] overflow-hidden"
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0)' : 'translateY(16px)',
+        transition: 'opacity 0.6s ease, transform 0.6s ease',
+        transitionDelay: `${80 + index * 60}ms`,
+      }}
+    >
       <button
-        type="button"
+        className="w-full flex items-center justify-between gap-4 py-5 text-left group cursor-pointer"
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-5 text-left gap-8 group"
         aria-expanded={open}
       >
-        <span className="text-base md:text-lg font-medium text-[#F0EDE6] group-hover:text-[#22C55E] transition-colors -tracking-[0.3px]">
+        <span
+          className="font-semibold text-sm md:text-base transition-colors"
+          style={{ color: open ? '#F0EDE6' : 'rgba(240,237,230,0.70)' }}
+        >
           {q}
         </span>
-        <span className={`flex-shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 5l5 5 5-5" stroke="#F5C842" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <span
+          className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300"
+          style={{
+            background: open ? '#22C55E' : 'transparent',
+            border: open ? '1px solid #22C55E' : '1px solid #182B18',
+            transform: open ? 'rotate(45deg)' : 'rotate(0deg)',
+          }}
+        >
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M5 2v6M2 5h6" stroke={open ? '#060A06' : '#728A72'} strokeWidth="1.5" strokeLinecap="round"/>
           </svg>
         </span>
       </button>
-      <div className={`overflow-hidden transition-all duration-300 ${open ? 'max-h-[400px] pb-5' : 'max-h-0'}`}>
-        <p className="text-sm md:text-base leading-relaxed text-[#728A72] max-w-[680px]">{a}</p>
+
+      <div
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{ maxHeight: open ? '300px' : '0px' }}
+      >
+        <p className="pb-5 text-sm text-[#728A72] leading-relaxed pr-10">
+          {a}
+        </p>
       </div>
     </div>
   );
 }
 
 export default function FAQSection() {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({ threshold: 0.08 });
+
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="faq" className="container py-16 md:py-24">
-      <h2 className={`text-[40px] md:text-[56px] lg:text-[72px] font-black -tracking-[1.5px] text-[#F0EDE6] mb-10 md:mb-14 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-        Questions? We've got answers.
-      </h2>
-      <div className={`max-w-[780px] transition-all duration-700 delay-150 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-        {faqs.map((item, i) => <FAQItem key={item.q} q={item.q} a={item.a} index={i} />)}
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      className="relative py-24 md:py-32"
+    >
+      <div className="container max-w-[760px]">
+
+        {/* Label */}
+        <div
+          style={{
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateX(0)' : 'translateX(-16px)',
+            transition: 'opacity 0.5s ease, transform 0.5s ease',
+          }}
+          className="mb-7 flex items-center gap-3"
+        >
+          <div className="h-px w-6 bg-[#22C55E]" />
+          <span className="text-[10px] font-black uppercase tracking-[3px] text-[#22C55E]">
+            FAQ
+          </span>
+        </div>
+
+        {/* Headline */}
+        <h2
+          className="font-black text-[#F0EDE6] leading-[0.95] -tracking-[2px] mb-12"
+          style={{
+            fontSize: 'clamp(36px, 5vw, 64px)',
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 0.7s ease, transform 0.7s ease',
+            transitionDelay: '40ms',
+          }}
+        >
+          Questions.<br />
+          <span className="text-[#728A72]">Answered.</span>
+        </h2>
+
+        {/* FAQ items */}
+        <div>
+          {faqs.map((item, i) => (
+            <FAQItem key={i} q={item.q} a={item.a} index={i} inView={inView} />
+          ))}
+        </div>
+
       </div>
     </section>
   );

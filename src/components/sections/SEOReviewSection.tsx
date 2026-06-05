@@ -157,6 +157,28 @@ export default function SEOReviewSection() {
           spacing="-space-x-10 md:-space-x-12"
         />
       </div>
+
+      {/* Inline CTA after proof */}
+      <div className={`mt-14 transition-all duration-700 delay-500 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div
+          className="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-5 rounded-2xl"
+          style={{
+            background: 'rgba(34,197,94,0.05)',
+            border: '1px solid rgba(34,197,94,0.18)',
+          }}
+        >
+          <div>
+            <p className="font-bold text-[#F0EDE6] text-sm">Three times proven. Now it's your turn.</p>
+            <p className="text-[#728A72] text-xs mt-0.5">Submit by July 10 · Releases July 17, 2026</p>
+          </div>
+          <a
+            href="/submit"
+            className="flex-shrink-0 h-[40px] px-5 rounded-full bg-[#F5C842] text-sm font-bold text-[#060612] hover:bg-[#FFD75A] transition-colors flex items-center gap-2"
+          >
+            Send Your Demo →
+          </a>
+        </div>
+      </div>
     </section>
   );
 }

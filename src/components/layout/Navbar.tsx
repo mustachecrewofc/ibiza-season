@@ -34,9 +34,6 @@ export default function Navbar() {
 
       {/* CTA buttons */}
       <div className="hidden md:flex items-center gap-2">
-        <a href="#about" className="px-4 py-2 text-sm text-[#728A72] hover:text-[#F0EDE6] transition-colors">
-          Learn More
-        </a>
         <a href="/submit" className="h-[36px] px-4 rounded-full bg-[#F5C842] text-sm font-semibold text-[#060612] hover:bg-[#FFD75A] transition-colors flex items-center">
           Submit Your Track
         </a>
@@ -66,8 +63,7 @@ export default function Navbar() {
             </a>
           ))}
           <div className="flex gap-2 mt-3 pt-3 border-t border-[#182B18]">
-            <a href="#about" className="flex-1 py-2 text-sm text-center text-[#728A72] border border-[#182B18] rounded-full">Learn More</a>
-            <a href="/submit" className="flex-1 py-2 text-sm text-center font-semibold bg-[#F5C842] text-[#060612] rounded-full">Submit</a>
+            <a href="/submit" className="flex-1 py-2 text-sm text-center font-semibold bg-[#F5C842] text-[#060612] rounded-full">Submit Your Track</a>
           </div>
         </div>
       )}
