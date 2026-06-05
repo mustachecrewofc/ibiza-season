@@ -31,23 +31,23 @@
         <div className="pt-[100px] lg:pt-0 pb-4 flex flex-col items-center">
           {/* Badge */}
           <div className="mt-12 lg:mt-0 mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#F5C842]/40 bg-[#F5C842]/10 text-[#22C55E] text-sm font-medium">
-            <span>🎯</span>
-            <span>30 Artists · 1 Coordinated Push · Beatport Top 100</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#22C55E"><circle cx="12" cy="12" r="10"/></svg>
+            <span>30 Artists · Coordinated Chart Push · World Cup Edition</span>
           </div>
 
           <h1 className="self-center text-center font-black text-[#F0EDE6] text-5xl leading-[54px] tracking-tight md:text-[96px] md:leading-[100px] md:-tracking-[2.5px] lg:pb-12 lg:text-[140px] lg:leading-[130px] lg:-tracking-[5px] [text-wrap:balance]">
-            YOUR TRACK.<br className="hidden lg:block" />
-            THE WORLD'S<br className="hidden lg:block" />
-            <span className="text-[#22C55E]">BIGGEST STAGE.</span>
+            YOUR NAME.<br className="hidden lg:block" />
+            BEATPORT<br className="hidden lg:block" />
+            <span className="text-[#22C55E]">CHARTS.</span>
           </h1>
         </div>
 
         {/* Subtitle + CTA */}
         <div className="pt-8 pb-6 flex flex-col items-start justify-end md:pt-8 md:pb-[55px]">
           <p className="max-w-[520px] -tracking-[0.16px] text-[#C4C2B8] text-base md:text-lg leading-relaxed">
-            Join a community of 30 artists who share your ambition. On launch day,
-            everyone buys the album — creating a coordinated chart push that no solo
-            release can match. Individual force. Collective objective.
+            30 artists. One VA album. On July 17, everyone buys together —
+            and every single track climbs Beatport simultaneously.
+            This is how independent artists chart. Not luck. Coordination.
           </p>
           <a
             href="/submit"

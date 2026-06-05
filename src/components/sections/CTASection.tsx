@@ -37,8 +37,8 @@ export default function CTASection() {
         </h2>
 
         <p className={`mt-6 max-w-[520px] text-[#728A72] text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          Submit your track for analysis. If it's a fit, you're in —
-          and on July 17 your name is on the Beatport chart.
+          We listen to every demo personally and respond within 7 days.
+          On July 17, your track drops alongside 29 others — and the chart push begins.
         </p>
 
         {/* Spots progress bar */}
