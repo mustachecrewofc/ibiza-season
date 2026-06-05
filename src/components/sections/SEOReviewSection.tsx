@@ -133,47 +133,6 @@ export default function SEOReviewSection() {
 
       </div>
 
-      {/* Real Beatport screenshots — highlighted proof */}
-      <div className={`mt-12 md:mt-16 transition-all duration-700 delay-250 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-        <p className="text-xs font-bold uppercase tracking-[2px] text-[#728A72] mb-4">Live screenshots — Beatport Top 10</p>
-        <div className="grid grid-cols-2 gap-4 max-w-[560px]">
-          {/* Dubstep #2 */}
-          <div className="relative rounded-2xl overflow-hidden border border-[#22C55E]/30 bg-[#0C140C] shadow-[0_8px_32px_-8px_rgba(34,197,94,0.25)] group">
-            <div className="absolute top-3 left-3 z-10">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#22C55E] text-[#060A06] text-xs font-black tracking-wide shadow-lg">
-                #2 Dubstep
-              </span>
-            </div>
-            <img
-              src={xmasDubstep2}
-              alt="Mustache Gang Xmas #2 Dubstep — Beatport Top 10"
-              className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-            <div className="px-3 py-2.5 border-t border-[#22C55E]/20">
-              <p className="text-[#F0EDE6] text-xs font-semibold leading-tight">Mustache Gang Xmas 2025</p>
-              <p className="text-[#728A72] text-[10px] mt-0.5">Beatport Dubstep Releases</p>
-            </div>
-          </div>
-          {/* House #7 */}
-          <div className="relative rounded-2xl overflow-hidden border border-[#F5C842]/30 bg-[#0C140C] shadow-[0_8px_32px_-8px_rgba(245,200,66,0.20)] group">
-            <div className="absolute top-3 left-3 z-10">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F5C842] text-[#060A06] text-xs font-black tracking-wide shadow-lg">
-                #7 House
-              </span>
-            </div>
-            <img
-              src={xmasHouse7}
-              alt="Mustache Gang Xmas #7 House — Beatport Top 10"
-              className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-            <div className="px-3 py-2.5 border-t border-[#F5C842]/20">
-              <p className="text-[#F0EDE6] text-xs font-semibold leading-tight">Mustache Gang Xmas 2025</p>
-              <p className="text-[#728A72] text-[10px] mt-0.5">Beatport House Releases</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className={`mt-16 md:mt-24 transition-all duration-700 delay-300 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
         <div className="flex items-center gap-3 mb-2 md:mb-4">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#22C55E]/15 border border-[#22C55E]/40 text-[#FF8A7A] text-xs font-bold uppercase tracking-wider">
