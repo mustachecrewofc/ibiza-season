@@ -83,10 +83,65 @@ export default function SquadMindsetReveal() {
           </p>
         </div>
 
+        {/* Pain context card — what actually happens to most artists */}
+        <div style={{ ...anim(290, 16), maxWidth: '580px' }} className="mt-10">
+          <div
+            className="rounded-2xl overflow-hidden"
+            style={{
+              background: 'rgba(6,10,6,0.38)',
+              border: '1px solid rgba(240,237,230,0.10)',
+              backdropFilter: 'blur(10px)',
+            }}
+          >
+            <div className="flex">
+              {/* Left accent — muted to signal "the bad path" */}
+              <div
+                className="w-1 flex-shrink-0"
+                style={{ background: 'rgba(240,237,230,0.18)' }}
+              />
+              <div className="px-5 py-4">
+                <p
+                  className="font-bold text-[10px] uppercase tracking-[2.5px] mb-3"
+                  style={{ color: 'rgba(240,237,230,0.30)' }}
+                >
+                  What actually happens to most artists
+                </p>
+                <div className="flex flex-col gap-1.5">
+                  {[
+                    'You spend months on the track.',
+                    'You master it. You release it. You post.',
+                    '300 streams the first week. Then 40. Then nothing.',
+                    'The algorithm never surfaces it again.',
+                  ].map((line, i) => (
+                    <div key={i} className="flex items-start gap-2.5">
+                      <span
+                        className="mt-[5px] w-1 h-1 rounded-full flex-shrink-0"
+                        style={{ background: 'rgba(240,237,230,0.25)' }}
+                      />
+                      <p
+                        className="text-sm leading-relaxed"
+                        style={{ color: 'rgba(240,237,230,0.38)' }}
+                      >
+                        {line}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <p
+                  className="mt-3 text-xs font-semibold"
+                  style={{ color: 'rgba(240,237,230,0.22)' }}
+                >
+                  Not a talent problem. A numbers problem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Comparison cards */}
         <div
           style={{ ...anim(360) }}
-          className="mt-14 grid grid-cols-1 md:grid-cols-[1fr_64px_1fr] items-stretch gap-3 md:gap-0"
+          className="mt-8 grid grid-cols-1 md:grid-cols-[1fr_64px_1fr] items-stretch gap-3 md:gap-0"
         >
           {/* Solo card */}
           <div
