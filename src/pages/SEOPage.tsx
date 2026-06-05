@@ -1,6 +1,6 @@
 import Navbar from '../components/layout/Navbar';
 import HeroSection from '../components/sections/HeroSection';
-import HeroBg from '../components/sections/HeroBg';
+import IntroductionSection from '../components/sections/IntroductionSection';
 import SquadMindsetReveal from '../components/sections/SquadMindsetReveal';
 import SEOReviewSection from '../components/sections/SEOReviewSection';
 import ChatSemrushSection from '../components/sections/ChatSemrushSection';
@@ -16,8 +16,8 @@ export default function SEOPage() {
         {/* 1 — Hook: your name on Beatport charts */}
         <HeroSection />
 
-        {/* 2 — Visual transition */}
-        <HeroBg />
+        {/* 2 — Mission: community intro, goal, why together */}
+        <IntroductionSection />
 
         {/* 3 — The mechanism: 1 purchase = 30 votes + the trick */}
         <SquadMindsetReveal />
