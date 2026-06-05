@@ -49,7 +49,7 @@
             everyone buys the album — creating a coordinated chart push that no solo
             release can match. Individual force. Collective objective.
           </p>
-          <
+          <a
             href="/submit"
             className="mt-6 h-[48px] flex items-center px-6 rounded-full bg-[#F5C842] text-base font-semibold -tracking-[0.32px] text-[#060612] border-0 transition-colors hover:bg-[#FFD75A] cursor-pointer focus-visible:ring-2 focus-visible:ring-[#F5C842]/60 focus-visible:outline-none"
           >
