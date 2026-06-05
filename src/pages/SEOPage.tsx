@@ -1,13 +1,13 @@
 import Navbar from '../components/layout/Navbar';
 import HeroSection from '../components/sections/HeroSection';
-import IntroductionSection from '../components/sections/IntroductionSection';
-import JourneySection from '../components/sections/JourneySection';
 import SquadMindsetReveal from '../components/sections/SquadMindsetReveal';
+import IntroductionSection from '../components/sections/IntroductionSection';
 import SEOReviewSection from '../components/sections/SEOReviewSection';
 import ChatSemrushSection from '../components/sections/ChatSemrushSection';
+import JourneySection from '../components/sections/JourneySection';
 import ExtraPushSection from '../components/sections/ExtraPushSection';
-import FAQSection from '../components/sections/FAQSection';
 import CTASection from '../components/sections/CTASection';
+import FAQSection from '../components/sections/FAQSection';
 
 export default function SEOPage() {
   return (
@@ -15,28 +15,28 @@ export default function SEOPage() {
       <Navbar />
 
       <main id="main-content">
-        {/* 1 — Hook: your name on Beatport charts */}
+        {/* 1 — Hook */}
         <HeroSection />
 
-        {/* 2 — Mission: community intro, goal, why together */}
-        <div id="mission"><IntroductionSection /></div>
-
-        {/* 3 — Journey: 6-step orbital from demo to chart */}
-        <div id="journey"><JourneySection /></div>
-
-        {/* 4 — The mechanism: community is the strategy */}
+        {/* 2 — Desire: solo vs VA contrast */}
         <SquadMindsetReveal />
 
-        {/* 5 — Proof: previous chart tops */}
+        {/* 3 — Understanding: what this community is */}
+        <div id="mission"><IntroductionSection /></div>
+
+        {/* 4 — Proof: three campaigns, real screenshots */}
         <SEOReviewSection />
 
-        {/* 6 — Community: Telegram + same mindset artists */}
+        {/* 5 — Inside: the community in action */}
         <div id="community"><ChatSemrushSection /></div>
 
-        {/* 7 — Extra push: EDM Army + SoundCloud + Email */}
+        {/* 6 — Process: how to get in */}
+        <div id="journey"><JourneySection /></div>
+
+        {/* 7 — Value stack: beyond Beatport */}
         <ExtraPushSection />
 
-        {/* 8 — Submit demo CTA */}
+        {/* 8 — CTA */}
         <CTASection />
 
         {/* 9 — FAQ (last) */}

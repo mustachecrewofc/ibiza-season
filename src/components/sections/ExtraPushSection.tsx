@@ -139,6 +139,18 @@ export default function ExtraPushSection() {
             </div>
           ))}
         </div>
+
+        {/* Bridge to CTA */}
+        <div
+          className={`mt-14 flex flex-col items-center gap-2 transition-all duration-700 delay-400 ${inView ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <p className="text-sm text-[#728A72] text-center">
+            30 spots. July 17. Your name on the list.
+          </p>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#728A72" strokeWidth="2" strokeLinecap="round" className="opacity-50">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
       </div>
     </section>
   );

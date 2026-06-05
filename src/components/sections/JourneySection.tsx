@@ -153,6 +153,23 @@ export default function JourneySection() {
         >
           <RadialOrbitalTimeline timelineData={journeyData} />
         </div>
+
+        {/* Bridge to Extra Push */}
+        <div
+          className="flex flex-col items-center gap-2 pb-4"
+          style={{
+            opacity: inView ? 1 : 0,
+            transition: 'opacity 0.7s ease',
+            transitionDelay: '600ms',
+          }}
+        >
+          <p className="text-sm text-[#728A72] text-center">
+            And the machine goes further than the Beatport chart.
+          </p>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#728A72" strokeWidth="2" strokeLinecap="round" className="opacity-50">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
       </div>
     </section>
   );

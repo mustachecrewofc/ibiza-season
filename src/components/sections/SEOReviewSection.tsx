@@ -179,6 +179,16 @@ export default function SEOReviewSection() {
           </a>
         </div>
       </div>
+
+      {/* Bridge to Community */}
+      <div className={`mt-12 flex flex-col items-center gap-2 transition-all duration-700 delay-600 ${inView ? 'opacity-100' : 'opacity-0'}`}>
+        <p className="text-sm text-[#728A72] text-center">
+          Behind every one of those chart runs, the same group chat was the engine.
+        </p>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#728A72" strokeWidth="2" strokeLinecap="round" className="opacity-50">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </div>
     </section>
   );
 }

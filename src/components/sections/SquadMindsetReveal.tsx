@@ -226,6 +226,19 @@ export default function SquadMindsetReveal() {
           </div>
         </div>
 
+        {/* Bridge to next section */}
+        <div
+          style={{ ...anim(800, 8) }}
+          className="mt-10 flex flex-col items-center gap-2 pb-2"
+        >
+          <p className="text-sm text-[#F0EDE6]/30 text-center">
+            This works because of one thing: the community behind it.
+          </p>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(240,237,230,0.20)" strokeWidth="2" strokeLinecap="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+
         {/* Inline CTA */}
         <div
           style={{

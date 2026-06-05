@@ -317,6 +317,23 @@ export default function ChatSemrushSection({ hideHero = false }: { hideHero?: bo
               </div>
             </div>
 
+          {/* Bridge to Journey */}
+          <div
+            className="mt-8 flex flex-col items-center gap-2"
+            style={{
+              opacity: inView ? 1 : 0,
+              transition: 'opacity 0.7s ease',
+              transitionDelay: hideHero ? '400ms' : '800ms',
+            }}
+          >
+            <p className="text-sm text-[#728A72] text-center">
+              This is your squad. Here's how you join it.
+            </p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#728A72" strokeWidth="2" strokeLinecap="round" className="opacity-50">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+
           </div>
         </div>
       </div>
