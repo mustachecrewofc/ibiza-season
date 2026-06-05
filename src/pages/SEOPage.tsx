@@ -1,6 +1,7 @@
 import Navbar from '../components/layout/Navbar';
 import HeroSection from '../components/sections/HeroSection';
 import IntroductionSection from '../components/sections/IntroductionSection';
+import JourneySection from '../components/sections/JourneySection';
 import SquadMindsetReveal from '../components/sections/SquadMindsetReveal';
 import SEOReviewSection from '../components/sections/SEOReviewSection';
 import ChatSemrushSection from '../components/sections/ChatSemrushSection';
@@ -19,7 +20,10 @@ export default function SEOPage() {
         {/* 2 — Mission: community intro, goal, why together */}
         <IntroductionSection />
 
-        {/* 3 — The mechanism: 1 purchase = 30 votes + the trick */}
+        {/* 3 — Journey: 6-step orbital from demo to chart */}
+        <JourneySection />
+
+        {/* 4 — The mechanism: community is the strategy */}
         <SquadMindsetReveal />
 
         {/* 4 — Proof: previous chart tops */}
