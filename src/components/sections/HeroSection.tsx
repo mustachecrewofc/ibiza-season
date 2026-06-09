@@ -83,25 +83,25 @@ export default function HeroSection() {
           aria-hidden="true"
         />
 
-        <section className="relative z-10 flex flex-col items-center text-center px-4 pt-28 pb-20 md:pt-36 md:pb-28">
+        <section className="relative z-10 flex flex-col items-center text-center px-4 pt-20 pb-10 md:pt-24 md:pb-14">
 
           {/* Badge */}
-          <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#22C55E]/30 bg-[#22C55E]/08 text-[#22C55E] text-sm font-medium">
+          <div className="mb-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#22C55E]/30 bg-[#22C55E]/08 text-[#22C55E] text-sm font-medium">
             <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
             <span>30 Artists · Coordinated Chart Push · World Cup Edition</span>
           </div>
 
           {/* Title */}
           <h1
-            className="font-black text-[#F0EDE6] leading-[0.9] -tracking-[3px] md:-tracking-[5px]"
-            style={{ fontSize: 'clamp(52px, 10vw, 140px)' }}
+            className="font-black text-[#F0EDE6] leading-[0.88] -tracking-[2px] md:-tracking-[3.5px]"
+            style={{ fontSize: 'clamp(38px, 5.5vw, 82px)' }}
           >
             MUSTACHE GANG<br />
             <span className="text-[#22C55E]">WORLD CUP VA</span>
           </h1>
 
           {/* Video thumbnail */}
-          <div className="mt-14 w-full max-w-[820px]">
+          <div className="mt-8 w-full max-w-[720px]">
             <button
               onClick={() => setModalOpen(true)}
               aria-label="Watch the VA breakdown video"
