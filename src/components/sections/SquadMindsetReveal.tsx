@@ -51,25 +51,29 @@ export default function SquadMindsetReveal() {
         >
           <div className="h-px w-6 bg-[#14532d]" />
           <span className="text-[10px] font-black uppercase tracking-[3px] text-[#14532d]">
-            Solo vs VA
+            The math
           </span>
         </div>
 
         {/* Headline */}
         <h2
           style={{ ...anim(80, 28), fontSize: 'clamp(40px, 6vw, 86px)' }}
-          className="font-black text-[#060A06] leading-[0.92] -tracking-[3px] max-w-[700px]"
+          className="font-black text-[#060A06] leading-[0.92] -tracking-[3px] max-w-[780px]"
         >
-          See the difference<br />
-          <span style={{ color: '#F0EDE6' }}>one decision makes.</span>
+          Your part. Their part.<br />
+          <span style={{ color: '#F0EDE6' }}>Everyone wins together.</span>
         </h2>
 
-        {/* Comparison cards */}
+        <p style={{ ...anim(180), color: 'rgba(6,10,6,0.55)', fontSize: '17px', lineHeight: 1.6, maxWidth: '560px', marginTop: '20px' }}>
+          When every artist buys the album and activates their audience, the numbers compound fast. Here is what that looks like.
+        </p>
+
+        {/* Two cards — your track + the album */}
         <div
           style={{ ...anim(220) }}
-          className="mt-10 grid grid-cols-1 md:grid-cols-[1fr_64px_1fr] items-stretch gap-3 md:gap-0"
+          className="mt-10 grid grid-cols-1 md:grid-cols-[1fr_56px_1fr] items-stretch gap-3 md:gap-0"
         >
-          {/* Solo card */}
+          {/* Card A — Your track */}
           <div
             className="rounded-[22px] flex flex-col gap-4 cursor-default"
             style={{
@@ -77,135 +81,110 @@ export default function SquadMindsetReveal() {
               border: '1px solid rgba(240,237,230,0.10)',
               padding: '40px 36px 36px',
               backdropFilter: 'blur(14px)',
-              transition: 'transform 0.3s ease, border-color 0.3s ease, background 0.3s ease',
+              transition: 'transform 0.3s ease, border-color 0.3s ease',
             }}
-            onMouseEnter={e => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.transform = 'translateY(-4px)';
-              el.style.borderColor = 'rgba(240,237,230,0.22)';
-              el.style.background = 'rgba(6,10,6,0.62)';
-            }}
-            onMouseLeave={e => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.transform = 'translateY(0)';
-              el.style.borderColor = 'rgba(240,237,230,0.10)';
-              el.style.background = 'rgba(6,10,6,0.52)';
-            }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.borderColor = 'rgba(240,237,230,0.22)'; }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(0)'; el.style.borderColor = 'rgba(240,237,230,0.10)'; }}
           >
-            <div className="text-[10px] font-black uppercase tracking-[2.5px]" style={{ color: 'rgba(240,237,230,0.30)' }}>
-              Solo release
+            <div className="text-[10px] font-black uppercase tracking-[2.5px]" style={{ color: 'rgba(240,237,230,0.40)' }}>
+              Your track — day one
             </div>
 
             <div
               className="font-black leading-none"
-              style={{ fontSize: 'clamp(72px, 9vw, 108px)', color: 'rgba(240,237,230,0.18)', letterSpacing: '-5px' }}
-            >
-              1
-            </div>
-
-            <div className="text-sm leading-relaxed" style={{ color: 'rgba(240,237,230,0.38)' }}>
-              track pushed per purchase.<br />One drop. Lost in the ocean.
-            </div>
-
-            {/* What you deal with solo */}
-            <div className="mt-2 flex flex-col gap-2">
-              {[
-                'Only your own audience sees it',
-                'Chart impact dies within days',
-                'Thousands in ads to replicate any traction',
-                'No network. No second wave.',
-              ].map((line, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="mt-[6px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'rgba(240,237,230,0.18)' }} />
-                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(240,237,230,0.30)' }}>{line}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-auto pt-4 flex gap-1.5 flex-wrap">
-              <div className="w-[18px] h-[18px] rounded-[3px]" style={{ background: 'rgba(240,237,230,0.14)' }} />
-            </div>
-          </div>
-
-          {/* VS divider */}
-          <div className="flex flex-row md:flex-col items-center justify-center gap-3 md:gap-2 py-3 md:py-0 px-0 md:px-3">
-            <div className="flex-1 md:flex-none h-px md:h-12 w-full md:w-px bg-gradient-to-r md:bg-gradient-to-b from-transparent via-[#060A06]/40 to-transparent" />
-            <span
-              style={{
-                fontSize: '11px',
-                fontWeight: 800,
-                letterSpacing: '2px',
-                color: 'rgba(6,10,6,0.45)',
-                textTransform: 'uppercase',
-                opacity: inView ? 1 : 0,
-                transition: 'opacity 0.6s ease',
-                transitionDelay: '500ms',
-                flexShrink: 0,
-              }}
-            >
-              vs
-            </span>
-            <div className="flex-1 md:flex-none h-px md:h-12 w-full md:w-px bg-gradient-to-r md:bg-gradient-to-b from-transparent via-[#060A06]/40 to-transparent" />
-          </div>
-
-          {/* VA card */}
-          <div
-            className="rounded-[22px] flex flex-col gap-4 cursor-default"
-            style={{
-              background: 'rgba(6,10,6,0.68)',
-              border: '1.5px solid #22C55E',
-              padding: '40px 36px 36px',
-              backdropFilter: 'blur(14px)',
-              boxShadow: '0 0 64px rgba(34,197,94,0.20), inset 0 1px 0 rgba(34,197,94,0.12)',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-            }}
-            onMouseEnter={e => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.transform = 'translateY(-4px)';
-              el.style.boxShadow = '0 8px 80px rgba(34,197,94,0.32), inset 0 1px 0 rgba(34,197,94,0.18)';
-            }}
-            onMouseLeave={e => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.transform = 'translateY(0)';
-              el.style.boxShadow = '0 0 64px rgba(34,197,94,0.20), inset 0 1px 0 rgba(34,197,94,0.12)';
-            }}
-          >
-            <div className="text-[10px] font-black uppercase tracking-[2.5px] text-[#22C55E]">
-              Mustache Gang World Cup 2026
-            </div>
-
-            <div
-              className="font-black leading-none"
-              style={{
-                fontSize: 'clamp(72px, 9vw, 108px)',
-                color: '#22C55E',
-                letterSpacing: '-5px',
-                textShadow: '0 0 48px rgba(34,197,94,0.30)',
-              }}
+              style={{ fontSize: 'clamp(72px, 9vw, 108px)', color: '#22C55E', letterSpacing: '-5px', textShadow: '0 0 48px rgba(34,197,94,0.25)' }}
             >
               30
             </div>
 
             <div className="text-sm leading-relaxed text-[#F0EDE6]">
-              tracks pushed per purchase.<br />Thirty tracks. One coordinated climb.
+              unique sales on your track<br />before you reach a single fan.
             </div>
 
-            {/* What you get with the VA */}
-            <div className="mt-2 flex flex-col gap-2">
+            <div className="mt-1 flex flex-col gap-2">
               {[
-                '30 audiences activated on launch day',
-                'Chart momentum compounds across the squad',
-                'Organic second wave as the album peaks',
-                'Network that stays long after the charts',
+                'All 30 co-artists buy the album on launch day',
+                'Each purchase credits your track immediately',
+                'You start with momentum — not from zero',
+                'Then your own audience adds on top',
               ].map((line, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <span className="mt-[6px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'rgba(34,197,94,0.60)' }} />
-                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(240,237,230,0.65)' }}>{line}</p>
+                  <span className="mt-[6px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'rgba(34,197,94,0.55)' }} />
+                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(240,237,230,0.55)' }}>{line}</p>
                 </div>
               ))}
             </div>
 
-            {/* Animated dot grid */}
+            <div className="mt-auto pt-4 flex gap-[5px] flex-wrap">
+              {Array.from({ length: 30 }).map((_, i) => (
+                <div key={i} style={{ width: '18px', height: '18px', borderRadius: '3px', background: '#22C55E', opacity: 0.45 }} />
+              ))}
+            </div>
+          </div>
+
+          {/* Plus connector */}
+          <div className="flex flex-row md:flex-col items-center justify-center gap-3 md:gap-2 py-3 md:py-0 px-0 md:px-3">
+            <div className="flex-1 md:flex-none h-px md:h-12 w-full md:w-px bg-gradient-to-r md:bg-gradient-to-b from-transparent via-[#060A06]/40 to-transparent" />
+            <span
+              style={{
+                fontSize: '22px',
+                fontWeight: 900,
+                color: 'rgba(245,200,66,0.80)',
+                opacity: inView ? 1 : 0,
+                transition: 'opacity 0.6s ease',
+                transitionDelay: '500ms',
+                flexShrink: 0,
+                lineHeight: 1,
+              }}
+            >
+              +
+            </span>
+            <div className="flex-1 md:flex-none h-px md:h-12 w-full md:w-px bg-gradient-to-r md:bg-gradient-to-b from-transparent via-[#060A06]/40 to-transparent" />
+          </div>
+
+          {/* Card B — The album */}
+          <div
+            className="rounded-[22px] flex flex-col gap-4 cursor-default"
+            style={{
+              background: 'rgba(6,10,6,0.68)',
+              border: '1.5px solid #F5C842',
+              padding: '40px 36px 36px',
+              backdropFilter: 'blur(14px)',
+              boxShadow: '0 0 64px rgba(245,200,66,0.15), inset 0 1px 0 rgba(245,200,66,0.10)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+            }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 8px 80px rgba(245,200,66,0.25), inset 0 1px 0 rgba(245,200,66,0.15)'; }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(0)'; el.style.boxShadow = '0 0 64px rgba(245,200,66,0.15), inset 0 1px 0 rgba(245,200,66,0.10)'; }}
+          >
+            <div className="text-[10px] font-black uppercase tracking-[2.5px]" style={{ color: '#F5C842' }}>
+              The album — collective push
+            </div>
+
+            <div
+              className="font-black leading-none"
+              style={{ fontSize: 'clamp(72px, 9vw, 108px)', color: '#F5C842', letterSpacing: '-5px', textShadow: '0 0 48px rgba(245,200,66,0.25)' }}
+            >
+              900
+            </div>
+
+            <div className="text-sm leading-relaxed text-[#F0EDE6]">
+              unique album sales when every artist<br />activates their audience.
+            </div>
+
+            <div className="mt-1 flex flex-col gap-2">
+              {[
+                '30 artists × 30 fans each = 900 album sales',
+                'Every sale credits all 30 tracks simultaneously',
+                'The chart gets hit from 30 directions at once',
+                'Momentum that no solo release can replicate',
+              ].map((line, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <span className="mt-[6px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'rgba(245,200,66,0.60)' }} />
+                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(240,237,230,0.55)' }}>{line}</p>
+                </div>
+              ))}
+            </div>
+
             <div className="mt-auto pt-4 flex gap-[5px] flex-wrap">
               {Array.from({ length: 30 }).map((_, i) => (
                 <div
@@ -214,7 +193,7 @@ export default function SquadMindsetReveal() {
                     width: '18px',
                     height: '18px',
                     borderRadius: '3px',
-                    background: '#22C55E',
+                    background: '#F5C842',
                     opacity: inView ? (0.4 + (i % 3) * 0.20) : 0,
                     transform: inView ? 'scale(1)' : 'scale(0.4)',
                     transition: 'opacity 0.4s ease, transform 0.4s ease',
