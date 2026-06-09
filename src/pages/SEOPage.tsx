@@ -7,6 +7,7 @@ import SEOReviewSection from '../components/sections/SEOReviewSection';
 import ChatSemrushSection from '../components/sections/ChatSemrushSection';
 import ExtraPushSection from '../components/sections/ExtraPushSection';
 import CTASection from '../components/sections/CTASection';
+import ArtistsSection from '../components/sections/ArtistsSection';
 import FAQSection from '../components/sections/FAQSection';
 
 export default function SEOPage() {
@@ -39,7 +40,10 @@ export default function SEOPage() {
         {/* 8 — CTA */}
         <CTASection />
 
-        {/* 9 — FAQ (last) */}
+        {/* 9 — Artists who participated */}
+        <ArtistsSection />
+
+        {/* 10 — FAQ (last) */}
         <FAQSection />
       </main>
     </div>
