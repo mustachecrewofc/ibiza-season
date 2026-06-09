@@ -168,7 +168,7 @@ export default function SquadMindsetReveal() {
             </div>
 
             <div className="text-sm leading-relaxed text-[#F0EDE6]">
-              track sales from 30 album<br />purchases on day one.
+              track sales from 30 albums<br />purchased on day one.
             </div>
 
             <div className="mt-1 flex flex-col gap-2">
