@@ -83,7 +83,7 @@ export default function IntroductionSection() {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative py-24 md:py-40 overflow-hidden"
+      className="relative pt-16 pb-24 md:pt-20 md:pb-32 overflow-hidden"
     >
       {/* Subtle glow top */}
       <div
