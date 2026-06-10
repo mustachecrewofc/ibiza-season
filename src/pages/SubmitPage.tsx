@@ -141,9 +141,6 @@ export default function SubmitPage() {
           <Link to="/">
             <img src={logoWhite} alt="Mustache Crew" className="h-10 w-auto invert" />
           </Link>
-          <span className="text-xs font-medium text-[#728A72] border border-[#182B18] rounded-full px-3 py-1.5">
-            🌍 Free submission
-          </span>
         </div>
       </div>
 
@@ -155,10 +152,10 @@ export default function SubmitPage() {
             Submit your track.
           </h1>
           <p className="text-[#728A72] text-base max-w-[520px] leading-relaxed">
-            Free to submit. We review within 7 days. €299 only upon acceptance — no cost if not selected.
+            We review every submission within 7 days.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            {['Free to submit', 'All genres', 'Reply in 7 days', 'Submit by July 10, 2026'].map(t => (
+            {['All genres', 'Reply in 7 days', 'Submit by July 10, 2026'].map(t => (
               <span key={t} className="text-xs font-medium px-3 py-1.5 rounded-full bg-[#0C140C] border border-[#182B18] text-[#728A72]">{t}</span>
             ))}
           </div>
@@ -241,9 +238,6 @@ export default function SubmitPage() {
                 </>
               ) : 'Submit My Track →'}
             </button>
-            <p className="text-xs text-[#728A72]">
-              Free to submit · €299 only upon acceptance
-            </p>
           </div>
         </form>
       </div>
