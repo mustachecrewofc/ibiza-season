@@ -77,14 +77,15 @@ export default function SquadMindsetReveal() {
           <div
             className="rounded-[22px] flex flex-col gap-4 cursor-default"
             style={{
-              background: 'rgba(6,10,6,0.52)',
-              border: '1px solid rgba(240,237,230,0.10)',
+              background: 'rgba(6,10,6,0.78)',
+              border: '1.5px solid #22C55E',
               padding: '40px 36px 36px',
               backdropFilter: 'blur(14px)',
-              transition: 'transform 0.3s ease, border-color 0.3s ease',
+              boxShadow: '0 0 64px rgba(34,197,94,0.15), inset 0 1px 0 rgba(34,197,94,0.10)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.borderColor = 'rgba(240,237,230,0.22)'; }}
-            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(0)'; el.style.borderColor = 'rgba(240,237,230,0.10)'; }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 8px 80px rgba(34,197,94,0.25), inset 0 1px 0 rgba(34,197,94,0.15)'; }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(0)'; el.style.boxShadow = '0 0 64px rgba(34,197,94,0.15), inset 0 1px 0 rgba(34,197,94,0.10)'; }}
           >
             <div className="text-[10px] font-black uppercase tracking-[2.5px]" style={{ color: 'rgba(240,237,230,0.40)' }}>
               Your track — day one

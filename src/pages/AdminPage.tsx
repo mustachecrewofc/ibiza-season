@@ -322,7 +322,6 @@ export default function AdminPage() {
   const [statusFilter, setStatusFilter] = useState<SubmissionStatus | 'all'>('all');
   const [selectedSub, setSelectedSub] = useState<Submission | null>(null);
   const [paymentSub, setPaymentSub] = useState<Submission | null>(null);
-  const [missionFullModal, setMissionFullModal] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState<Submission | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -352,17 +351,13 @@ export default function AdminPage() {
   }
 
   async function changeStatus(sub: Submission, newStatus: SubmissionStatus) {
-    const approvedCount = subs.filter(s => s.status === 'approved').length;
-    if (newStatus === 'approved' && sub.status !== 'approved' && approvedCount >= MISSION_SLOTS) {
-      setMissionFullModal(true); return;
-    }
     const { data } = await supabase.from('submissions').update({ status: newStatus }).eq('id', sub.id).select().single();
     if (data) updateLocal(data as Submission);
   }
 
   async function changePaymentStatus(sub: Submission, newStatus: PaymentStatus) {
     const update: Partial<Submission> = { payment_status: newStatus };
-    if (newStatus === 'requested' && !sub.payment_requested_at) update.payment_requested_at = new Date().toISOString();
+    if ((newStatus === 'first_contact' || newStatus === 'recall') && !sub.payment_requested_at) update.payment_requested_at = new Date().toISOString();
     if (newStatus === 'paid') {
       update.payment_paid_at = new Date().toISOString();
       if (!sub.payment_requested_at) update.payment_requested_at = new Date().toISOString();
@@ -396,7 +391,9 @@ export default function AdminPage() {
 
   // Payment metrics
   const pmNot = subs.filter(s => s.payment_status === 'not_charged').length;
-  const pmReq = subs.filter(s => s.payment_status === 'requested').length;
+  const pmFirstContact = subs.filter(s => s.payment_status === 'first_contact').length;
+  const pmRecall = subs.filter(s => s.payment_status === 'recall').length;
+  const pmDeclined = subs.filter(s => s.payment_status === 'declined').length;
   const pmPaid = subs.filter(s => s.payment_status === 'paid').length;
   const approvedSubs = subs.filter(s => s.status === 'approved');
 
@@ -414,12 +411,12 @@ export default function AdminPage() {
 
           {/* Mission capacity */}
           <div className="flex items-center gap-2 bg-[#0C140C] border border-[#182B18] rounded-full px-4 py-1.5">
-            <span className="text-xs text-[#728A72]">Mission capacity</span>
-            <span className={`text-sm font-black tabular-nums ${approvedCount >= MISSION_SLOTS ? 'text-red-400' : 'text-[#22C55E]'}`}>
+            <span className="text-xs text-[#728A72]">Approved</span>
+            <span className={`text-sm font-black tabular-nums ${approvedCount > MISSION_SLOTS ? 'text-[#F5C842]' : 'text-[#22C55E]'}`}>
               {approvedCount}/{MISSION_SLOTS}
             </span>
             <div className="w-16 h-1.5 bg-[#182B18] rounded-full overflow-hidden">
-              <div className="h-full bg-[#22C55E] rounded-full transition-all" style={{ width: `${(approvedCount / MISSION_SLOTS) * 100}%` }} />
+              <div className={`h-full rounded-full transition-all ${approvedCount > MISSION_SLOTS ? 'bg-[#F5C842]' : 'bg-[#22C55E]'}`} style={{ width: `${Math.min((approvedCount / MISSION_SLOTS) * 100, 100)}%` }} />
             </div>
           </div>
 
@@ -442,8 +439,8 @@ export default function AdminPage() {
                 tab === t ? 'bg-[#182B18] text-[#F0EDE6]' : 'text-[#728A72] hover:text-[#F0EDE6]'
               }`}>
               {t === 'pipeline' ? 'Pipeline' : 'Payments'}
-              {t === 'payments' && pmReq > 0 && (
-                <span className="ml-2 bg-[#F5C842] text-[#060612] text-xs font-black px-1.5 py-0.5 rounded-full">{pmReq}</span>
+              {t === 'payments' && (pmFirstContact + pmRecall) > 0 && (
+                <span className="ml-2 bg-[#F5C842] text-[#060612] text-xs font-black px-1.5 py-0.5 rounded-full">{pmFirstContact + pmRecall}</span>
               )}
             </button>
           ))}
@@ -555,12 +552,13 @@ export default function AdminPage() {
         {tab === 'payments' && (
           <>
             {/* Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
               {[
-                { label: 'Not Charged', value: pmNot, color: '#728A72' },
-                { label: 'Requested',   value: pmReq, color: '#F5C842' },
-                { label: 'Paid',        value: pmPaid, color: '#22C55E' },
-                { label: 'Pending Payment', value: pmReq, color: '#F5C842' },
+                { label: 'Not Contacted', value: pmNot, color: '#728A72' },
+                { label: 'First Contact', value: pmFirstContact, color: '#F5C842' },
+                { label: 'Recall',        value: pmRecall, color: '#3B82F6' },
+                { label: 'Declined',      value: pmDeclined, color: '#EF4444' },
+                { label: 'Paid',          value: pmPaid, color: '#22C55E' },
               ].map(m => (
                 <div key={m.label} className="bg-[#0C140C] border border-[#182B18] rounded-xl px-4 py-4">
                   <p className="text-2xl font-black" style={{ color: m.color }}>{m.value}</p>
@@ -596,15 +594,43 @@ export default function AdminPage() {
                         <td className="px-4 py-3">
                           <div className="flex gap-2">
                             {sub.payment_status === 'not_charged' && (
-                              <button onClick={() => changePaymentStatus(sub, 'requested')}
+                              <button onClick={() => changePaymentStatus(sub, 'first_contact')}
                                 className="h-7 px-2.5 rounded-lg bg-[#F5C842]/15 text-[#F5C842] text-xs font-semibold hover:bg-[#F5C842]/25 transition-colors">
-                                Request
+                                First contact
                               </button>
                             )}
-                            {sub.payment_status === 'requested' && (
-                              <button onClick={() => changePaymentStatus(sub, 'paid')}
-                                className="h-7 px-2.5 rounded-lg bg-[#22C55E]/15 text-[#22C55E] text-xs font-semibold hover:bg-[#22C55E]/25 transition-colors">
-                                Paid ✓
+                            {sub.payment_status === 'first_contact' && (
+                              <>
+                                <button onClick={() => changePaymentStatus(sub, 'recall')}
+                                  className="h-7 px-2.5 rounded-lg bg-[#3B82F6]/15 text-[#3B82F6] text-xs font-semibold hover:bg-[#3B82F6]/25 transition-colors">
+                                  Recall
+                                </button>
+                                <button onClick={() => changePaymentStatus(sub, 'paid')}
+                                  className="h-7 px-2.5 rounded-lg bg-[#22C55E]/15 text-[#22C55E] text-xs font-semibold hover:bg-[#22C55E]/25 transition-colors">
+                                  Paid ✓
+                                </button>
+                                <button onClick={() => changePaymentStatus(sub, 'declined')}
+                                  className="h-7 px-2.5 rounded-lg bg-red-500/15 text-red-400 text-xs font-semibold hover:bg-red-500/25 transition-colors">
+                                  Declined
+                                </button>
+                              </>
+                            )}
+                            {sub.payment_status === 'recall' && (
+                              <>
+                                <button onClick={() => changePaymentStatus(sub, 'paid')}
+                                  className="h-7 px-2.5 rounded-lg bg-[#22C55E]/15 text-[#22C55E] text-xs font-semibold hover:bg-[#22C55E]/25 transition-colors">
+                                  Paid ✓
+                                </button>
+                                <button onClick={() => changePaymentStatus(sub, 'declined')}
+                                  className="h-7 px-2.5 rounded-lg bg-red-500/15 text-red-400 text-xs font-semibold hover:bg-red-500/25 transition-colors">
+                                  Declined
+                                </button>
+                              </>
+                            )}
+                            {sub.payment_status === 'declined' && (
+                              <button onClick={() => changePaymentStatus(sub, 'recall')}
+                                className="h-7 px-2.5 rounded-lg bg-[#3B82F6]/15 text-[#3B82F6] text-xs font-semibold hover:bg-[#3B82F6]/25 transition-colors">
+                                Recall
                               </button>
                             )}
                             {sub.payment_status === 'paid' && (
@@ -627,23 +653,6 @@ export default function AdminPage() {
           </>
         )}
       </div>
-
-      {/* Mission full modal */}
-      {missionFullModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70" onClick={() => setMissionFullModal(false)}>
-          <div className="bg-[#0C140C] border border-red-500/30 rounded-2xl p-8 max-w-[380px] text-center" onClick={e => e.stopPropagation()}>
-            <p className="text-4xl mb-3">🎯</p>
-            <h3 className="font-black text-[#F0EDE6] text-xl mb-2">Mission Full</h3>
-            <p className="text-[#728A72] text-sm leading-relaxed mb-5">
-              All {MISSION_SLOTS} spots are approved. Reject or remove an artist to free up a slot.
-            </p>
-            <button onClick={() => setMissionFullModal(false)}
-              className="h-10 px-6 rounded-full bg-[#F5C842] text-[#060612] text-sm font-bold">
-              Got it
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* Delete confirmation modal */}
       {deleteConfirm && (

@@ -12,7 +12,7 @@ export const supabase = createClient(url || '', key || '');
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export type SubmissionStatus = 'pending' | 'in_review' | 'gold_list' | 'approved' | 'rejected';
-export type PaymentStatus = 'not_charged' | 'requested' | 'paid';
+export type PaymentStatus = 'not_charged' | 'first_contact' | 'recall' | 'declined' | 'paid';
 
 export interface AdminNote {
   text: string;
@@ -67,9 +67,11 @@ export const STATUS_META: Record<SubmissionStatus, { label: string; color: strin
 };
 
 export const PAYMENT_META: Record<PaymentStatus, { label: string; color: string }> = {
-  not_charged: { label: 'Not charged yet', color: '#728A72' },
-  requested:   { label: 'Payment requested', color: '#F5C842' },
-  paid:        { label: 'Paid',              color: '#22C55E' },
+  not_charged:  { label: 'Not contacted yet',  color: '#728A72' },
+  first_contact:{ label: 'First contact',      color: '#F5C842' },
+  recall:       { label: 'Recall',             color: '#3B82F6' },
+  declined:     { label: 'Declined to pay',    color: '#EF4444' },
+  paid:         { label: 'Paid',               color: '#22C55E' },
 };
 
 export const MISSION_SLOTS = 30;
