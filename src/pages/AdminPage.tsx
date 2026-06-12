@@ -577,7 +577,7 @@ export default function AdminPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-[#182B18]">
-                      {['Artist', 'Track', 'Payment Status', 'Amount', 'Quick Actions', 'Details'].map(h => (
+                      {['Artist', 'Track', 'Payment Status', 'Amount', 'Stage', 'Details'].map(h => (
                         <th key={h} className="px-4 py-3 text-left text-xs font-bold uppercase tracking-[1px] text-[#728A72]">{h}</th>
                       ))}
                     </tr>
@@ -592,51 +592,18 @@ export default function AdminPage() {
                           {sub.payment_amount ? `€${sub.payment_amount}` : '—'}
                         </td>
                         <td className="px-4 py-3">
-                          <div className="flex gap-2">
-                            {sub.payment_status === 'not_charged' && (
-                              <button onClick={() => changePaymentStatus(sub, 'first_contact')}
-                                className="h-7 px-2.5 rounded-lg bg-[#F5C842]/15 text-[#F5C842] text-xs font-semibold hover:bg-[#F5C842]/25 transition-colors">
-                                First contact
-                              </button>
-                            )}
-                            {sub.payment_status === 'first_contact' && (
-                              <>
-                                <button onClick={() => changePaymentStatus(sub, 'recall')}
-                                  className="h-7 px-2.5 rounded-lg bg-[#3B82F6]/15 text-[#3B82F6] text-xs font-semibold hover:bg-[#3B82F6]/25 transition-colors">
-                                  Recall
-                                </button>
-                                <button onClick={() => changePaymentStatus(sub, 'paid')}
-                                  className="h-7 px-2.5 rounded-lg bg-[#22C55E]/15 text-[#22C55E] text-xs font-semibold hover:bg-[#22C55E]/25 transition-colors">
-                                  Paid ✓
-                                </button>
-                                <button onClick={() => changePaymentStatus(sub, 'declined')}
-                                  className="h-7 px-2.5 rounded-lg bg-red-500/15 text-red-400 text-xs font-semibold hover:bg-red-500/25 transition-colors">
-                                  Declined
-                                </button>
-                              </>
-                            )}
-                            {sub.payment_status === 'recall' && (
-                              <>
-                                <button onClick={() => changePaymentStatus(sub, 'paid')}
-                                  className="h-7 px-2.5 rounded-lg bg-[#22C55E]/15 text-[#22C55E] text-xs font-semibold hover:bg-[#22C55E]/25 transition-colors">
-                                  Paid ✓
-                                </button>
-                                <button onClick={() => changePaymentStatus(sub, 'declined')}
-                                  className="h-7 px-2.5 rounded-lg bg-red-500/15 text-red-400 text-xs font-semibold hover:bg-red-500/25 transition-colors">
-                                  Declined
-                                </button>
-                              </>
-                            )}
-                            {sub.payment_status === 'declined' && (
-                              <button onClick={() => changePaymentStatus(sub, 'recall')}
-                                className="h-7 px-2.5 rounded-lg bg-[#3B82F6]/15 text-[#3B82F6] text-xs font-semibold hover:bg-[#3B82F6]/25 transition-colors">
-                                Recall
-                              </button>
-                            )}
-                            {sub.payment_status === 'paid' && (
-                              <span className="text-[#22C55E] text-xs font-semibold">✓ Confirmed</span>
-                            )}
-                          </div>
+                          <select
+                            value={sub.payment_status}
+                            onChange={e => changePaymentStatus(sub, e.target.value as PaymentStatus)}
+                            className="bg-[#060A06] border border-[#182B18] rounded-lg px-2 py-1.5 text-xs font-semibold focus:outline-none focus:border-[#22C55E] cursor-pointer"
+                            style={{ color: PAYMENT_META[sub.payment_status].color }}
+                          >
+                            {(Object.keys(PAYMENT_META) as PaymentStatus[]).map(p => (
+                              <option key={p} value={p} style={{ color: PAYMENT_META[p].color, background: '#060A06' }}>
+                                {PAYMENT_META[p].label}
+                              </option>
+                            ))}
+                          </select>
                         </td>
                         <td className="px-4 py-3">
                           <button onClick={() => setPaymentSub(sub)}
