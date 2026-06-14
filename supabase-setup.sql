@@ -28,7 +28,7 @@ create table public.submissions (
 
   -- Payment
   payment_status text not null default 'not_charged'
-    check (payment_status in ('not_charged', 'requested', 'paid')),
+    check (payment_status in ('not_charged', 'first_contact', 'recall', 'declined', 'paid')),
   payment_requested_at timestamptz,
   payment_paid_at timestamptz,
   payment_method text,

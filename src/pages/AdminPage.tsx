@@ -480,7 +480,7 @@ export default function AdminPage() {
                   <thead>
                     <tr className="border-b border-[#182B18]">
                       {['Artist', 'Track', 'Email', 'Status', 'Submitted', 'Tracker', 'Actions'].map(h => (
-                        <th key={h} className="px-4 py-3 text-left text-xs font-bold uppercase tracking-[1px] text-[#728A72]">{h}</th>
+                        <th key={h} className="px-2 py-3 text-left text-xs font-bold uppercase tracking-[1px] text-[#728A72] whitespace-nowrap">{h}</th>
                       ))}
                     </tr>
                   </thead>
@@ -488,10 +488,10 @@ export default function AdminPage() {
                     {filtered.map(sub => (
                       <tr key={sub.id} className="border-b border-[#182B18] last:border-0 hover:bg-[#182B18]/30 transition-colors cursor-pointer"
                         onClick={() => setSelectedSub(sub)}>
-                        <td className="px-4 py-3 font-semibold text-[#F0EDE6]">{sub.artist_name}</td>
-                        <td className="px-4 py-3 text-[#728A72] max-w-[160px] truncate">{sub.track_name}</td>
-                        <td className="px-4 py-3 text-[#728A72] max-w-[180px] truncate hidden md:table-cell">{sub.email}</td>
-                        <td className="px-4 py-3">
+                        <td className="px-2 py-3 font-semibold text-[#F0EDE6] max-w-[120px] truncate">{sub.artist_name}</td>
+                        <td className="px-2 py-3 text-[#728A72] max-w-[120px] truncate">{sub.track_name}</td>
+                        <td className="px-2 py-3 text-[#728A72] max-w-[140px] truncate hidden xl:table-cell">{sub.email}</td>
+                        <td className="px-2 py-3">
                           <select
                             value={sub.status}
                             onClick={e => e.stopPropagation()}
@@ -503,22 +503,22 @@ export default function AdminPage() {
                             ))}
                           </select>
                         </td>
-                        <td className="px-4 py-3 text-[#728A72] text-xs hidden lg:table-cell whitespace-nowrap">
+                        <td className="px-2 py-3 text-[#728A72] text-xs hidden lg:table-cell whitespace-nowrap">
                           {new Date(sub.created_at).toLocaleDateString('en-GB')}
                         </td>
                         {/* Tracker link */}
-                        <td className="px-4 py-3" onClick={e => e.stopPropagation()}>
-                          <div className="flex items-center gap-1.5">
+                        <td className="px-2 py-3" onClick={e => e.stopPropagation()}>
+                          <div className="flex items-center gap-1">
                             <button
                               onClick={() => copyTrackerLink(sub)}
-                              className="h-7 px-2.5 flex items-center rounded-lg bg-[#182B18] text-[#728A72] text-xs hover:text-[#F5C842] transition-colors"
+                              className="h-7 w-7 flex items-center justify-center rounded-lg bg-[#182B18] text-[#728A72] text-xs hover:text-[#F5C842] transition-colors"
                               title="Copy tracker link"
                             >
-                              {copiedId === sub.id ? '✓ Copied' : '🔗 Copy'}
+                              {copiedId === sub.id ? '✓' : '🔗'}
                             </button>
                             <a
                               href={`/track?id=${sub.public_id}`} target="_blank" rel="noreferrer"
-                              className="h-7 px-2 flex items-center rounded-lg border border-[#182B18] text-[#728A72] text-xs hover:text-[#F0EDE6] transition-colors"
+                              className="h-7 w-7 flex items-center justify-center rounded-lg border border-[#182B18] text-[#728A72] text-xs hover:text-[#F0EDE6] transition-colors"
                               title="Open tracker"
                             >
                               ↗
@@ -526,28 +526,28 @@ export default function AdminPage() {
                           </div>
                         </td>
                         {/* Actions */}
-                        <td className="px-4 py-3" onClick={e => e.stopPropagation()}>
-                          <div className="flex items-center gap-2">
-                            <a href={sub.track_link} target="_blank" rel="noreferrer"
-                              className="h-7 px-2.5 flex items-center rounded-lg bg-[#182B18] text-[#22C55E] text-xs font-semibold hover:bg-[#22C55E]/10 transition-colors">
+                        <td className="px-2 py-3" onClick={e => e.stopPropagation()}>
+                          <div className="flex items-center gap-1.5">
+                            <a href={sub.track_link} target="_blank" rel="noreferrer" title="Open track"
+                              className="h-7 w-7 flex items-center justify-center rounded-lg bg-[#182B18] text-[#22C55E] text-xs font-semibold hover:bg-[#22C55E]/10 transition-colors">
                               ▶
                             </a>
-                            <button onClick={() => setSelectedSub(sub)}
-                              className="h-7 px-2.5 flex items-center rounded-lg border border-[#182B18] text-[#728A72] text-xs hover:text-[#F0EDE6] transition-colors">
-                              Details
+                            <button onClick={() => setSelectedSub(sub)} title="Details"
+                              className="h-7 w-7 flex items-center justify-center rounded-lg border border-[#182B18] text-[#728A72] text-xs hover:text-[#F0EDE6] transition-colors">
+                              i
                             </button>
                             {sub.payment_status === 'not_charged' ? (
                               <button onClick={() => approveAndMarkFirstContact(sub)}
-                                className="h-7 px-2.5 flex items-center rounded-lg bg-[#F5C842]/15 text-[#F5C842] text-xs font-semibold hover:bg-[#F5C842]/25 transition-colors whitespace-nowrap">
-                                Approve + 1st Contact
+                                className="h-7 px-2 flex items-center rounded-lg bg-[#F5C842]/15 text-[#F5C842] text-xs font-semibold hover:bg-[#F5C842]/25 transition-colors whitespace-nowrap">
+                                + Contact
                               </button>
                             ) : (
-                              <span className="h-7 px-2.5 flex items-center rounded-lg border border-[#182B18] text-[#728A72] text-xs whitespace-nowrap">
+                              <span className="h-7 px-2 flex items-center rounded-lg border border-[#182B18] text-[#728A72] text-xs whitespace-nowrap">
                                 {PAYMENT_META[sub.payment_status].label}
                               </span>
                             )}
-                            <button onClick={() => setDeleteConfirm(sub)}
-                              className="h-7 px-2.5 flex items-center rounded-lg border border-red-500/20 text-red-400/60 text-xs hover:text-red-400 hover:border-red-500/50 transition-colors">
+                            <button onClick={() => setDeleteConfirm(sub)} title="Delete"
+                              className="h-7 w-7 flex items-center justify-center rounded-lg border border-red-500/20 text-red-400/60 text-xs hover:text-red-400 hover:border-red-500/50 transition-colors">
                               🗑
                             </button>
                           </div>
