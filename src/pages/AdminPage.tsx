@@ -344,7 +344,8 @@ export default function AdminPage() {
   }
 
   async function changeStatus(sub: Submission, newStatus: SubmissionStatus) {
-    const { data } = await supabase.from('submissions').update({ status: newStatus }).eq('id', sub.id).select().single();
+    const { data, error } = await supabase.from('submissions').update({ status: newStatus }).eq('id', sub.id).select().single();
+    if (error) { console.error(error); alert(`Failed to update status: ${error.message}`); return; }
     if (data) updateLocal(data as Submission);
   }
 
@@ -356,14 +357,16 @@ export default function AdminPage() {
       if (!sub.payment_requested_at) update.payment_requested_at = new Date().toISOString();
     }
     if (newStatus === 'not_charged') { update.payment_requested_at = undefined; update.payment_paid_at = undefined; }
-    const { data } = await supabase.from('submissions').update(update).eq('id', sub.id).select().single();
+    const { data, error } = await supabase.from('submissions').update(update).eq('id', sub.id).select().single();
+    if (error) { console.error(error); alert(`Failed to update payment status: ${error.message}`); return; }
     if (data) updateLocal(data as Submission);
   }
 
   async function approveAndMarkFirstContact(sub: Submission) {
     const update: Partial<Submission> = { status: 'approved', payment_status: 'first_contact' };
     if (!sub.payment_requested_at) update.payment_requested_at = new Date().toISOString();
-    const { data } = await supabase.from('submissions').update(update).eq('id', sub.id).select().single();
+    const { data, error } = await supabase.from('submissions').update(update).eq('id', sub.id).select().single();
+    if (error) { console.error(error); alert(`Failed to approve + mark first contact: ${error.message}`); return; }
     if (data) updateLocal(data as Submission);
   }
 
@@ -472,7 +475,7 @@ export default function AdminPage() {
                 <p className="font-semibold">No submissions yet.</p>
               </div>
             ) : (
-              <div className="bg-[#0C140C] border border-[#182B18] rounded-2xl overflow-hidden">
+              <div className="bg-[#0C140C] border border-[#182B18] rounded-2xl overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-[#182B18]">
