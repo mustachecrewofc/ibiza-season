@@ -84,13 +84,6 @@ function StatusBadge({ status }: { status: SubmissionStatus }) {
   );
 }
 
-function PaymentBadge({ status }: { status: PaymentStatus }) {
-  const m = PAYMENT_META[status];
-  return (
-    <span className="text-xs font-semibold" style={{ color: m.color }}>{m.label}</span>
-  );
-}
-
 const inputCls = 'w-full bg-[#060A06] border border-[#182B18] rounded-xl px-3 py-2.5 text-sm text-[#F0EDE6] placeholder:text-[#728A72] focus:outline-none focus:border-[#22C55E] transition-colors';
 
 // ─── Submission detail modal ──────────────────────────────────────────────────
@@ -313,14 +306,12 @@ function PaymentModal({ sub, onClose, onUpdate }: {
 // ─── Main Admin Panel ─────────────────────────────────────────────────────────
 
 type Tab = 'pipeline' | 'payments';
-type PipelineView = 'list' | 'kanban';
 
 export default function AdminPage() {
   const [session, setSession] = useState<boolean | null>(null);
   const [subs, setSubs] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState<Tab>('pipeline');
-  const [pipelineView, setPipelineView] = useState<PipelineView>('kanban');
   const [statusFilter, setStatusFilter] = useState<SubmissionStatus | 'all'>('all');
   const [selectedSub, setSelectedSub] = useState<Submission | null>(null);
   const [paymentSub, setPaymentSub] = useState<Submission | null>(null);
@@ -451,28 +442,16 @@ export default function AdminPage() {
         {/* ─── PIPELINE TAB ─── */}
         {tab === 'pipeline' && (
           <>
-            {/* Status filter chips + view toggle */}
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-              <div className="flex flex-wrap gap-2">
-                <Chip active={statusFilter === 'all'} onClick={() => setStatusFilter('all')}>
-                  All <Count n={subs.length} />
+            {/* Status filter chips */}
+            <div className="flex flex-wrap gap-2 mb-5">
+              <Chip active={statusFilter === 'all'} onClick={() => setStatusFilter('all')}>
+                All <Count n={subs.length} />
+              </Chip>
+              {(Object.keys(STATUS_META) as SubmissionStatus[]).map(s => (
+                <Chip key={s} active={statusFilter === s} onClick={() => setStatusFilter(s)} color={STATUS_META[s].color}>
+                  {STATUS_META[s].label.split(' ')[0]} <Count n={subs.filter(x => x.status === s).length} />
                 </Chip>
-                {(Object.keys(STATUS_META) as SubmissionStatus[]).map(s => (
-                  <Chip key={s} active={statusFilter === s} onClick={() => setStatusFilter(s)} color={STATUS_META[s].color}>
-                    {STATUS_META[s].label.split(' ')[0]} <Count n={subs.filter(x => x.status === s).length} />
-                  </Chip>
-                ))}
-              </div>
-              <div className="flex gap-1 bg-[#0C140C] border border-[#182B18] rounded-lg p-1">
-                {(['kanban', 'list'] as PipelineView[]).map(v => (
-                  <button key={v} onClick={() => setPipelineView(v)}
-                    className={`px-3 py-1.5 rounded-md text-xs font-semibold capitalize transition-all ${
-                      pipelineView === v ? 'bg-[#182B18] text-[#F0EDE6]' : 'text-[#728A72] hover:text-[#F0EDE6]'
-                    }`}>
-                    {v === 'kanban' ? '▦ Kanban' : '☰ List'}
-                  </button>
-                ))}
-              </div>
+              ))}
             </div>
 
             {loading ? (
@@ -484,62 +463,6 @@ export default function AdminPage() {
               <div className="text-center py-16 text-[#728A72]">
                 <p className="text-4xl mb-3">📭</p>
                 <p className="font-semibold">No submissions yet.</p>
-              </div>
-            ) : pipelineView === 'kanban' ? (
-              <div className="flex gap-4 overflow-x-auto pb-2">
-                {(Object.keys(STATUS_META) as SubmissionStatus[]).map(col => {
-                  const colSubs = filtered.filter(s => s.status === col);
-                  const meta = STATUS_META[col];
-                  return (
-                    <div key={col} className="flex-shrink-0 w-[280px] flex flex-col">
-                      <div className="flex items-center gap-2 mb-3 px-1">
-                        <span className="w-2 h-2 rounded-full" style={{ background: meta.color }} />
-                        <p className="text-xs font-bold uppercase tracking-[1px] text-[#F0EDE6]">{meta.label}</p>
-                        <Count n={colSubs.length} />
-                      </div>
-                      <div className="flex flex-col gap-2 min-h-[60px]">
-                        {colSubs.length === 0 ? (
-                          <div className="border border-dashed border-[#182B18] rounded-xl py-6 text-center text-xs text-[#728A72]">Empty</div>
-                        ) : colSubs.map(sub => (
-                          <div key={sub.id}
-                            className="bg-[#0C140C] border border-[#182B18] rounded-xl p-3 cursor-pointer hover:border-[#728A72] transition-colors"
-                            onClick={() => setSelectedSub(sub)}
-                          >
-                            <p className="font-semibold text-sm text-[#F0EDE6] truncate">{sub.artist_name}</p>
-                            <p className="text-xs text-[#728A72] truncate mb-2">{sub.track_name}</p>
-
-                            {sub.status === 'approved' && (
-                              <span className="inline-block mb-2 text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ color: PAYMENT_META[sub.payment_status].color, background: `${PAYMENT_META[sub.payment_status].color}15` }}>
-                                {PAYMENT_META[sub.payment_status].label}
-                              </span>
-                            )}
-
-                            <div className="flex flex-wrap gap-1.5" onClick={e => e.stopPropagation()}>
-                              {sub.status !== 'approved' && (
-                                <button onClick={() => changeStatus(sub, 'approved')}
-                                  className="h-7 px-2.5 rounded-lg bg-[#22C55E]/15 text-[#22C55E] text-xs font-semibold hover:bg-[#22C55E]/25 transition-colors">
-                                  Approve ✓
-                                </button>
-                              )}
-                              {sub.status === 'approved' && sub.payment_status === 'not_charged' && (
-                                <button onClick={() => changePaymentStatus(sub, 'first_contact')}
-                                  className="h-7 px-2.5 rounded-lg bg-[#F5C842]/15 text-[#F5C842] text-xs font-semibold hover:bg-[#F5C842]/25 transition-colors">
-                                  First contact sent
-                                </button>
-                              )}
-                              {sub.status !== 'rejected' && (
-                                <button onClick={() => changeStatus(sub, 'rejected')}
-                                  className="h-7 px-2.5 rounded-lg border border-red-500/20 text-red-400/60 text-xs hover:text-red-400 hover:border-red-500/50 transition-colors">
-                                  Reject
-                                </button>
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
               </div>
             ) : (
               <div className="bg-[#0C140C] border border-[#182B18] rounded-2xl overflow-hidden">
@@ -603,6 +526,12 @@ export default function AdminPage() {
                               className="h-7 px-2.5 flex items-center rounded-lg border border-[#182B18] text-[#728A72] text-xs hover:text-[#F0EDE6] transition-colors">
                               Details
                             </button>
+                            {sub.status === 'approved' && sub.payment_status === 'not_charged' && (
+                              <button onClick={() => changePaymentStatus(sub, 'first_contact')}
+                                className="h-7 px-2.5 flex items-center rounded-lg bg-[#F5C842]/15 text-[#F5C842] text-xs font-semibold hover:bg-[#F5C842]/25 transition-colors">
+                                1st Contact Sent
+                              </button>
+                            )}
                             <button onClick={() => setDeleteConfirm(sub)}
                               className="h-7 px-2.5 flex items-center rounded-lg border border-red-500/20 text-red-400/60 text-xs hover:text-red-400 hover:border-red-500/50 transition-colors">
                               🗑
@@ -643,48 +572,52 @@ export default function AdminPage() {
                 <p>No approved artists yet.</p>
               </div>
             ) : (
-              <div className="bg-[#0C140C] border border-[#182B18] rounded-2xl overflow-hidden">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-[#182B18]">
-                      {['Artist', 'Track', 'Payment Status', 'Amount', 'Stage', 'Details'].map(h => (
-                        <th key={h} className="px-4 py-3 text-left text-xs font-bold uppercase tracking-[1px] text-[#728A72]">{h}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {approvedSubs.map(sub => (
-                      <tr key={sub.id} className="border-b border-[#182B18] last:border-0 hover:bg-[#182B18]/30 transition-colors">
-                        <td className="px-4 py-3 font-semibold text-[#F0EDE6]">{sub.artist_name}</td>
-                        <td className="px-4 py-3 text-[#728A72] max-w-[140px] truncate hidden md:table-cell">{sub.track_name}</td>
-                        <td className="px-4 py-3"><PaymentBadge status={sub.payment_status} /></td>
-                        <td className="px-4 py-3 text-[#F0EDE6] font-mono text-xs">
-                          {sub.payment_amount ? `€${sub.payment_amount}` : '—'}
-                        </td>
-                        <td className="px-4 py-3">
-                          <select
-                            value={sub.payment_status}
-                            onChange={e => changePaymentStatus(sub, e.target.value as PaymentStatus)}
-                            className="bg-[#060A06] border border-[#182B18] rounded-lg px-2 py-1.5 text-xs font-semibold focus:outline-none focus:border-[#22C55E] cursor-pointer"
-                            style={{ color: PAYMENT_META[sub.payment_status].color }}
+              <div className="flex gap-4 overflow-x-auto pb-2">
+                {(Object.keys(PAYMENT_META) as PaymentStatus[]).map(col => {
+                  const colSubs = approvedSubs.filter(s => s.payment_status === col);
+                  const meta = PAYMENT_META[col];
+                  return (
+                    <div key={col} className="flex-shrink-0 w-[280px] flex flex-col">
+                      <div className="flex items-center gap-2 mb-3 px-1">
+                        <span className="w-2 h-2 rounded-full" style={{ background: meta.color }} />
+                        <p className="text-xs font-bold uppercase tracking-[1px] text-[#F0EDE6]">{meta.label}</p>
+                        <Count n={colSubs.length} />
+                      </div>
+                      <div className="flex flex-col gap-2 min-h-[60px]">
+                        {colSubs.length === 0 ? (
+                          <div className="border border-dashed border-[#182B18] rounded-xl py-6 text-center text-xs text-[#728A72]">Empty</div>
+                        ) : colSubs.map(sub => (
+                          <div key={sub.id}
+                            className="bg-[#0C140C] border border-[#182B18] rounded-xl p-3 cursor-pointer hover:border-[#728A72] transition-colors"
+                            onClick={() => setPaymentSub(sub)}
                           >
-                            {(Object.keys(PAYMENT_META) as PaymentStatus[]).map(p => (
-                              <option key={p} value={p} style={{ color: PAYMENT_META[p].color, background: '#060A06' }}>
-                                {PAYMENT_META[p].label}
-                              </option>
-                            ))}
-                          </select>
-                        </td>
-                        <td className="px-4 py-3">
-                          <button onClick={() => setPaymentSub(sub)}
-                            className="h-7 px-2.5 rounded-lg border border-[#182B18] text-[#728A72] text-xs hover:text-[#F0EDE6] transition-colors">
-                            View
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                            <p className="font-semibold text-sm text-[#F0EDE6] truncate">{sub.artist_name}</p>
+                            <p className="text-xs text-[#728A72] truncate mb-2">{sub.track_name}</p>
+
+                            {sub.payment_amount ? (
+                              <p className="text-xs font-mono text-[#F0EDE6] mb-2">€{sub.payment_amount}</p>
+                            ) : null}
+
+                            <div onClick={e => e.stopPropagation()}>
+                              <select
+                                value={sub.payment_status}
+                                onChange={e => changePaymentStatus(sub, e.target.value as PaymentStatus)}
+                                className="w-full bg-[#060A06] border border-[#182B18] rounded-lg px-2 py-1.5 text-xs font-semibold focus:outline-none focus:border-[#22C55E] cursor-pointer"
+                                style={{ color: PAYMENT_META[sub.payment_status].color }}
+                              >
+                                {(Object.keys(PAYMENT_META) as PaymentStatus[]).map(p => (
+                                  <option key={p} value={p} style={{ color: PAYMENT_META[p].color, background: '#060A06' }}>
+                                    {PAYMENT_META[p].label}
+                                  </option>
+                                ))}
+                              </select>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </>
