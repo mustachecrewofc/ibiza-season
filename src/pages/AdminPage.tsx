@@ -260,11 +260,16 @@ function PaymentModal({ sub, onClose, onUpdate }: {
         <div className="flex items-center justify-between px-6 py-4 border-b border-[#182B18]">
           <div>
             <p className="font-bold text-[#F0EDE6]">{sub.artist_name}</p>
-            <p className="text-xs text-[#728A72]">Payment details</p>
+            <p className="text-xs text-[#728A72]">{sub.track_name} · {sub.email}</p>
           </div>
           <button onClick={onClose} className="text-[#728A72] hover:text-[#F0EDE6] text-xl leading-none">×</button>
         </div>
         <div className="p-6 space-y-4">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full" style={{ color: PAYMENT_META[sub.payment_status].color, background: `${PAYMENT_META[sub.payment_status].color}15` }}>
+              {PAYMENT_META[sub.payment_status].label}
+            </span>
+          </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="text-xs font-bold uppercase tracking-[1px] text-[#728A72] mb-1.5 block">Amount (€)</label>
@@ -294,7 +299,9 @@ function PaymentModal({ sub, onClose, onUpdate }: {
             </a>
           </div>
           <div className="bg-[#060A06] rounded-xl px-4 py-3 space-y-1.5 text-xs">
-            {sub.payment_requested_at && <p className="text-[#728A72]">Requested: <span className="text-[#F0EDE6]">{new Date(sub.payment_requested_at).toLocaleString()}</span></p>}
+            <p className="text-[#728A72]">Email: <span className="text-[#F0EDE6]">{sub.email}</span></p>
+            <p className="text-[#728A72]">Track: <span className="text-[#F0EDE6]">{sub.track_name}</span></p>
+            {sub.payment_requested_at && <p className="text-[#728A72]">First contact sent: <span className="text-[#F0EDE6]">{new Date(sub.payment_requested_at).toLocaleString()}</span></p>}
             {sub.payment_paid_at && <p className="text-[#728A72]">Paid: <span className="text-[#22C55E]">{new Date(sub.payment_paid_at).toLocaleString()}</span></p>}
           </div>
         </div>
@@ -396,6 +403,7 @@ export default function AdminPage() {
   const approvedSubs = subs.filter(s => s.status === 'approved');
   const pmNot = approvedSubs.filter(s => s.payment_status === 'not_charged').length;
   const pmFirstContact = approvedSubs.filter(s => s.payment_status === 'first_contact').length;
+  const pmInterested = approvedSubs.filter(s => s.payment_status === 'interested').length;
   const pmRecall = approvedSubs.filter(s => s.payment_status === 'recall').length;
   const pmDeclined = approvedSubs.filter(s => s.payment_status === 'declined').length;
   const pmPaid = approvedSubs.filter(s => s.payment_status === 'paid').length;
@@ -565,10 +573,11 @@ export default function AdminPage() {
         {tab === 'payments' && (
           <>
             {/* Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
               {[
                 { label: 'Not Contacted', value: pmNot, color: '#728A72' },
                 { label: 'First Contact', value: pmFirstContact, color: '#F5C842' },
+                { label: 'Interested',    value: pmInterested, color: '#A78BFA' },
                 { label: 'Recall',        value: pmRecall, color: '#3B82F6' },
                 { label: 'Declined',      value: pmDeclined, color: '#EF4444' },
                 { label: 'Paid',          value: pmPaid, color: '#22C55E' },
@@ -586,12 +595,12 @@ export default function AdminPage() {
                 <p>No approved artists yet.</p>
               </div>
             ) : (
-              <div className="flex gap-4 overflow-x-auto pb-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
                 {(Object.keys(PAYMENT_META) as PaymentStatus[]).map(col => {
                   const colSubs = approvedSubs.filter(s => s.payment_status === col);
                   const meta = PAYMENT_META[col];
                   return (
-                    <div key={col} className="flex-shrink-0 w-[280px] flex flex-col">
+                    <div key={col} className="flex flex-col min-w-0">
                       <div className="flex items-center gap-2 mb-3 px-1">
                         <span className="w-2 h-2 rounded-full" style={{ background: meta.color }} />
                         <p className="text-xs font-bold uppercase tracking-[1px] text-[#F0EDE6]">{meta.label}</p>

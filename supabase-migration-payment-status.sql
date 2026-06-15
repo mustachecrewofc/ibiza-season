@@ -8,4 +8,4 @@ alter table public.submissions
 
 alter table public.submissions
   add constraint submissions_payment_status_check
-  check (payment_status in ('not_charged', 'first_contact', 'recall', 'declined', 'paid'));
+  check (payment_status in ('not_charged', 'first_contact', 'interested', 'recall', 'declined', 'paid'));

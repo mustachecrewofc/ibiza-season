@@ -12,7 +12,7 @@ export const supabase = createClient(url || '', key || '');
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export type SubmissionStatus = 'pending' | 'in_review' | 'gold_list' | 'approved' | 'rejected';
-export type PaymentStatus = 'not_charged' | 'first_contact' | 'recall' | 'declined' | 'paid';
+export type PaymentStatus = 'not_charged' | 'first_contact' | 'interested' | 'recall' | 'declined' | 'paid';
 
 export interface AdminNote {
   text: string;
@@ -69,6 +69,7 @@ export const STATUS_META: Record<SubmissionStatus, { label: string; color: strin
 export const PAYMENT_META: Record<PaymentStatus, { label: string; color: string }> = {
   not_charged:  { label: 'Not contacted yet',  color: '#728A72' },
   first_contact:{ label: 'First contact',      color: '#F5C842' },
+  interested:   { label: 'Interested',         color: '#A78BFA' },
   recall:       { label: 'Recall',             color: '#3B82F6' },
   declined:     { label: 'Declined to pay',    color: '#EF4444' },
   paid:         { label: 'Paid',               color: '#22C55E' },
