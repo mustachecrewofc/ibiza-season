@@ -98,11 +98,13 @@ function startOfToday(): number {
 
 // ─── Saved reply templates ─────────────────────────────────────────────────────
 
-const MESSAGE_TEMPLATES: { key: string; label: string; build: (sub: Submission) => string }[] = [
+const TEMPLATES_STORAGE_KEY = 'va_message_templates_v1';
+
+const DEFAULT_TEMPLATES: { key: string; label: string; text: string }[] = [
   {
     key: 'first_contact',
     label: 'First Contact / Approval',
-    build: () => `Hi Artist,
+    text: `Hi Artist,
 
 We really enjoyed your track and feel it would be a great fit for our upcoming VA compilation.
 Like many producers, I'm sure one of your goals is to eventually reach the Beatport Top 100, so I wanted to quickly recap how this project works in case you'd like to move forward. This release is a coordinated effort. Everyone involved needs to do their part to maximize the results for the entire compilation.
@@ -133,7 +135,7 @@ Looking forward to hearing your thoughts.`,
   {
     key: 'recall',
     label: 'Recall',
-    build: () => `Hi Artist,
+    text: `Hi Artist,
 
 Hope you're doing well!
 
@@ -150,6 +152,33 @@ Let me know once it's done!
 Best,`,
   },
 ];
+
+function getStoredTemplates(): Record<string, string> {
+  try {
+    const raw = localStorage.getItem(TEMPLATES_STORAGE_KEY);
+    return raw ? JSON.parse(raw) as Record<string, string> : {};
+  } catch {
+    return {};
+  }
+}
+
+function getTemplateText(key: string): string {
+  const stored = getStoredTemplates();
+  if (stored[key] !== undefined) return stored[key];
+  return DEFAULT_TEMPLATES.find(t => t.key === key)?.text || '';
+}
+
+function setTemplateText(key: string, text: string) {
+  const stored = getStoredTemplates();
+  stored[key] = text;
+  localStorage.setItem(TEMPLATES_STORAGE_KEY, JSON.stringify(stored));
+}
+
+function resetTemplateText(key: string) {
+  const stored = getStoredTemplates();
+  delete stored[key];
+  localStorage.setItem(TEMPLATES_STORAGE_KEY, JSON.stringify(stored));
+}
 
 async function copyToClipboard(text: string) {
   await navigator.clipboard.writeText(text);
@@ -313,11 +342,28 @@ function PaymentModal({ sub, onClose, onUpdate }: {
   const [declineReason, setDeclineReason] = useState(sub.decline_reason || '');
   const [saving, setSaving] = useState(false);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
+  const [editingKey, setEditingKey] = useState<string | null>(null);
+  const [editingText, setEditingText] = useState('');
 
   async function handleCopy(key: string, text: string) {
     await copyToClipboard(text);
     setCopiedKey(key);
     setTimeout(() => setCopiedKey(null), 1500);
+  }
+
+  function startEditing(key: string) {
+    setEditingKey(key);
+    setEditingText(getTemplateText(key));
+  }
+
+  function saveTemplate(key: string) {
+    setTemplateText(key, editingText);
+    setEditingKey(null);
+  }
+
+  function resetTemplate(key: string) {
+    resetTemplateText(key);
+    setEditingText(getTemplateText(key));
   }
 
   async function save() {
@@ -355,16 +401,43 @@ function PaymentModal({ sub, onClose, onUpdate }: {
           </div>
           <div>
             <label className="text-xs font-bold uppercase tracking-[1px] text-[#728A72] mb-1.5 block">Saved replies</label>
-            <div className="flex flex-wrap gap-2">
-              {MESSAGE_TEMPLATES.map(t => (
-                <button key={t.key} type="button" onClick={() => handleCopy(t.key, t.build(sub))}
-                  className={`h-9 px-3.5 rounded-full border text-xs font-semibold transition-colors cursor-pointer ${
-                    copiedKey === t.key
-                      ? 'bg-[#22C55E]/15 border-[#22C55E] text-[#22C55E]'
-                      : 'border-[#182B18] text-[#728A72] hover:text-[#F0EDE6] hover:border-[#728A72]'
-                  }`}>
-                  {copiedKey === t.key ? 'Copied ✓' : `Copy ${t.label}`}
-                </button>
+            <div className="flex flex-col gap-2">
+              {DEFAULT_TEMPLATES.map(t => (
+                <div key={t.key}>
+                  <div className="flex flex-wrap gap-2">
+                    <button type="button" onClick={() => handleCopy(t.key, getTemplateText(t.key))}
+                      className={`h-9 px-3.5 rounded-full border text-xs font-semibold transition-colors cursor-pointer ${
+                        copiedKey === t.key
+                          ? 'bg-[#22C55E]/15 border-[#22C55E] text-[#22C55E]'
+                          : 'border-[#182B18] text-[#728A72] hover:text-[#F0EDE6] hover:border-[#728A72]'
+                      }`}>
+                      {copiedKey === t.key ? 'Copied ✓' : `Copy ${t.label}`}
+                    </button>
+                    <button type="button"
+                      onClick={() => editingKey === t.key ? setEditingKey(null) : startEditing(t.key)}
+                      className="h-9 px-3.5 rounded-full border border-[#182B18] text-[#728A72] text-xs font-semibold hover:text-[#F0EDE6] hover:border-[#728A72] transition-colors cursor-pointer">
+                      {editingKey === t.key ? 'Cancel' : 'Edit'}
+                    </button>
+                  </div>
+                  {editingKey === t.key && (
+                    <div className="mt-2 bg-[#060A06] rounded-xl p-3">
+                      <textarea
+                        className={`${inputCls} resize-none`} rows={10}
+                        value={editingText} onChange={e => setEditingText(e.target.value)}
+                      />
+                      <div className="flex gap-2 mt-2">
+                        <button type="button" onClick={() => saveTemplate(t.key)}
+                          className="h-8 px-3 rounded-full bg-[#22C55E]/15 border border-[#22C55E] text-[#22C55E] text-xs font-bold hover:bg-[#22C55E]/25 transition-colors cursor-pointer">
+                          Save template
+                        </button>
+                        <button type="button" onClick={() => resetTemplate(t.key)}
+                          className="h-8 px-3 rounded-full border border-[#182B18] text-[#728A72] text-xs font-semibold hover:text-[#F0EDE6] hover:border-[#728A72] transition-colors cursor-pointer">
+                          Reset to default
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
