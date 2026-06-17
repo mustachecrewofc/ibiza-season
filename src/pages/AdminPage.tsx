@@ -495,6 +495,12 @@ function PaymentModal({ sub, onClose, onUpdate }: {
                 {' '}<span className="text-[#728A72]">({daysAgo(sub.payment_requested_at)}d ago)</span>
               </p>
             )}
+            {sub.last_recall_at && (
+              <p className="text-[#728A72]">
+                Last recall: <span className="text-[#3B82F6]">{new Date(sub.last_recall_at).toLocaleString()}</span>
+                {' '}<span className="text-[#728A72]">({daysAgo(sub.last_recall_at)}d ago) · #{sub.recall_count || 1}</span>
+              </p>
+            )}
             {sub.payment_paid_at && <p className="text-[#728A72]">Paid: <span className="text-[#22C55E]">{new Date(sub.payment_paid_at).toLocaleString()}</span></p>}
           </div>
         </div>
@@ -551,12 +557,17 @@ export default function AdminPage() {
 
   async function changePaymentStatus(sub: Submission, newStatus: PaymentStatus) {
     const update: Partial<Submission> = { payment_status: newStatus };
-    if ((newStatus === 'first_contact' || newStatus === 'recall') && !sub.payment_requested_at) update.payment_requested_at = new Date().toISOString();
+    if (newStatus === 'first_contact' && !sub.payment_requested_at) update.payment_requested_at = new Date().toISOString();
+    if (newStatus === 'recall') {
+      update.last_recall_at = new Date().toISOString();
+      update.recall_count = (sub.recall_count || 0) + 1;
+      if (!sub.payment_requested_at) update.payment_requested_at = new Date().toISOString();
+    }
     if (newStatus === 'paid') {
       update.payment_paid_at = new Date().toISOString();
       if (!sub.payment_requested_at) update.payment_requested_at = new Date().toISOString();
     }
-    if (newStatus === 'not_charged') { update.payment_requested_at = undefined; update.payment_paid_at = undefined; }
+    if (newStatus === 'not_charged') { update.payment_requested_at = undefined; update.payment_paid_at = undefined; update.last_recall_at = undefined; update.recall_count = undefined; }
     const { data, error } = await supabase.from('submissions').update(update).eq('id', sub.id).select().single();
     if (error) { console.error(error); alert(`Failed to update payment status: ${error.message}`); return; }
     if (data) updateLocal(data as Submission);
@@ -853,7 +864,17 @@ export default function AdminPage() {
                             )}
 
                             <div className="flex flex-wrap gap-1.5 mb-2">
-                              {sub.payment_requested_at && !['paid', 'declined'].includes(sub.payment_status) && (() => {
+                              {sub.payment_status === 'recall' && sub.last_recall_at && (() => {
+                                const d = daysAgo(sub.last_recall_at);
+                                const count = sub.recall_count || 1;
+                                const stale = d >= 3;
+                                return (
+                                  <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${stale ? 'bg-red-500/15 text-red-400' : d === 0 ? 'bg-[#3B82F6]/15 text-[#3B82F6]' : 'bg-[#182B18] text-[#728A72]'}`}>
+                                    Recall #{count} · {d === 0 ? 'today' : `${d}d ago`}
+                                  </span>
+                                );
+                              })()}
+                              {sub.payment_status !== 'recall' && sub.payment_requested_at && !['paid', 'declined'].includes(sub.payment_status) && (() => {
                                 const d = daysAgo(sub.payment_requested_at);
                                 const stale = d >= 3;
                                 return (

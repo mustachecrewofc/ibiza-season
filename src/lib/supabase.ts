@@ -43,6 +43,8 @@ export interface Submission {
   next_action_at?: string;
   next_action_note?: string;
   decline_reason?: string;
+  last_recall_at?: string;
+  recall_count?: number;
   created_at: string;
   updated_at: string;
 }
