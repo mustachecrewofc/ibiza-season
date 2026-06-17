@@ -134,20 +134,44 @@ Looking forward to hearing your thoughts.`,
   },
   {
     key: 'recall',
-    label: 'Recall',
+    label: 'Recall #1',
     text: `Hi Artist,
 
 Hope you're doing well!
 
 I need your confirmation regarding your participation in the VA World Cup, as we're already closing the final spots.
 
-To secure your participation and continue with the next steps, please complete the registration here:
+Let me know if you're still interested!
 
-https://labelsyst3m.com/f/9p9cmrvi
+Best,`,
+  },
+  {
+    key: 'recall_2',
+    label: 'Recall #2',
+    text: `Subject: Saving your spot — VA World Cup
 
-Please make sure to select VA World Cup during the registration.
+Hey,
 
-Let me know once it's done!
+I've been holding a spot for your track in the VA World Cup because honestly, after listening to it, I think it fits exactly what we're building here.
+
+This isn't just another compilation. We're talking about a coordinated campaign with 30 artists pushing the same release on the same day — the kind of momentum that gets a release into the Beatport Top 10 on launch day. That's visibility that most artists spend years trying to get.
+
+We're closing the final spots this week and I wanted to make sure you had the chance to be part of it before we move on.
+
+If you're interested, just reply to this email and I'll walk you through the next steps.
+
+Best,`,
+  },
+  {
+    key: 'recall_3',
+    label: 'Recall #3',
+    text: `Hey,
+
+Last chance — we're finalizing the lineup today.
+
+I've kept your spot open but I need to know if you're in.
+
+Just reply with a yes and I'll take care of the rest.
 
 Best,`,
   },
