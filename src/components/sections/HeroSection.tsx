@@ -56,20 +56,46 @@ export default function HeroSection() {
           </div>
 
           {/* Title */}
-          <h1
-            className="font-black text-[#F7F3EB] leading-[0.88] -tracking-[2px] md:-tracking-[3.5px]"
-            style={{ fontSize: 'clamp(38px, 5.5vw, 82px)' }}
-          >
-            MUSTACHE GANG<br />
-            <span
-              className="font-handwritten text-transparent bg-clip-text inline-block"
-              style={{
-                backgroundImage: 'linear-gradient(135deg, #D9B45B 0%, #E78E6D 45%, #49B7C9 100%)',
-                fontSize: 'clamp(56px, 8.5vw, 128px)',
-                lineHeight: 1.05,
-                paddingBottom: '0.12em',
-              }}
-            >WORLD CUP VA</span>
+          <h1 className="flex flex-col items-center text-center font-black text-[#F7F3EB] leading-[0.88] -tracking-[2px] md:-tracking-[3.5px]">
+            <span style={{ fontSize: 'clamp(38px, 5.5vw, 82px)' }}>MUSTACHE GANG</span>
+
+            {/* Handwritten star + brush underline */}
+            <span className="relative inline-block">
+              <span
+                className="font-handwritten text-transparent bg-clip-text inline-block"
+                style={{
+                  backgroundImage: 'linear-gradient(115deg, #D9B45B 0%, #E78E6D 46%, #49B7C9 96%)',
+                  fontSize: 'clamp(72px, 12vw, 168px)',
+                  lineHeight: 1.3,
+                  paddingTop: '0.34em',
+                  paddingBottom: '0.34em',
+                  marginTop: '-0.42em',
+                  marginBottom: '-0.34em',
+                  filter: 'drop-shadow(0 10px 34px rgba(217,180,91,0.20))',
+                }}
+              >
+                Ibiza Season
+              </span>
+              {/* subtle brush stroke */}
+              <svg
+                className="absolute left-1/2 -translate-x-1/2 pointer-events-none"
+                style={{ bottom: '0.34em', width: '92%', height: '22px' }}
+                viewBox="0 0 400 22" preserveAspectRatio="none" fill="none" aria-hidden="true"
+              >
+                <path
+                  d="M6 13 C 90 4, 150 18, 220 9 S 350 5, 394 12"
+                  stroke="url(#brush)" strokeWidth="3.5" strokeLinecap="round"
+                  style={{ opacity: 0.7 }}
+                />
+                <defs>
+                  <linearGradient id="brush" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#D9B45B" />
+                    <stop offset="50%" stopColor="#E78E6D" />
+                    <stop offset="100%" stopColor="#49B7C9" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
           </h1>
 
           {/* Video — inline embed */}
