@@ -2,36 +2,36 @@ import { useInView } from '../../hooks/useInView';
 
 const IconCommunity = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#F5C842"/>
-    <circle cx="9" cy="7" r="4" stroke="#F5C842"/>
-    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="#F5C842"/>
-    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#F5C842"/>
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#D9B45B"/>
+    <circle cx="9" cy="7" r="4" stroke="#D9B45B"/>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="#D9B45B"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#D9B45B"/>
   </svg>
 );
 
 const IconChart = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke="#22C55E"/>
-    <polyline points="17 6 23 6 23 12" stroke="#22C55E"/>
+    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke="#49B7C9"/>
+    <polyline points="17 6 23 6 23 12" stroke="#49B7C9"/>
   </svg>
 );
 
 const IconNetwork = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="5" r="2" stroke="#22C55E"/>
-    <circle cx="5" cy="19" r="2" stroke="#22C55E"/>
-    <circle cx="19" cy="19" r="2" stroke="#22C55E"/>
-    <path d="M12 7v4M10 17l-3.5-4M14 17l3.5-4" stroke="#22C55E"/>
+    <circle cx="12" cy="5" r="2" stroke="#49B7C9"/>
+    <circle cx="5" cy="19" r="2" stroke="#49B7C9"/>
+    <circle cx="19" cy="19" r="2" stroke="#49B7C9"/>
+    <path d="M12 7v4M10 17l-3.5-4M14 17l3.5-4" stroke="#49B7C9"/>
   </svg>
 );
 
 const IconTrophy = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M6 9H4a2 2 0 0 1-2-2V5h4" stroke="#F5C842"/>
-    <path d="M18 9h2a2 2 0 0 0 2-2V5h-4" stroke="#F5C842"/>
-    <path d="M6 2h12v7a6 6 0 0 1-12 0V2z" stroke="#F5C842"/>
-    <path d="M12 15v4" stroke="#F5C842"/>
-    <path d="M8 21h8" stroke="#F5C842"/>
+    <path d="M6 9H4a2 2 0 0 1-2-2V5h4" stroke="#D9B45B"/>
+    <path d="M18 9h2a2 2 0 0 0 2-2V5h-4" stroke="#D9B45B"/>
+    <path d="M6 2h12v7a6 6 0 0 1-12 0V2z" stroke="#D9B45B"/>
+    <path d="M12 15v4" stroke="#D9B45B"/>
+    <path d="M8 21h8" stroke="#D9B45B"/>
   </svg>
 );
 
@@ -48,7 +48,7 @@ export default function IntroductionSection() {
   const pillars = [
     {
       num: '01',
-      accent: '#F5C842',
+      accent: '#D9B45B',
       accentRgb: '245,200,66',
       icon: <IconCommunity />,
       title: 'A community, not just a compilation',
@@ -56,7 +56,7 @@ export default function IntroductionSection() {
     },
     {
       num: '02',
-      accent: '#22C55E',
+      accent: '#49B7C9',
       accentRgb: '34,197,94',
       icon: <IconChart />,
       title: 'One purchase. Thirty tracks pushed.',
@@ -64,7 +64,7 @@ export default function IntroductionSection() {
     },
     {
       num: '03',
-      accent: '#22C55E',
+      accent: '#49B7C9',
       accentRgb: '34,197,94',
       icon: <IconNetwork />,
       title: 'Day one: 30 sales on your track. 900 on the album.',
@@ -72,7 +72,7 @@ export default function IntroductionSection() {
     },
     {
       num: '04',
-      accent: '#F5C842',
+      accent: '#D9B45B',
       accentRgb: '245,200,66',
       icon: <IconTrophy />,
       title: "We've done this. Three times.",
@@ -90,7 +90,7 @@ export default function IntroductionSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 70% 45% at 50% 0%, rgba(34,197,94,0.07) 0%, transparent 65%)',
+            'radial-gradient(ellipse 70% 45% at 50% 0%, rgba(73,183,201,0.07) 0%, transparent 65%)',
         }}
         aria-hidden="true"
       />
@@ -107,8 +107,8 @@ export default function IntroductionSection() {
           }}
           className="mb-7 flex items-center gap-3"
         >
-          <div className="h-px w-6 bg-[#22C55E]" />
-          <span className="text-[10px] font-black uppercase tracking-[3px] text-[#22C55E]">
+          <div className="h-px w-6 bg-[#49B7C9]" />
+          <span className="text-[10px] font-black uppercase tracking-[3px] text-[#49B7C9]">
             The mission
           </span>
         </div>
@@ -116,21 +116,21 @@ export default function IntroductionSection() {
         {/* Main headline */}
         <h2
           style={{ ...anim(80, 36), fontSize: 'clamp(44px, 7.5vw, 108px)' }}
-          className="font-black text-[#F0EDE6] leading-[0.92] -tracking-[3px] max-w-[960px]"
+          className="font-black text-[#F7F3EB] leading-[0.92] -tracking-[3px] max-w-[960px]"
         >
           30 artists.<br />
           One goal:<br />
-          <span className="text-[#22C55E]">Beatport Top 100.</span>
+          <span className="text-[#49B7C9]">Beatport Top 100.</span>
         </h2>
 
         {/* Manifesto paragraph */}
         <p
           style={anim(220)}
-          className="mt-8 text-[#F0EDE6]/65 text-base md:text-xl leading-relaxed max-w-[660px]"
+          className="mt-8 text-[#F7F3EB]/65 text-base md:text-xl leading-relaxed max-w-[660px]"
         >
           Mustache Gang World Cup is not a random compilation.
           It is a{' '}
-          <span className="text-[#F0EDE6]/90 font-semibold">coordinated community of artists</span>{' '}
+          <span className="text-[#F7F3EB]/90 font-semibold">coordinated community of artists</span>{' '}
           who all want the same thing — and who know that the only way to get there is together.
           You bring your audience. Everyone does the same.
           And on July 17, the chart gets flooded.
@@ -146,20 +146,20 @@ export default function IntroductionSection() {
               key={i}
               className="rounded-2xl overflow-hidden cursor-default"
               style={{
-                background: 'rgba(12,20,12,0.70)',
-                border: '1px solid rgba(240,237,230,0.07)',
+                background: 'rgba(19,41,74,0.70)',
+                border: '1px solid rgba(247,243,235,0.07)',
                 backdropFilter: 'blur(12px)',
                 transition: 'border-color 0.3s ease, background 0.3s ease',
               }}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLElement;
                 el.style.borderColor = `rgba(${p.accentRgb},0.22)`;
-                el.style.background = 'rgba(12,20,12,0.90)';
+                el.style.background = 'rgba(19,41,74,0.90)';
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.borderColor = 'rgba(240,237,230,0.07)';
-                el.style.background = 'rgba(12,20,12,0.70)';
+                el.style.borderColor = 'rgba(247,243,235,0.07)';
+                el.style.background = 'rgba(19,41,74,0.70)';
               }}
             >
               <div className="flex">
@@ -186,10 +186,10 @@ export default function IntroductionSection() {
                       {p.num}
                     </span>
                   </div>
-                  <p className="font-bold text-[#F0EDE6] text-sm md:text-[15px] mb-2 leading-snug">
+                  <p className="font-bold text-[#F7F3EB] text-sm md:text-[15px] mb-2 leading-snug">
                     {p.title}
                   </p>
-                  <p className="text-[#F0EDE6]/50 text-sm leading-relaxed">{p.body}</p>
+                  <p className="text-[#F7F3EB]/50 text-sm leading-relaxed">{p.body}</p>
                 </div>
               </div>
             </div>
@@ -200,8 +200,8 @@ export default function IntroductionSection() {
         <div style={anim(620, 16)} className="mt-10">
           <div
             style={{
-              background: 'rgba(240,237,230,0.02)',
-              border: '1px solid rgba(240,237,230,0.07)',
+              background: 'rgba(247,243,235,0.02)',
+              border: '1px solid rgba(247,243,235,0.07)',
               borderRadius: '16px',
               padding: '28px 32px',
               textAlign: 'center',
@@ -209,26 +209,26 @@ export default function IntroductionSection() {
           >
             <p
               className="font-black uppercase tracking-[2.5px] mb-2"
-              style={{ color: 'rgba(240,237,230,0.30)', fontSize: '11px' }}
+              style={{ color: 'rgba(247,243,235,0.30)', fontSize: '11px' }}
             >
               Alone, your release disappears into the noise.
             </p>
             <p
-              className="font-black text-[#F0EDE6] leading-tight -tracking-[1px]"
+              className="font-black text-[#F7F3EB] leading-tight -tracking-[1px]"
               style={{ fontSize: 'clamp(20px, 3vw, 32px)' }}
             >
               Together, we make the charts{' '}
-              <span className="text-[#22C55E]">impossible to ignore.</span>
+              <span className="text-[#49B7C9]">impossible to ignore.</span>
             </p>
           </div>
         </div>
 
         {/* Bridge to Solo vs VA */}
         <div style={anim(720, 8)} className="mt-10 flex flex-col items-center gap-2">
-          <p className="text-sm text-[#728A72] text-center">
+          <p className="text-sm text-[#9DB2C7] text-center">
             See exactly what changes when you stop releasing alone.
           </p>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#728A72" strokeWidth="2" strokeLinecap="round" className="opacity-50">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9DB2C7" strokeWidth="2" strokeLinecap="round" className="opacity-50">
             <polyline points="6 9 12 15 18 9"/>
           </svg>
         </div>

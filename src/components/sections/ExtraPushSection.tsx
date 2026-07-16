@@ -92,7 +92,7 @@ function Lightbox({
       aria-label={current.alt}
     >
       {/* Frosted backdrop */}
-      <div className="absolute inset-0 bg-[#04060A]/80 backdrop-blur-2xl" />
+      <div className="absolute inset-0 bg-[#081426]/80 backdrop-blur-2xl" />
 
       {/* Close button */}
       <button
@@ -158,7 +158,7 @@ function Lightbox({
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#FF1B8D]/40 bg-[#FF1B8D]/10 px-5 py-2.5 text-sm font-medium text-[#FF1B8D] transition-all duration-200 hover:border-[#FF1B8D]/70 hover:bg-[#FF1B8D]/20 hover:text-white"
+            className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#E78E6D]/40 bg-[#E78E6D]/10 px-5 py-2.5 text-sm font-medium text-[#E78E6D] transition-all duration-200 hover:border-[#E78E6D]/70 hover:bg-[#E78E6D]/20 hover:text-white"
           >
             Read full article
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -188,7 +188,7 @@ function Lightbox({
 const pushItems = [
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D9B45B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>
       </svg>
@@ -198,7 +198,7 @@ const pushItems = [
     label: 'Email marketing',
     description:
       'The album is sent directly to 2,000+ contacts — a key industry network built over 8 years in the electronic music scene. Real people. Real reach.',
-    color: '#F5C842',
+    color: '#D9B45B',
   },
   {
     logo: (
@@ -221,7 +221,7 @@ const pushItems = [
     label: 'Press article',
     description:
       'A dedicated article published on EDM Army — one of the biggest EDM portals — promoting the album and putting your name in front of a global dance music audience.',
-    color: '#FF1B8D',
+    color: '#E78E6D',
     statHref: 'https://edmarmy.com/',
     media: {
       type: 'stack' as const,
@@ -241,14 +241,14 @@ export default function ExtraPushSection() {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative bg-[#060A06] overflow-hidden py-24 md:py-32"
+      className="relative bg-[#0E223D] overflow-hidden py-24 md:py-32"
     >
       {/* Subtle grid */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage:
-            'linear-gradient(#F5C842 1px, transparent 1px), linear-gradient(90deg, #F5C842 1px, transparent 1px)',
+            'linear-gradient(#D9B45B 1px, transparent 1px), linear-gradient(90deg, #D9B45B 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }}
         aria-hidden="true"
@@ -259,28 +259,28 @@ export default function ExtraPushSection() {
         className="absolute bottom-0 right-0 w-[500px] h-[300px] pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 70% 60% at 100% 100%, rgba(34,197,94,0.08) 0%, transparent 70%)',
+            'radial-gradient(ellipse 70% 60% at 100% 100%, rgba(73,183,201,0.08) 0%, transparent 70%)',
         }}
         aria-hidden="true"
       />
 
       <div className="container relative z-10">
         <div
-          className={`mb-4 text-xs font-bold uppercase tracking-[2px] text-[#728A72] transition-all duration-500 ${inView ? 'opacity-100' : 'opacity-0'}`}
+          className={`mb-4 text-xs font-bold uppercase tracking-[2px] text-[#9DB2C7] transition-all duration-500 ${inView ? 'opacity-100' : 'opacity-0'}`}
         >
           Extra push
         </div>
 
         <h2
-          className={`font-black text-[#F0EDE6] leading-[1.05] -tracking-[2px] transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+          className={`font-black text-[#F7F3EB] leading-[1.05] -tracking-[2px] transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
           style={{ fontSize: 'clamp(36px, 5.5vw, 72px)' }}
         >
           Beyond the<br />
-          <span className="text-[#22C55E]">Beatport push.</span>
+          <span className="text-[#49B7C9]">Beatport push.</span>
         </h2>
 
         <p
-          className={`mt-6 max-w-[540px] text-[#728A72] text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100' : 'opacity-0'}`}
+          className={`mt-6 max-w-[540px] text-[#9DB2C7] text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100' : 'opacity-0'}`}
         >
           Your release doesn't stop at the chart push. It gets promoted across multiple channels at the same time.
         </p>
@@ -291,7 +291,7 @@ export default function ExtraPushSection() {
           {pushItems.map((item, i) => (
             <div
               key={i}
-              className="rounded-2xl border border-[#182B18] bg-[#0C140C] p-7 flex flex-col gap-5"
+              className="rounded-2xl border border-[#1E3A5F] bg-[#13294A] p-7 flex flex-col gap-5"
               style={{ boxShadow: `0 0 50px -12px ${item.color}18` }}
             >
               {/* Icon / Brand logo */}
@@ -300,7 +300,7 @@ export default function ExtraPushSection() {
                   {item.logo}
                 </div>
               ) : (
-                <div className="w-11 h-11 rounded-xl bg-[#060A06] border border-[#182B18] flex items-center justify-center flex-shrink-0">
+                <div className="w-11 h-11 rounded-xl bg-[#0E223D] border border-[#1E3A5F] flex items-center justify-center flex-shrink-0">
                   {item.icon}
                 </div>
               )}
@@ -312,7 +312,7 @@ export default function ExtraPushSection() {
                     href={item.statHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-black leading-none inline-block underline decoration-2 underline-offset-4 decoration-[#FF1B8D]/40 hover:decoration-[#FF1B8D] transition-colors duration-200 cursor-pointer"
+                    className="font-black leading-none inline-block underline decoration-2 underline-offset-4 decoration-[#E78E6D]/40 hover:decoration-[#E78E6D] transition-colors duration-200 cursor-pointer"
                     style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', color: item.color, letterSpacing: '-1.5px' }}
                   >
                     {item.stat}
@@ -325,17 +325,17 @@ export default function ExtraPushSection() {
                     {item.stat}
                   </div>
                 )}
-                <div className="text-[10px] font-bold uppercase tracking-[1.5px] text-[#728A72] mt-1">
+                <div className="text-[10px] font-bold uppercase tracking-[1.5px] text-[#9DB2C7] mt-1">
                   {item.statLabel}
                 </div>
               </div>
 
               {/* Description */}
-              <div className="border-t border-[#182B18] pt-5">
+              <div className="border-t border-[#1E3A5F] pt-5">
                 <p className="text-xs font-bold uppercase tracking-[1.5px] mb-2" style={{ color: item.color }}>
                   {item.label}
                 </p>
-                <p className="text-[#728A72] text-sm leading-relaxed">{item.description}</p>
+                <p className="text-[#9DB2C7] text-sm leading-relaxed">{item.description}</p>
 
                 {item.media?.type === 'stack' && (
                   <PressStack
@@ -361,10 +361,10 @@ export default function ExtraPushSection() {
         <div
           className={`mt-14 flex flex-col items-center gap-2 transition-all duration-700 delay-400 ${inView ? 'opacity-100' : 'opacity-0'}`}
         >
-          <p className="text-sm text-[#728A72] text-center">
+          <p className="text-sm text-[#9DB2C7] text-center">
             30 spots. July 17. Your name on the list.
           </p>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#728A72" strokeWidth="2" strokeLinecap="round" className="opacity-50">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9DB2C7" strokeWidth="2" strokeLinecap="round" className="opacity-50">
             <polyline points="6 9 12 15 18 9"/>
           </svg>
         </div>

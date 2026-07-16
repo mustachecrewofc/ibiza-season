@@ -25,17 +25,17 @@ const doubled = [...items, ...items];
 
 export default function MarqueeSection() {
   return (
-    <div className="relative overflow-hidden bg-[#060A06] select-none py-0">
+    <div className="relative overflow-hidden bg-[#0E223D] select-none py-0">
       {/* Top border glow */}
-      <div className="h-px w-full" style={{ background: 'linear-gradient(to right, transparent, rgba(34,197,94,0.35) 30%, rgba(34,197,94,0.35) 70%, transparent)' }} />
+      <div className="h-px w-full" style={{ background: 'linear-gradient(to right, transparent, rgba(73,183,201,0.35) 30%, rgba(73,183,201,0.35) 70%, transparent)' }} />
 
       <div className="py-3.5">
         {/* Left fade */}
         <div className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(to right, #060A06, transparent)' }} />
+          style={{ background: 'linear-gradient(to right, #0E223D, transparent)' }} />
         {/* Right fade */}
         <div className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(to left, #060A06, transparent)' }} />
+          style={{ background: 'linear-gradient(to left, #0E223D, transparent)' }} />
 
         <div
           className="flex gap-0 whitespace-nowrap"
@@ -43,17 +43,17 @@ export default function MarqueeSection() {
         >
           {doubled.map((item, i) => (
             <span key={i} className="inline-flex items-center gap-2.5 px-5">
-              <span className="text-[#22C55E] font-black text-sm tabular-nums">{item.pos}</span>
-              <span className="text-[#F0EDE6]/70 text-sm font-medium">{item.label}</span>
-              <span className="text-[#728A72] text-xs">· {item.album}</span>
-              <span className="text-[#182B18] mx-1">◆</span>
+              <span className="text-[#49B7C9] font-black text-sm tabular-nums">{item.pos}</span>
+              <span className="text-[#F7F3EB]/70 text-sm font-medium">{item.label}</span>
+              <span className="text-[#9DB2C7] text-xs">· {item.album}</span>
+              <span className="text-[#1E3A5F] mx-1">◆</span>
             </span>
           ))}
         </div>
       </div>
 
       {/* Bottom border glow */}
-      <div className="h-px w-full" style={{ background: 'linear-gradient(to right, transparent, rgba(34,197,94,0.35) 30%, rgba(34,197,94,0.35) 70%, transparent)' }} />
+      <div className="h-px w-full" style={{ background: 'linear-gradient(to right, transparent, rgba(73,183,201,0.35) 30%, rgba(73,183,201,0.35) 70%, transparent)' }} />
     </div>
   );
 }

@@ -20,7 +20,7 @@ export default function SquadMindsetReveal() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 110% 85% at 50% 15%, #F5C842 0%, #4ADE80 20%, #22C55E 50%, #166534 78%, #060A06 100%)',
+            'radial-gradient(ellipse 110% 85% at 50% 15%, #D9B45B 0%, #E78E6D 24%, #49B7C9 52%, #1B4574 78%, #0E223D 100%)',
         }}
         aria-hidden="true"
       />
@@ -34,7 +34,7 @@ export default function SquadMindsetReveal() {
       />
       <div
         className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, transparent, #060A06)' }}
+        style={{ background: 'linear-gradient(to bottom, transparent, #0E223D)' }}
         aria-hidden="true"
       />
 
@@ -49,8 +49,8 @@ export default function SquadMindsetReveal() {
           }}
           className="mb-6 flex items-center gap-3"
         >
-          <div className="h-px w-6 bg-[#14532d]" />
-          <span className="text-[10px] font-black uppercase tracking-[3px] text-[#14532d]">
+          <div className="h-px w-6 bg-[#153A63]" />
+          <span className="text-[10px] font-black uppercase tracking-[3px] text-[#153A63]">
             The math
           </span>
         </div>
@@ -58,13 +58,13 @@ export default function SquadMindsetReveal() {
         {/* Headline */}
         <h2
           style={{ ...anim(80, 28), fontSize: 'clamp(40px, 6vw, 86px)' }}
-          className="font-black text-[#060A06] leading-[0.92] -tracking-[3px] max-w-[780px]"
+          className="font-black text-[#0E223D] leading-[0.92] -tracking-[3px] max-w-[780px]"
         >
           Your part. Their part.<br />
-          <span style={{ color: '#F0EDE6' }}>Everyone wins together.</span>
+          <span style={{ color: '#F7F3EB' }}>Everyone wins together.</span>
         </h2>
 
-        <p style={{ ...anim(180), color: 'rgba(6,10,6,0.55)', fontSize: '17px', lineHeight: 1.6, maxWidth: '560px', marginTop: '20px' }}>
+        <p style={{ ...anim(180), color: 'rgba(14,34,61,0.55)', fontSize: '17px', lineHeight: 1.6, maxWidth: '560px', marginTop: '20px' }}>
           When every artist buys the album and activates their audience, the numbers compound fast. Here is what that looks like.
         </p>
 
@@ -77,28 +77,28 @@ export default function SquadMindsetReveal() {
           <div
             className="rounded-[22px] flex flex-col gap-4 cursor-default"
             style={{
-              background: 'rgba(6,10,6,0.78)',
-              border: '1.5px solid #22C55E',
+              background: 'rgba(14,34,61,0.78)',
+              border: '1.5px solid #49B7C9',
               padding: '40px 36px 36px',
               backdropFilter: 'blur(14px)',
-              boxShadow: '0 0 64px rgba(34,197,94,0.15), inset 0 1px 0 rgba(34,197,94,0.10)',
+              boxShadow: '0 0 64px rgba(73,183,201,0.15), inset 0 1px 0 rgba(73,183,201,0.10)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 8px 80px rgba(34,197,94,0.25), inset 0 1px 0 rgba(34,197,94,0.15)'; }}
-            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(0)'; el.style.boxShadow = '0 0 64px rgba(34,197,94,0.15), inset 0 1px 0 rgba(34,197,94,0.10)'; }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 8px 80px rgba(73,183,201,0.25), inset 0 1px 0 rgba(73,183,201,0.15)'; }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(0)'; el.style.boxShadow = '0 0 64px rgba(73,183,201,0.15), inset 0 1px 0 rgba(73,183,201,0.10)'; }}
           >
-            <div className="text-[10px] font-black uppercase tracking-[2.5px]" style={{ color: 'rgba(240,237,230,0.40)' }}>
+            <div className="text-[10px] font-black uppercase tracking-[2.5px]" style={{ color: 'rgba(247,243,235,0.40)' }}>
               Your track — day one
             </div>
 
             <div
               className="font-black leading-none"
-              style={{ fontSize: 'clamp(72px, 9vw, 108px)', color: '#22C55E', letterSpacing: '-5px', textShadow: '0 0 48px rgba(34,197,94,0.25)' }}
+              style={{ fontSize: 'clamp(72px, 9vw, 108px)', color: '#49B7C9', letterSpacing: '-5px', textShadow: '0 0 48px rgba(73,183,201,0.25)' }}
             >
               30
             </div>
 
-            <div className="text-sm leading-relaxed text-[#F0EDE6]">
+            <div className="text-sm leading-relaxed text-[#F7F3EB]">
               unique sales on your track<br />before you reach a single fan.
             </div>
 
@@ -110,27 +110,27 @@ export default function SquadMindsetReveal() {
                 'Then your own audience adds on top',
               ].map((line, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <span className="mt-[6px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'rgba(34,197,94,0.55)' }} />
-                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(240,237,230,0.55)' }}>{line}</p>
+                  <span className="mt-[6px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'rgba(73,183,201,0.55)' }} />
+                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(247,243,235,0.55)' }}>{line}</p>
                 </div>
               ))}
             </div>
 
             <div className="mt-auto pt-4 flex gap-[5px] flex-wrap">
               {Array.from({ length: 30 }).map((_, i) => (
-                <div key={i} style={{ width: '18px', height: '18px', borderRadius: '3px', background: '#22C55E', opacity: 0.45 }} />
+                <div key={i} style={{ width: '18px', height: '18px', borderRadius: '3px', background: '#49B7C9', opacity: 0.45 }} />
               ))}
             </div>
           </div>
 
           {/* Plus connector */}
           <div className="flex flex-row md:flex-col items-center justify-center gap-3 md:gap-2 py-3 md:py-0 px-0 md:px-3">
-            <div className="flex-1 md:flex-none h-px md:h-12 w-full md:w-px bg-gradient-to-r md:bg-gradient-to-b from-transparent via-[#060A06]/40 to-transparent" />
+            <div className="flex-1 md:flex-none h-px md:h-12 w-full md:w-px bg-gradient-to-r md:bg-gradient-to-b from-transparent via-[#0E223D]/40 to-transparent" />
             <span
               style={{
                 fontSize: '22px',
                 fontWeight: 900,
-                color: 'rgba(245,200,66,0.80)',
+                color: 'rgba(217,180,91,0.80)',
                 opacity: inView ? 1 : 0,
                 transition: 'opacity 0.6s ease',
                 transitionDelay: '500ms',
@@ -140,35 +140,35 @@ export default function SquadMindsetReveal() {
             >
               +
             </span>
-            <div className="flex-1 md:flex-none h-px md:h-12 w-full md:w-px bg-gradient-to-r md:bg-gradient-to-b from-transparent via-[#060A06]/40 to-transparent" />
+            <div className="flex-1 md:flex-none h-px md:h-12 w-full md:w-px bg-gradient-to-r md:bg-gradient-to-b from-transparent via-[#0E223D]/40 to-transparent" />
           </div>
 
           {/* Card B — The album */}
           <div
             className="rounded-[22px] flex flex-col gap-4 cursor-default"
             style={{
-              background: 'rgba(6,10,6,0.68)',
-              border: '1.5px solid #F5C842',
+              background: 'rgba(14,34,61,0.68)',
+              border: '1.5px solid #D9B45B',
               padding: '40px 36px 36px',
               backdropFilter: 'blur(14px)',
-              boxShadow: '0 0 64px rgba(245,200,66,0.15), inset 0 1px 0 rgba(245,200,66,0.10)',
+              boxShadow: '0 0 64px rgba(217,180,91,0.15), inset 0 1px 0 rgba(217,180,91,0.10)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 8px 80px rgba(245,200,66,0.25), inset 0 1px 0 rgba(245,200,66,0.15)'; }}
-            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(0)'; el.style.boxShadow = '0 0 64px rgba(245,200,66,0.15), inset 0 1px 0 rgba(245,200,66,0.10)'; }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.boxShadow = '0 8px 80px rgba(217,180,91,0.25), inset 0 1px 0 rgba(217,180,91,0.15)'; }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(0)'; el.style.boxShadow = '0 0 64px rgba(217,180,91,0.15), inset 0 1px 0 rgba(217,180,91,0.10)'; }}
           >
-            <div className="text-[10px] font-black uppercase tracking-[2.5px]" style={{ color: '#F5C842' }}>
+            <div className="text-[10px] font-black uppercase tracking-[2.5px]" style={{ color: '#D9B45B' }}>
               The album — track sales
             </div>
 
             <div
               className="font-black leading-none"
-              style={{ fontSize: 'clamp(72px, 9vw, 108px)', color: '#F5C842', letterSpacing: '-5px', textShadow: '0 0 48px rgba(245,200,66,0.25)' }}
+              style={{ fontSize: 'clamp(72px, 9vw, 108px)', color: '#D9B45B', letterSpacing: '-5px', textShadow: '0 0 48px rgba(217,180,91,0.25)' }}
             >
               900
             </div>
 
-            <div className="text-sm leading-relaxed text-[#F0EDE6]">
+            <div className="text-sm leading-relaxed text-[#F7F3EB]">
               track sales from 30 albums<br />purchased on day one.
             </div>
 
@@ -180,8 +180,8 @@ export default function SquadMindsetReveal() {
                 'And that is before a single fan buys in',
               ].map((line, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <span className="mt-[6px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'rgba(245,200,66,0.60)' }} />
-                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(240,237,230,0.55)' }}>{line}</p>
+                  <span className="mt-[6px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'rgba(217,180,91,0.60)' }} />
+                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(247,243,235,0.55)' }}>{line}</p>
                 </div>
               ))}
             </div>
@@ -194,7 +194,7 @@ export default function SquadMindsetReveal() {
                     width: '18px',
                     height: '18px',
                     borderRadius: '3px',
-                    background: '#F5C842',
+                    background: '#D9B45B',
                     opacity: inView ? (0.4 + (i % 3) * 0.20) : 0,
                     transform: inView ? 'scale(1)' : 'scale(0.4)',
                     transition: 'opacity 0.4s ease, transform 0.4s ease',
@@ -211,10 +211,10 @@ export default function SquadMindsetReveal() {
           style={{ ...anim(800, 8) }}
           className="mt-10 flex flex-col items-center gap-2 pb-2"
         >
-          <p className="text-sm text-[#F0EDE6]/30 text-center">
+          <p className="text-sm text-[#F7F3EB]/30 text-center">
             Don't take our word for it.
           </p>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(240,237,230,0.20)" strokeWidth="2" strokeLinecap="round">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(247,243,235,0.20)" strokeWidth="2" strokeLinecap="round">
             <polyline points="6 9 12 15 18 9"/>
           </svg>
         </div>
@@ -223,17 +223,17 @@ export default function SquadMindsetReveal() {
         <div
           style={{
             ...anim(700, 12),
-            background: 'rgba(6,10,6,0.50)',
-            border: '1px solid rgba(240,237,230,0.08)',
+            background: 'rgba(14,34,61,0.50)',
+            border: '1px solid rgba(247,243,235,0.08)',
           }}
           className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-5 rounded-2xl"
         >
-          <p className="font-semibold text-[#F0EDE6]/70 text-sm text-center sm:text-left">
+          <p className="font-semibold text-[#F7F3EB]/70 text-sm text-center sm:text-left">
             Ready to be on the VA card, not the solo one?
           </p>
           <a
             href="/submit"
-            className="flex-shrink-0 h-[40px] px-5 rounded-full bg-[#F5C842] text-sm font-bold text-[#060612] hover:bg-[#FFD75A] transition-colors flex items-center gap-2"
+            className="flex-shrink-0 h-[40px] px-5 rounded-full bg-[#D9B45B] text-sm font-bold text-[#0E223D] hover:bg-[#E8C77A] transition-colors flex items-center gap-2"
           >
             Send Your Demo →
           </a>

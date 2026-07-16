@@ -45,7 +45,7 @@ function FAQItem({ q, a, index, inView }: { q: string; a: string; index: number;
 
   return (
     <div
-      className="border-b border-[#182B18] overflow-hidden"
+      className="border-b border-[#1E3A5F] overflow-hidden"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? 'translateY(0)' : 'translateY(16px)',
@@ -60,20 +60,20 @@ function FAQItem({ q, a, index, inView }: { q: string; a: string; index: number;
       >
         <span
           className="font-semibold text-sm md:text-base transition-colors"
-          style={{ color: open ? '#F0EDE6' : 'rgba(240,237,230,0.70)' }}
+          style={{ color: open ? '#F7F3EB' : 'rgba(247,243,235,0.70)' }}
         >
           {q}
         </span>
         <span
           className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300"
           style={{
-            background: open ? '#22C55E' : 'transparent',
-            border: open ? '1px solid #22C55E' : '1px solid #182B18',
+            background: open ? '#49B7C9' : 'transparent',
+            border: open ? '1px solid #49B7C9' : '1px solid #1E3A5F',
             transform: open ? 'rotate(45deg)' : 'rotate(0deg)',
           }}
         >
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-            <path d="M5 2v6M2 5h6" stroke={open ? '#060A06' : '#728A72'} strokeWidth="1.5" strokeLinecap="round"/>
+            <path d="M5 2v6M2 5h6" stroke={open ? '#0E223D' : '#9DB2C7'} strokeWidth="1.5" strokeLinecap="round"/>
           </svg>
         </span>
       </button>
@@ -82,7 +82,7 @@ function FAQItem({ q, a, index, inView }: { q: string; a: string; index: number;
         className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{ maxHeight: open ? '300px' : '0px' }}
       >
-        <p className="pb-5 text-sm text-[#728A72] leading-relaxed pr-10">
+        <p className="pb-5 text-sm text-[#9DB2C7] leading-relaxed pr-10">
           {a}
         </p>
       </div>
@@ -109,15 +109,15 @@ export default function FAQSection() {
           }}
           className="mb-7 flex items-center gap-3"
         >
-          <div className="h-px w-6 bg-[#22C55E]" />
-          <span className="text-[10px] font-black uppercase tracking-[3px] text-[#22C55E]">
+          <div className="h-px w-6 bg-[#49B7C9]" />
+          <span className="text-[10px] font-black uppercase tracking-[3px] text-[#49B7C9]">
             FAQ
           </span>
         </div>
 
         {/* Headline */}
         <h2
-          className="font-black text-[#F0EDE6] leading-[0.95] -tracking-[2px] mb-12"
+          className="font-black text-[#F7F3EB] leading-[0.95] -tracking-[2px] mb-12"
           style={{
             fontSize: 'clamp(36px, 5vw, 64px)',
             opacity: inView ? 1 : 0,
@@ -127,7 +127,7 @@ export default function FAQSection() {
           }}
         >
           Questions.<br />
-          <span className="text-[#728A72]">Answered.</span>
+          <span className="text-[#9DB2C7]">Answered.</span>
         </h2>
 
         {/* FAQ items */}

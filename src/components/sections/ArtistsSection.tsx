@@ -64,8 +64,8 @@ function ArtistBubble({ name, image, spotify, featured = false, delay = 0, inVie
           className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
             background: featured
-              ? 'radial-gradient(circle, rgba(245,200,66,0.35) 0%, transparent 70%)'
-              : 'radial-gradient(circle, rgba(34,197,94,0.30) 0%, transparent 70%)',
+              ? 'radial-gradient(circle, rgba(217,180,91,0.35) 0%, transparent 70%)'
+              : 'radial-gradient(circle, rgba(73,183,201,0.30) 0%, transparent 70%)',
             transform: 'scale(1.25)',
           }}
         />
@@ -73,10 +73,10 @@ function ArtistBubble({ name, image, spotify, featured = false, delay = 0, inVie
         <div
           className="absolute inset-0 rounded-full transition-all duration-300"
           style={{
-            border: featured ? '2px solid rgba(245,200,66,0.55)' : '2px solid rgba(34,197,94,0.25)',
+            border: featured ? '2px solid rgba(217,180,91,0.55)' : '2px solid rgba(73,183,201,0.25)',
             boxShadow: featured
-              ? '0 0 16px rgba(245,200,66,0.20)'
-              : '0 0 10px rgba(34,197,94,0.10)',
+              ? '0 0 16px rgba(217,180,91,0.20)'
+              : '0 0 10px rgba(73,183,201,0.10)',
           }}
         />
         {/* Photo */}
@@ -91,7 +91,7 @@ function ArtistBubble({ name, image, spotify, featured = false, delay = 0, inVie
           }}
         />
         {/* Spotify icon on hover */}
-        <div className="absolute inset-0 rounded-full flex items-center justify-center bg-[#060A06]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 backdrop-blur-[2px]">
+        <div className="absolute inset-0 rounded-full flex items-center justify-center bg-[#0E223D]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 backdrop-blur-[2px]">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#1DB954">
             <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 01.207.857zm1.223-2.722a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 01-.973-.519.781.781 0 01.52-.972c3.632-1.102 8.147-.568 11.233 1.328a.78.78 0 01.257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 11-.543-1.792c3.532-1.072 9.404-.865 13.115 1.338a.937.937 0 01-.955 1.61z"/>
           </svg>
@@ -100,11 +100,11 @@ function ArtistBubble({ name, image, spotify, featured = false, delay = 0, inVie
 
       {/* Name */}
       <span
-        className="text-center leading-tight transition-colors duration-200 group-hover:text-[#F0EDE6]"
+        className="text-center leading-tight transition-colors duration-200 group-hover:text-[#F7F3EB]"
         style={{
           fontSize: featured ? '13px' : '11px',
           fontWeight: featured ? 600 : 500,
-          color: featured ? 'rgba(240,237,230,0.85)' : 'rgba(240,237,230,0.50)',
+          color: featured ? 'rgba(247,243,235,0.85)' : 'rgba(247,243,235,0.50)',
           maxWidth: featured ? '88px' : '72px',
         }}
       >
@@ -125,7 +125,7 @@ export default function ArtistsSection() {
       {/* Subtle glow */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(34,197,94,0.05) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(73,183,201,0.05) 0%, transparent 70%)' }}
         aria-hidden="true"
       />
 
@@ -136,16 +136,16 @@ export default function ArtistsSection() {
           className="mb-6 flex items-center justify-center gap-3"
           style={{ opacity: inView ? 1 : 0, transition: 'opacity 0.5s ease' }}
         >
-          <div className="h-px w-8 bg-[#22C55E]/40" />
-          <span className="text-[10px] font-black uppercase tracking-[3px] text-[#22C55E]">
+          <div className="h-px w-8 bg-[#49B7C9]/40" />
+          <span className="text-[10px] font-black uppercase tracking-[3px] text-[#49B7C9]">
             Artists who participated
           </span>
-          <div className="h-px w-8 bg-[#22C55E]/40" />
+          <div className="h-px w-8 bg-[#49B7C9]/40" />
         </div>
 
         {/* Subtitle */}
         <p
-          className="text-center text-[#728A72] text-sm mb-12"
+          className="text-center text-[#9DB2C7] text-sm mb-12"
           style={{ opacity: inView ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: '80ms' }}
         >
           29 artists across previous VA campaigns — this is the squad that made it happen.
@@ -162,7 +162,7 @@ export default function ArtistsSection() {
         <div
           className="mx-auto mb-10 h-px max-w-[400px]"
           style={{
-            background: 'linear-gradient(to right, transparent, rgba(34,197,94,0.20), transparent)',
+            background: 'linear-gradient(to right, transparent, rgba(73,183,201,0.20), transparent)',
             opacity: inView ? 1 : 0,
             transition: 'opacity 0.5s ease',
             transitionDelay: '500ms',
@@ -178,7 +178,7 @@ export default function ArtistsSection() {
 
         {/* Footer note */}
         <p
-          className="mt-12 text-center text-xs text-[#728A72]/60"
+          className="mt-12 text-center text-xs text-[#9DB2C7]/60"
           style={{ opacity: inView ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: '900ms' }}
         >
           Will your name be here after World Cup 2026?

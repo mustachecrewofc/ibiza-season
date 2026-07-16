@@ -12,7 +12,7 @@ import FAQSection from '../components/sections/FAQSection';
 
 export default function SEOPage() {
   return (
-    <div className="min-h-screen bg-[#060A06]">
+    <div className="min-h-screen bg-[#0E223D]">
       <Navbar />
 
       <main id="main-content">

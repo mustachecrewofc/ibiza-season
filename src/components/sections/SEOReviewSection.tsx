@@ -69,8 +69,8 @@ const issues = [
 
 function StatusIcon() {
   return (
-    <span className="w-5 h-5 flex items-center justify-center rounded-full bg-[#F5C842]/15 flex-shrink-0">
-      <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-4.5" stroke="#F5C842" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+    <span className="w-5 h-5 flex items-center justify-center rounded-full bg-[#D9B45B]/15 flex-shrink-0">
+      <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-4.5" stroke="#D9B45B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
     </span>
   );
 }
@@ -88,23 +88,23 @@ export default function SEOReviewSection() {
               <path d="M30 90 L55 20 L65 60 L100 45 Z" fill="url(#ptr-grad)" opacity="0.95"/>
               <defs>
                 <linearGradient id="ptr-grad" x1="30" y1="20" x2="100" y2="90" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#F5C842"/>
-                  <stop offset="100%" stopColor="#22C55E"/>
+                  <stop offset="0%" stopColor="#D9B45B"/>
+                  <stop offset="100%" stopColor="#49B7C9"/>
                 </linearGradient>
               </defs>
             </svg>
           </div>
 
-          <div className="pl-14 md:pl-16 mb-3 text-xs font-bold uppercase tracking-[2px] text-[#728A72]">
+          <div className="pl-14 md:pl-16 mb-3 text-xs font-bold uppercase tracking-[2px] text-[#9DB2C7]">
             Proof. Not promises.
           </div>
           <h2
-            className="font-black text-[#F0EDE6] leading-[1.05] -tracking-[2px] pl-14 md:pl-16"
+            className="font-black text-[#F7F3EB] leading-[1.05] -tracking-[2px] pl-14 md:pl-16"
             style={{ fontSize: 'clamp(36px, 5.5vw, 76px)' }}
           >
-            We've done this before.<br/><span className="text-[#22C55E]">Three times.</span>
+            We've done this before.<br/><span className="text-[#49B7C9]">Three times.</span>
           </h2>
-          <p className="mt-6 pl-14 md:pl-16 text-[#728A72] text-base md:text-lg leading-relaxed max-w-[460px]">
+          <p className="mt-6 pl-14 md:pl-16 text-[#9DB2C7] text-base md:text-lg leading-relaxed max-w-[460px]">
             Three VA campaigns. Three Beatport chart runs. Real screenshots,
             real positions — not projections. Every number below is documented.
           </p>
@@ -112,31 +112,31 @@ export default function SEOReviewSection() {
             href="https://www.instagram.com/mustachecrew/"
             target="_blank"
             rel="noreferrer"
-            className="mt-6 ml-14 md:ml-16 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#182B18] text-sm text-[#F0EDE6] hover:bg-[#0C140C] transition-colors"
+            className="mt-6 ml-14 md:ml-16 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#1E3A5F] text-sm text-[#F7F3EB] hover:bg-[#13294A] transition-colors"
           >
             📷 Watch the highlights on Instagram ↗
           </a>
         </div>
 
         <div className={`transition-all duration-700 delay-200 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <div className="bg-[#0C140C] rounded-2xl border border-[#182B18] shadow-sm overflow-hidden">
-            <div className="px-5 py-4 border-b border-[#182B18] flex items-center justify-between">
+          <div className="bg-[#13294A] rounded-2xl border border-[#1E3A5F] shadow-sm overflow-hidden">
+            <div className="px-5 py-4 border-b border-[#1E3A5F] flex items-center justify-between">
               <div>
-                <p className="font-semibold text-[#F0EDE6] text-sm">Label achievements</p>
-                <p className="text-[#728A72] text-xs mt-0.5">Highlights from previous VA editions.</p>
+                <p className="font-semibold text-[#F7F3EB] text-sm">Label achievements</p>
+                <p className="text-[#9DB2C7] text-xs mt-0.5">Highlights from previous VA editions.</p>
               </div>
-              <span className="h-8 px-3 rounded-lg bg-[#F5C842] text-[#060612] text-xs font-bold flex items-center">
+              <span className="h-8 px-3 rounded-lg bg-[#D9B45B] text-[#0E223D] text-xs font-bold flex items-center">
                 Since 2018
               </span>
             </div>
 
-            <div className="divide-y divide-[#182B18]">
+            <div className="divide-y divide-[#1E3A5F]">
               {issues.map((item) => (
                 <div key={item.label} className="flex items-center gap-3 px-5 py-3">
                   <StatusIcon />
-                  <span className="text-sm text-[#F0EDE6] flex-1">{item.label}</span>
+                  <span className="text-sm text-[#F7F3EB] flex-1">{item.label}</span>
                   {item.badge && (
-                    <span className="text-xs bg-[#F5C842]/15 text-[#22C55E] px-2 py-0.5 rounded-full font-medium">{item.badge}</span>
+                    <span className="text-xs bg-[#D9B45B]/15 text-[#49B7C9] px-2 py-0.5 rounded-full font-medium">{item.badge}</span>
                   )}
                 </div>
               ))}
@@ -149,10 +149,10 @@ export default function SEOReviewSection() {
       {/* Xmas gallery */}
       <div className={`mt-16 md:mt-24 transition-all duration-700 delay-300 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
         <div className="flex items-center gap-3 mb-2 md:mb-4">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#22C55E]/15 border border-[#22C55E]/40 text-[#FF8A7A] text-xs font-bold uppercase tracking-wider">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#49B7C9]/15 border border-[#49B7C9]/40 text-[#FF8A7A] text-xs font-bold uppercase tracking-wider">
             🎅 Mustache Gang Xmas 2025
           </span>
-          <span className="text-[#728A72] text-xs hidden sm:inline">8 Beatport chart placements</span>
+          <span className="text-[#9DB2C7] text-xs hidden sm:inline">8 Beatport chart placements</span>
         </div>
         <PortfolioGallery images={xmasImages} spacing="-space-x-24 md:-space-x-28" />
       </div>
@@ -160,10 +160,10 @@ export default function SEOReviewSection() {
       {/* Brazilian Carnival gallery */}
       <div className={`mt-12 md:mt-20 transition-all duration-700 delay-300 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
         <div className="flex items-center gap-3 mb-2 md:mb-4">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5C842]/15 border border-[#F5C842]/40 text-[#22C55E] text-xs font-bold uppercase tracking-wider">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D9B45B]/15 border border-[#D9B45B]/40 text-[#49B7C9] text-xs font-bold uppercase tracking-wider">
             🇧🇷 Brazilian Carnival VA
           </span>
-          <span className="text-[#728A72] text-xs hidden sm:inline">12 Beatport chart placements</span>
+          <span className="text-[#9DB2C7] text-xs hidden sm:inline">12 Beatport chart placements</span>
         </div>
         <PortfolioGallery
           images={carnivalImages}
@@ -179,7 +179,7 @@ export default function SEOReviewSection() {
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3B82F6]/15 border border-[#3B82F6]/40 text-[#3B82F6] text-xs font-bold uppercase tracking-wider">
             🌍 Mustache Gang Euro Tour
           </span>
-          <span className="text-[#728A72] text-xs hidden sm:inline">9 Beatport chart placements</span>
+          <span className="text-[#9DB2C7] text-xs hidden sm:inline">9 Beatport chart placements</span>
         </div>
         <PortfolioGallery images={euroImages} spacing="-space-x-20 md:-space-x-24" />
       </div>
@@ -189,17 +189,17 @@ export default function SEOReviewSection() {
         <div
           className="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-5 rounded-2xl"
           style={{
-            background: 'rgba(34,197,94,0.05)',
-            border: '1px solid rgba(34,197,94,0.18)',
+            background: 'rgba(73,183,201,0.05)',
+            border: '1px solid rgba(73,183,201,0.18)',
           }}
         >
           <div>
-            <p className="font-bold text-[#F0EDE6] text-sm">Three times proven. Now it's your turn.</p>
-            <p className="text-[#728A72] text-xs mt-0.5">Submit by July 10 · Releases July 17, 2026</p>
+            <p className="font-bold text-[#F7F3EB] text-sm">Three times proven. Now it's your turn.</p>
+            <p className="text-[#9DB2C7] text-xs mt-0.5">Submit by July 10 · Releases July 17, 2026</p>
           </div>
           <a
             href="/submit"
-            className="flex-shrink-0 h-[40px] px-5 rounded-full bg-[#F5C842] text-sm font-bold text-[#060612] hover:bg-[#FFD75A] transition-colors flex items-center gap-2"
+            className="flex-shrink-0 h-[40px] px-5 rounded-full bg-[#D9B45B] text-sm font-bold text-[#0E223D] hover:bg-[#E8C77A] transition-colors flex items-center gap-2"
           >
             Send Your Demo →
           </a>
@@ -208,10 +208,10 @@ export default function SEOReviewSection() {
 
       {/* Bridge to Community */}
       <div className={`mt-12 flex flex-col items-center gap-2 transition-all duration-700 delay-600 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-        <p className="text-sm text-[#728A72] text-center">
+        <p className="text-sm text-[#9DB2C7] text-center">
           Behind every one of those chart runs, the same group chat was the engine.
         </p>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#728A72" strokeWidth="2" strokeLinecap="round" className="opacity-50">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9DB2C7" strokeWidth="2" strokeLinecap="round" className="opacity-50">
           <polyline points="6 9 12 15 18 9"/>
         </svg>
       </div>
