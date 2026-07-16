@@ -1,6 +1,35 @@
 ﻿@import "tailwindcss";
 
+/* ── Local fonts ─────────────────────────────────────────────────────────── */
+/* Satoshi — variable weight axis 300–900 (primary UI font) */
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/satoshi/Satoshi-Variable.woff2") format("woff2"),
+       url("/assets/fonts/satoshi/Satoshi-Variable.woff") format("woff");
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+/* Brittany Signature — handwritten campaign display font */
+@font-face {
+  font-family: "Brittany Signature";
+  src: url("/assets/fonts/brittany-signature/BrittanySignature.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Tailwind v4 theme tokens → enables font-sans and font-handwritten utilities */
+@theme {
+  --font-sans: "Satoshi", Arial, sans-serif;
+  --font-handwritten: "Brittany Signature", cursive;
+}
+
 :root {
+  --font-primary: "Satoshi", Arial, sans-serif;
+  --font-handwritten: "Brittany Signature", cursive;
+
   /* ── Ibiza Season 2026 palette ── */
   --color-midnight-marine: #0E223D;
   --color-ibiza-blue: #1E5AA8;
@@ -34,13 +63,16 @@
 html, body {
   background-color: #0E223D;
   color: #F7F3EB;
-  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.font-handwritten,
 .font-script {
-  font-family: 'Caveat Brush', cursive;
+  font-family: var(--font-handwritten);
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 @utility container {

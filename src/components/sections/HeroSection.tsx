@@ -62,8 +62,13 @@ export default function HeroSection() {
           >
             MUSTACHE GANG<br />
             <span
-              className="text-transparent bg-clip-text"
-              style={{ backgroundImage: 'linear-gradient(135deg, #D9B45B 0%, #E78E6D 45%, #49B7C9 100%)' }}
+              className="font-handwritten text-transparent bg-clip-text inline-block"
+              style={{
+                backgroundImage: 'linear-gradient(135deg, #D9B45B 0%, #E78E6D 45%, #49B7C9 100%)',
+                fontSize: 'clamp(56px, 8.5vw, 128px)',
+                lineHeight: 1.05,
+                paddingBottom: '0.12em',
+              }}
             >WORLD CUP VA</span>
           </h1>
 
