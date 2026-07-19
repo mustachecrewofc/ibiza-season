@@ -147,7 +147,7 @@ export default function SubmitPage() {
       <div className="max-w-[780px] mx-auto px-4 md:px-8 py-12 md:py-20">
         {/* Page heading */}
         <div className="mb-10">
-          <div className="mb-3 text-xs font-bold uppercase tracking-[2px] text-[#728A72]">Mustache Gang World Cup 2026</div>
+          <div className="mb-3 text-xs font-bold uppercase tracking-[2px] text-[#728A72]">Mustache Gang Ibiza Season 2026</div>
           <h1 className="font-black text-[#F0EDE6] leading-[1.0] -tracking-[2px] mb-4" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
             Submit your track.
           </h1>
@@ -155,7 +155,7 @@ export default function SubmitPage() {
             We review every submission within 7 days.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            {['All genres', 'Reply in 7 days', 'Submit by July 10, 2026'].map(t => (
+            {['All genres', 'Reply in 7 days', 'Submit by September 18, 2026'].map(t => (
               <span key={t} className="text-xs font-medium px-3 py-1.5 rounded-full bg-[#0C140C] border border-[#182B18] text-[#728A72]">{t}</span>
             ))}
           </div>
@@ -176,7 +176,7 @@ export default function SubmitPage() {
             </div>
 
             <Field label="Track Name" required error={errors.track_name}>
-              <input className={inputCls} placeholder="My World Cup Track" value={form.track_name} onChange={set('track_name')} maxLength={80} />
+              <input className={inputCls} placeholder="My Ibiza Season Track" value={form.track_name} onChange={set('track_name')} maxLength={80} />
               <p className="text-xs text-[#728A72] text-right">{form.track_name.length}/80</p>
             </Field>
 

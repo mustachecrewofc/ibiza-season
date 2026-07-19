@@ -1,7 +1,7 @@
 import { useInView } from '../../hooks/useInView';
 
 const TOTAL_SPOTS = 30;
-const SPOTS_TAKEN = 18; // update as submissions come in
+const SPOTS_TAKEN = 3; // update as submissions come in
 
 export default function CTASection() {
   const { ref, inView } = useInView();
@@ -38,7 +38,7 @@ export default function CTASection() {
 
         <p className={`mt-6 max-w-[520px] text-[#9DB2C7] text-base md:text-lg leading-relaxed transition-all duration-700 delay-100 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           We listen to every demo personally and respond within 7 days.
-          On July 17, your track drops alongside 29 others — and the chart push begins.
+          On October 2, your track drops alongside 29 others — and the chart push begins.
         </p>
 
         {/* Spots progress bar */}
@@ -58,7 +58,7 @@ export default function CTASection() {
             />
           </div>
           <p className="mt-2 text-xs text-[#9DB2C7] text-center">
-            {TOTAL_SPOTS} spots max · Submit by July 10 · Releases July 17, 2026
+            {TOTAL_SPOTS} spots max · Submit by September 18 · Releases October 2, 2026
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function CTASection() {
         </div>
 
         <p className={`mt-6 text-xs text-[#9DB2C7] transition-all duration-700 delay-400 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-          All genres welcome · All countries welcome · Deadline July 10
+          All genres welcome · All countries welcome · Deadline September 18
         </p>
       </div>
     </section>

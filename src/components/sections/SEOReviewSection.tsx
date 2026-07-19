@@ -195,7 +195,7 @@ export default function SEOReviewSection() {
         >
           <div>
             <p className="font-bold text-[#F7F3EB] text-sm">Three times proven. Now it's your turn.</p>
-            <p className="text-[#9DB2C7] text-xs mt-0.5">Submit by July 10 · Releases July 17, 2026</p>
+            <p className="text-[#9DB2C7] text-xs mt-0.5">Submit by September 18 · Releases October 2, 2026</p>
           </div>
           <a
             href="/submit"

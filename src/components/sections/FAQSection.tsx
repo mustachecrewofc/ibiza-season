@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: 'What happens after I submit?',
-    a: 'Mustache Crew A&R listens personally to every demo and responds within 7 days. No bots, no auto-rejections. If selected, you receive access to the squad Telegram group and the full campaign brief for July 17.',
+    a: 'Mustache Crew A&R listens personally to every demo and responds within 7 days. No bots, no auto-rejections. If selected, you receive access to the squad Telegram group and the full campaign brief for October 2.',
   },
   {
     q: 'What if my track is not selected?',
@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: 'Do I have to do anything on launch day?',
-    a: 'Yes. Every artist is expected to activate their own audience on July 17 — stories, reels, email list, bio link, whatever your channels are. The coordinated push only works when everyone shows up. That commitment is part of being in the squad.',
+    a: 'Yes. Every artist is expected to activate their own audience on October 2 — stories, reels, email list, bio link, whatever your channels are. The coordinated push only works when everyone shows up. That commitment is part of being in the squad.',
   },
   {
     q: 'Does my audience need to buy the full album on Beatport?',
@@ -28,15 +28,15 @@ const faqs = [
   },
   {
     q: 'When is the submission deadline?',
-    a: 'Demos must be submitted by July 10, 2026. The VA releases July 17 — two days before the FIFA World Cup Final.',
+    a: 'Demos open July 20 and must be submitted by September 18, 2026. The VA releases October 2 — right as Ibiza\'s legendary closing parties wrap the summer season.',
   },
   {
     q: 'How many spots are still available?',
     a: '30 spots total. We are filling them now on a rolling basis — earlier submissions get priority consideration. Once the 30 are confirmed, submissions close.',
   },
   {
-    q: 'Why is the release date July 17?',
-    a: 'The FIFA World Cup Final 2026 is July 19. Releasing two days before the most-watched sporting event on the planet puts our album — and all 30 artists — in front of a global, highly engaged audience at exactly the right moment.',
+    q: 'Why is the release date October 2?',
+    a: 'Late September and early October is when Ibiza\'s world-famous closing parties bring the global electronic music scene together to end the summer season. Releasing right into that moment puts our album — and all 30 artists — in front of a highly engaged, dance-focused audience at exactly the right time.',
   },
 ];
 

@@ -181,7 +181,7 @@ export default function ArtistsSection() {
           className="mt-12 text-center text-xs text-[#9DB2C7]/60"
           style={{ opacity: inView ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: '900ms' }}
         >
-          Will your name be here after World Cup 2026?
+          Will your name be here after Ibiza Season 2026?
         </p>
 
       </div>

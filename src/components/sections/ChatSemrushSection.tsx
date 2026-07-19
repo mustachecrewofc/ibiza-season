@@ -17,7 +17,7 @@ const messages: Msg[] = [
     author: 'Mustache Crew',
     role: 'A&R · admin',
     isCrew: true,
-    content: "Squad, it's official — Mustache Gang World Cup 2026 drops July 17, 2 days before the Final. 30 artists, one coordinated push. Pre-save links go live tomorrow at 11AM CET. Are we ready?",
+    content: "Squad, it's official — Mustache Gang Ibiza Season 2026 drops October 2, right as Ibiza's closing parties wrap the summer. 30 artists, one coordinated push. Pre-save links go live tomorrow at 11AM CET. Are we ready?",
     delay: 600,
   },
   {
@@ -52,7 +52,7 @@ const messages: Msg[] = [
     author: 'Mustache Crew',
     role: 'A&R · admin',
     isCrew: true,
-    content: "That's the squad mindset. 30 artists, one drop, one push. We run the war room — you bring the heat. World Cup window is ours.",
+    content: "That's the squad mindset. 30 artists, one drop, one push. We run the war room — you bring the heat. The Ibiza closing window is ours.",
     delay: 6800,
   },
 ];
@@ -310,7 +310,7 @@ export default function ChatSemrushSection({ hideHero = false }: { hideHero?: bo
                       All genres, all countries —{' '}
                       <span className="font-medium text-[#49B7C9]">30 spots, no exceptions</span>.
                       Deadline to apply:{' '}
-                      <span className="text-[#D9B45B] font-medium">July 10, 2026</span>.
+                      <span className="text-[#D9B45B] font-medium">September 18, 2026</span>.
                     </p>
                   </div>
                 </div>

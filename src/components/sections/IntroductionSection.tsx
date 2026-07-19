@@ -128,12 +128,12 @@ export default function IntroductionSection() {
           style={anim(220)}
           className="mt-8 text-[#F7F3EB]/65 text-base md:text-xl leading-relaxed max-w-[660px]"
         >
-          Mustache Gang World Cup is not a random compilation.
+          Mustache Gang Ibiza Season is not a random compilation.
           It is a{' '}
           <span className="text-[#F7F3EB]/90 font-semibold">coordinated community of artists</span>{' '}
           who all want the same thing — and who know that the only way to get there is together.
           You bring your audience. Everyone does the same.
-          And on July 17, the chart gets flooded.
+          And on October 2, the chart gets flooded.
         </p>
 
         {/* 4 pillars — 2x2 grid */}

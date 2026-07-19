@@ -52,7 +52,7 @@ export default function HeroSection() {
           {/* Badge */}
           <div className="mb-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#49B7C9]/30 bg-[#49B7C9]/08 text-[#49B7C9] text-sm font-medium">
             <span className="w-2 h-2 rounded-full bg-[#49B7C9] animate-pulse" />
-            <span>30 Artists · Coordinated Chart Push · World Cup Edition</span>
+            <span>30 Artists · Coordinated Chart Push · Ibiza Season Edition</span>
           </div>
 
           {/* Title */}
@@ -109,7 +109,7 @@ export default function HeroSection() {
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src={`https://www.youtube.com/embed/${VIDEO_ID}?rel=0&modestbranding=1`}
-                title="Mustache Gang World Cup 2026 — VA Breakdown"
+                title="Mustache Gang Ibiza Season 2026 — VA Breakdown"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
@@ -131,9 +131,9 @@ export default function HeroSection() {
             </a>
 
             <p className="text-sm text-[#9DB2C7]">
-              Submit by <span className="text-[#49B7C9] font-semibold">July 10</span>
+              Submit by <span className="text-[#49B7C9] font-semibold">September 18</span>
               &nbsp;·&nbsp;
-              Releases <span className="text-[#D9B45B] font-semibold">July 17, 2026</span>
+              Releases <span className="text-[#D9B45B] font-semibold">October 2, 2026</span>
             </p>
 
             {/* Scroll cue */}
