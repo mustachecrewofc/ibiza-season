@@ -69,7 +69,7 @@ export default function CTASection() {
             href="/submit"
             className="h-[52px] flex items-center px-8 rounded-full bg-[#D9B45B] text-[#0E223D] text-base font-bold hover:bg-[#E8C77A] transition-colors"
           >
-            Send Your Demo — Free →
+            Send Your Demo →
           </a>
         </div>
 
